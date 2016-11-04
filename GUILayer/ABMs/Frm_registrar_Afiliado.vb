@@ -134,7 +134,7 @@ Public Class frm_registrar_Afiliado
             .activo = True
             .idTipoAfil = cbo_tipo_afiliado.SelectedValue
             .id_domicilio = oDomicilioService.generarCodigoDomicilio()
-            .calle = txt_direccion.Text
+            .calle = txt_calle.Text
             .numero = txt_altura.Text
             .codBarrio = cbo_barrios.SelectedValue
             If String.IsNullOrEmpty(txt_telefono.Text) = True Then
