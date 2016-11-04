@@ -88,15 +88,18 @@ Partial Class frm_registrar_Afiliado
         '
         Me.dgv_afiliados.AllowUserToAddRows = False
         Me.dgv_afiliados.AllowUserToDeleteRows = False
+        Me.dgv_afiliados.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_afiliados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_afiliados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idTipoDoc, Me.col_tipo, Me.col_documento, Me.col_nombre, Me.col_edad, Me.col_telefono, Me.col_mail, Me.col_direccion, Me.col_barrio, Me.col_localidad, Me.col_Provincia, Me.col_tipoAfil, Me.col_empresa, Me.col_activo, Me.col_estaActivo})
-        Me.dgv_afiliados.Location = New System.Drawing.Point(606, 16)
-        Me.dgv_afiliados.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgv_afiliados.Location = New System.Drawing.Point(454, 13)
+        Me.dgv_afiliados.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgv_afiliados.Name = "dgv_afiliados"
         Me.dgv_afiliados.ReadOnly = True
         Me.dgv_afiliados.RowTemplate.Height = 24
         Me.dgv_afiliados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_afiliados.Size = New System.Drawing.Size(428, 433)
+        Me.dgv_afiliados.Size = New System.Drawing.Size(321, 352)
         Me.dgv_afiliados.TabIndex = 7
         '
         'col_idTipoDoc
@@ -203,69 +206,75 @@ Partial Class frm_registrar_Afiliado
         '
         'cmd_Salir
         '
+        Me.cmd_Salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_Salir.BackColor = System.Drawing.Color.Silver
         Me.cmd_Salir.Image = CType(resources.GetObject("cmd_Salir.Image"), System.Drawing.Image)
-        Me.cmd_Salir.Location = New System.Drawing.Point(971, 465)
-        Me.cmd_Salir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cmd_Salir.Location = New System.Drawing.Point(728, 378)
+        Me.cmd_Salir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmd_Salir.Name = "cmd_Salir"
-        Me.cmd_Salir.Size = New System.Drawing.Size(63, 63)
+        Me.cmd_Salir.Size = New System.Drawing.Size(47, 51)
         Me.cmd_Salir.TabIndex = 8
         Me.cmd_Salir.UseVisualStyleBackColor = False
         '
         'btn_Buscar
         '
+        Me.btn_Buscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Buscar.BackColor = System.Drawing.Color.Silver
         Me.btn_Buscar.Image = CType(resources.GetObject("btn_Buscar.Image"), System.Drawing.Image)
-        Me.btn_Buscar.Location = New System.Drawing.Point(292, 466)
-        Me.btn_Buscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_Buscar.Location = New System.Drawing.Point(219, 379)
+        Me.btn_Buscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_Buscar.Name = "btn_Buscar"
-        Me.btn_Buscar.Size = New System.Drawing.Size(61, 67)
+        Me.btn_Buscar.Size = New System.Drawing.Size(46, 54)
         Me.btn_Buscar.TabIndex = 6
         Me.btn_Buscar.UseVisualStyleBackColor = False
         '
         'btn_Eliminar
         '
+        Me.btn_Eliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Eliminar.BackColor = System.Drawing.Color.Silver
         Me.btn_Eliminar.BackgroundImage = CType(resources.GetObject("btn_Eliminar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_Eliminar.Location = New System.Drawing.Point(217, 466)
-        Me.btn_Eliminar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_Eliminar.Location = New System.Drawing.Point(163, 379)
+        Me.btn_Eliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_Eliminar.Name = "btn_Eliminar"
-        Me.btn_Eliminar.Size = New System.Drawing.Size(69, 67)
+        Me.btn_Eliminar.Size = New System.Drawing.Size(52, 54)
         Me.btn_Eliminar.TabIndex = 5
         Me.btn_Eliminar.UseVisualStyleBackColor = False
         '
         'btn_Grabar
         '
+        Me.btn_Grabar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Grabar.BackColor = System.Drawing.Color.Silver
         Me.btn_Grabar.Image = CType(resources.GetObject("btn_Grabar.Image"), System.Drawing.Image)
-        Me.btn_Grabar.Location = New System.Drawing.Point(144, 465)
-        Me.btn_Grabar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_Grabar.Location = New System.Drawing.Point(108, 378)
+        Me.btn_Grabar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_Grabar.Name = "btn_Grabar"
-        Me.btn_Grabar.Size = New System.Drawing.Size(67, 68)
+        Me.btn_Grabar.Size = New System.Drawing.Size(50, 55)
         Me.btn_Grabar.TabIndex = 4
         Me.btn_Grabar.UseVisualStyleBackColor = False
         '
         'btn_Modificar
         '
+        Me.btn_Modificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Modificar.BackColor = System.Drawing.Color.Silver
         Me.btn_Modificar.BackgroundImage = CType(resources.GetObject("btn_Modificar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Modificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_Modificar.Location = New System.Drawing.Point(78, 465)
-        Me.btn_Modificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_Modificar.Location = New System.Drawing.Point(58, 378)
+        Me.btn_Modificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_Modificar.Name = "btn_Modificar"
-        Me.btn_Modificar.Size = New System.Drawing.Size(60, 68)
+        Me.btn_Modificar.Size = New System.Drawing.Size(45, 55)
         Me.btn_Modificar.TabIndex = 3
         Me.btn_Modificar.UseVisualStyleBackColor = False
         '
         'btn_Nuevo
         '
+        Me.btn_Nuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Nuevo.BackColor = System.Drawing.Color.Silver
         Me.btn_Nuevo.Image = CType(resources.GetObject("btn_Nuevo.Image"), System.Drawing.Image)
-        Me.btn_Nuevo.Location = New System.Drawing.Point(12, 465)
-        Me.btn_Nuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_Nuevo.Location = New System.Drawing.Point(9, 378)
+        Me.btn_Nuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_Nuevo.Name = "btn_Nuevo"
-        Me.btn_Nuevo.Size = New System.Drawing.Size(61, 68)
+        Me.btn_Nuevo.Size = New System.Drawing.Size(46, 55)
         Me.btn_Nuevo.TabIndex = 2
         Me.btn_Nuevo.UseVisualStyleBackColor = False
         '
@@ -283,38 +292,40 @@ Partial Class frm_registrar_Afiliado
         Me.txt_direccion.Controls.Add(Me.lbl_barrio)
         Me.txt_direccion.Controls.Add(Me.txt_calle)
         Me.txt_direccion.Controls.Add(Me.lbl_direccion)
-        Me.txt_direccion.Location = New System.Drawing.Point(11, 288)
-        Me.txt_direccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_direccion.Location = New System.Drawing.Point(8, 234)
+        Me.txt_direccion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_direccion.Name = "txt_direccion"
-        Me.txt_direccion.Size = New System.Drawing.Size(581, 161)
+        Me.txt_direccion.Size = New System.Drawing.Size(436, 131)
         Me.txt_direccion.TabIndex = 1
         '
         'lbl_datosDomicilio
         '
         Me.lbl_datosDomicilio.AutoSize = True
         Me.lbl_datosDomicilio.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_datosDomicilio.Location = New System.Drawing.Point(13, 12)
+        Me.lbl_datosDomicilio.Location = New System.Drawing.Point(10, 10)
+        Me.lbl_datosDomicilio.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_datosDomicilio.Name = "lbl_datosDomicilio"
-        Me.lbl_datosDomicilio.Size = New System.Drawing.Size(175, 20)
+        Me.lbl_datosDomicilio.Size = New System.Drawing.Size(147, 17)
         Me.lbl_datosDomicilio.TabIndex = 10
         Me.lbl_datosDomicilio.Text = "Datos del Domicilio"
         '
         'txt_altura
         '
         Me.txt_altura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_altura.Location = New System.Drawing.Point(379, 44)
-        Me.txt_altura.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_altura.Location = New System.Drawing.Point(284, 36)
+        Me.txt_altura.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_altura.Name = "txt_altura"
-        Me.txt_altura.Size = New System.Drawing.Size(60, 22)
+        Me.txt_altura.Size = New System.Drawing.Size(46, 20)
         Me.txt_altura.TabIndex = 1
         '
         'lbl_numero
         '
         Me.lbl_numero.AutoSize = True
         Me.lbl_numero.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_numero.Location = New System.Drawing.Point(307, 48)
+        Me.lbl_numero.Location = New System.Drawing.Point(230, 39)
+        Me.lbl_numero.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_numero.Name = "lbl_numero"
-        Me.lbl_numero.Size = New System.Drawing.Size(66, 18)
+        Me.lbl_numero.Size = New System.Drawing.Size(55, 15)
         Me.lbl_numero.TabIndex = 8
         Me.lbl_numero.Text = "Numero:"
         '
@@ -323,19 +334,20 @@ Partial Class frm_registrar_Afiliado
         Me.cbo_provincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_provincias.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_provincias.FormattingEnabled = True
-        Me.cbo_provincias.Location = New System.Drawing.Point(88, 74)
-        Me.cbo_provincias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cbo_provincias.Location = New System.Drawing.Point(66, 60)
+        Me.cbo_provincias.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbo_provincias.Name = "cbo_provincias"
-        Me.cbo_provincias.Size = New System.Drawing.Size(181, 26)
+        Me.cbo_provincias.Size = New System.Drawing.Size(137, 23)
         Me.cbo_provincias.TabIndex = 2
         '
         'lbl_Provincia
         '
         Me.lbl_Provincia.AutoSize = True
         Me.lbl_Provincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Provincia.Location = New System.Drawing.Point(14, 77)
+        Me.lbl_Provincia.Location = New System.Drawing.Point(10, 63)
+        Me.lbl_Provincia.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_Provincia.Name = "lbl_Provincia"
-        Me.lbl_Provincia.Size = New System.Drawing.Size(73, 18)
+        Me.lbl_Provincia.Size = New System.Drawing.Size(60, 15)
         Me.lbl_Provincia.TabIndex = 6
         Me.lbl_Provincia.Text = "Provincia:"
         '
@@ -344,19 +356,20 @@ Partial Class frm_registrar_Afiliado
         Me.cbo_localidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_localidades.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_localidades.FormattingEnabled = True
-        Me.cbo_localidades.Location = New System.Drawing.Point(379, 76)
-        Me.cbo_localidades.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cbo_localidades.Location = New System.Drawing.Point(284, 62)
+        Me.cbo_localidades.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbo_localidades.Name = "cbo_localidades"
-        Me.cbo_localidades.Size = New System.Drawing.Size(164, 26)
+        Me.cbo_localidades.Size = New System.Drawing.Size(124, 23)
         Me.cbo_localidades.TabIndex = 3
         '
         'lbl_localidad
         '
         Me.lbl_localidad.AutoSize = True
         Me.lbl_localidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_localidad.Location = New System.Drawing.Point(298, 82)
+        Me.lbl_localidad.Location = New System.Drawing.Point(224, 67)
+        Me.lbl_localidad.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_localidad.Name = "lbl_localidad"
-        Me.lbl_localidad.Size = New System.Drawing.Size(75, 18)
+        Me.lbl_localidad.Size = New System.Drawing.Size(64, 15)
         Me.lbl_localidad.TabIndex = 4
         Me.lbl_localidad.Text = "Localidad:"
         '
@@ -365,38 +378,40 @@ Partial Class frm_registrar_Afiliado
         Me.cbo_barrios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_barrios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_barrios.FormattingEnabled = True
-        Me.cbo_barrios.Location = New System.Drawing.Point(89, 113)
-        Me.cbo_barrios.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cbo_barrios.Location = New System.Drawing.Point(67, 92)
+        Me.cbo_barrios.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbo_barrios.Name = "cbo_barrios"
-        Me.cbo_barrios.Size = New System.Drawing.Size(181, 26)
+        Me.cbo_barrios.Size = New System.Drawing.Size(137, 23)
         Me.cbo_barrios.TabIndex = 4
         '
         'lbl_barrio
         '
         Me.lbl_barrio.AutoSize = True
         Me.lbl_barrio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_barrio.Location = New System.Drawing.Point(35, 116)
+        Me.lbl_barrio.Location = New System.Drawing.Point(26, 94)
+        Me.lbl_barrio.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_barrio.Name = "lbl_barrio"
-        Me.lbl_barrio.Size = New System.Drawing.Size(52, 18)
+        Me.lbl_barrio.Size = New System.Drawing.Size(43, 15)
         Me.lbl_barrio.TabIndex = 2
         Me.lbl_barrio.Text = "Barrio:"
         '
         'txt_calle
         '
         Me.txt_calle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_calle.Location = New System.Drawing.Point(89, 44)
-        Me.txt_calle.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_calle.Location = New System.Drawing.Point(67, 36)
+        Me.txt_calle.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.Size = New System.Drawing.Size(180, 22)
+        Me.txt_calle.Size = New System.Drawing.Size(136, 20)
         Me.txt_calle.TabIndex = 0
         '
         'lbl_direccion
         '
         Me.lbl_direccion.AutoSize = True
         Me.lbl_direccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_direccion.Location = New System.Drawing.Point(42, 45)
+        Me.lbl_direccion.Location = New System.Drawing.Point(32, 37)
+        Me.lbl_direccion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_direccion.Name = "lbl_direccion"
-        Me.lbl_direccion.Size = New System.Drawing.Size(45, 18)
+        Me.lbl_direccion.Size = New System.Drawing.Size(38, 15)
         Me.lbl_direccion.TabIndex = 0
         Me.lbl_direccion.Text = "Calle:"
         '
@@ -423,34 +438,37 @@ Partial Class frm_registrar_Afiliado
         Me.Panel1.Controls.Add(Me.lbl_apellido)
         Me.Panel1.Controls.Add(Me.txt_nombre)
         Me.Panel1.Controls.Add(Me.lbl_nombre)
-        Me.Panel1.Location = New System.Drawing.Point(11, 17)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Location = New System.Drawing.Point(8, 14)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(581, 258)
+        Me.Panel1.Size = New System.Drawing.Size(436, 210)
         Me.Panel1.TabIndex = 0
         '
         'dtp_fecha
         '
-        Me.dtp_fecha.Location = New System.Drawing.Point(117, 148)
+        Me.dtp_fecha.Location = New System.Drawing.Point(88, 120)
+        Me.dtp_fecha.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dtp_fecha.Name = "dtp_fecha"
-        Me.dtp_fecha.Size = New System.Drawing.Size(181, 22)
+        Me.dtp_fecha.Size = New System.Drawing.Size(137, 20)
         Me.dtp_fecha.TabIndex = 26
         '
         'txt_empresa
         '
         Me.txt_empresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_empresa.Location = New System.Drawing.Point(413, 183)
+        Me.txt_empresa.Location = New System.Drawing.Point(310, 149)
+        Me.txt_empresa.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_empresa.Name = "txt_empresa"
-        Me.txt_empresa.Size = New System.Drawing.Size(151, 22)
+        Me.txt_empresa.Size = New System.Drawing.Size(114, 20)
         Me.txt_empresa.TabIndex = 7
         '
         'lbl_empresa
         '
         Me.lbl_empresa.AutoSize = True
         Me.lbl_empresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_empresa.Location = New System.Drawing.Point(335, 184)
+        Me.lbl_empresa.Location = New System.Drawing.Point(251, 150)
+        Me.lbl_empresa.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_empresa.Name = "lbl_empresa"
-        Me.lbl_empresa.Size = New System.Drawing.Size(72, 18)
+        Me.lbl_empresa.Size = New System.Drawing.Size(60, 15)
         Me.lbl_empresa.TabIndex = 25
         Me.lbl_empresa.Text = "Empresa:"
         '
@@ -459,18 +477,19 @@ Partial Class frm_registrar_Afiliado
         Me.cbo_tipo_afiliado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_tipo_afiliado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_tipo_afiliado.FormattingEnabled = True
-        Me.cbo_tipo_afiliado.Location = New System.Drawing.Point(413, 144)
+        Me.cbo_tipo_afiliado.Location = New System.Drawing.Point(310, 117)
+        Me.cbo_tipo_afiliado.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbo_tipo_afiliado.Name = "cbo_tipo_afiliado"
-        Me.cbo_tipo_afiliado.Size = New System.Drawing.Size(151, 26)
+        Me.cbo_tipo_afiliado.Size = New System.Drawing.Size(114, 23)
         Me.cbo_tipo_afiliado.TabIndex = 5
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(17, 13)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(13, 11)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(44, 50)
+        Me.PictureBox1.Size = New System.Drawing.Size(33, 41)
         Me.PictureBox1.TabIndex = 17
         Me.PictureBox1.TabStop = False
         '
@@ -478,47 +497,50 @@ Partial Class frm_registrar_Afiliado
         '
         Me.lbl_datosEmpleado.AutoSize = True
         Me.lbl_datosEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_datosEmpleado.Location = New System.Drawing.Point(67, 27)
+        Me.lbl_datosEmpleado.Location = New System.Drawing.Point(50, 22)
+        Me.lbl_datosEmpleado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_datosEmpleado.Name = "lbl_datosEmpleado"
-        Me.lbl_datosEmpleado.Size = New System.Drawing.Size(159, 20)
+        Me.lbl_datosEmpleado.Size = New System.Drawing.Size(136, 17)
         Me.lbl_datosEmpleado.TabIndex = 16
         Me.lbl_datosEmpleado.Text = "Datos del Afiliado"
         '
         'txt_mail
         '
         Me.txt_mail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_mail.Location = New System.Drawing.Point(117, 220)
-        Me.txt_mail.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_mail.Location = New System.Drawing.Point(88, 179)
+        Me.txt_mail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_mail.Name = "txt_mail"
-        Me.txt_mail.Size = New System.Drawing.Size(181, 22)
+        Me.txt_mail.Size = New System.Drawing.Size(136, 20)
         Me.txt_mail.TabIndex = 8
         '
         'lbl_mail
         '
         Me.lbl_mail.AutoSize = True
         Me.lbl_mail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_mail.Location = New System.Drawing.Point(57, 220)
+        Me.lbl_mail.Location = New System.Drawing.Point(43, 179)
+        Me.lbl_mail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_mail.Name = "lbl_mail"
-        Me.lbl_mail.Size = New System.Drawing.Size(54, 18)
+        Me.lbl_mail.Size = New System.Drawing.Size(46, 15)
         Me.lbl_mail.TabIndex = 14
         Me.lbl_mail.Text = "E-Mail:"
         '
         'txt_telefono
         '
         Me.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_telefono.Location = New System.Drawing.Point(117, 183)
-        Me.txt_telefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_telefono.Location = New System.Drawing.Point(88, 149)
+        Me.txt_telefono.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_telefono.Name = "txt_telefono"
-        Me.txt_telefono.Size = New System.Drawing.Size(181, 22)
+        Me.txt_telefono.Size = New System.Drawing.Size(136, 20)
         Me.txt_telefono.TabIndex = 6
         '
         'lbl_telefono
         '
         Me.lbl_telefono.AutoSize = True
         Me.lbl_telefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_telefono.Location = New System.Drawing.Point(41, 191)
+        Me.lbl_telefono.Location = New System.Drawing.Point(31, 155)
+        Me.lbl_telefono.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_telefono.Name = "lbl_telefono"
-        Me.lbl_telefono.Size = New System.Drawing.Size(70, 18)
+        Me.lbl_telefono.Size = New System.Drawing.Size(58, 15)
         Me.lbl_telefono.TabIndex = 12
         Me.lbl_telefono.Text = "Teléfono:"
         '
@@ -526,9 +548,10 @@ Partial Class frm_registrar_Afiliado
         '
         Me.lbl_TipoAfiliado.AutoSize = True
         Me.lbl_TipoAfiliado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_TipoAfiliado.Location = New System.Drawing.Point(316, 148)
+        Me.lbl_TipoAfiliado.Location = New System.Drawing.Point(237, 120)
+        Me.lbl_TipoAfiliado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_TipoAfiliado.Name = "lbl_TipoAfiliado"
-        Me.lbl_TipoAfiliado.Size = New System.Drawing.Size(91, 18)
+        Me.lbl_TipoAfiliado.Size = New System.Drawing.Size(77, 15)
         Me.lbl_TipoAfiliado.TabIndex = 10
         Me.lbl_TipoAfiliado.Text = "Tipo afiliado:"
         '
@@ -536,9 +559,10 @@ Partial Class frm_registrar_Afiliado
         '
         Me.lbl_fecha_nac.AutoSize = True
         Me.lbl_fecha_nac.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_fecha_nac.Location = New System.Drawing.Point(3, 148)
+        Me.lbl_fecha_nac.Location = New System.Drawing.Point(2, 120)
+        Me.lbl_fecha_nac.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_fecha_nac.Name = "lbl_fecha_nac"
-        Me.lbl_fecha_nac.Size = New System.Drawing.Size(108, 18)
+        Me.lbl_fecha_nac.Size = New System.Drawing.Size(89, 15)
         Me.lbl_fecha_nac.TabIndex = 8
         Me.lbl_fecha_nac.Text = "Fecha de Nac :"
         '
@@ -547,86 +571,90 @@ Partial Class frm_registrar_Afiliado
         Me.cbo_tipo_documento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_tipo_documento.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_tipo_documento.FormattingEnabled = True
-        Me.cbo_tipo_documento.Location = New System.Drawing.Point(413, 110)
-        Me.cbo_tipo_documento.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cbo_tipo_documento.Location = New System.Drawing.Point(310, 89)
+        Me.cbo_tipo_documento.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbo_tipo_documento.Name = "cbo_tipo_documento"
-        Me.cbo_tipo_documento.Size = New System.Drawing.Size(151, 26)
+        Me.cbo_tipo_documento.Size = New System.Drawing.Size(114, 23)
         Me.cbo_tipo_documento.TabIndex = 3
         '
         'lbl_tipo_documento
         '
         Me.lbl_tipo_documento.AutoSize = True
         Me.lbl_tipo_documento.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_tipo_documento.Location = New System.Drawing.Point(330, 113)
+        Me.lbl_tipo_documento.Location = New System.Drawing.Point(248, 92)
+        Me.lbl_tipo_documento.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_tipo_documento.Name = "lbl_tipo_documento"
-        Me.lbl_tipo_documento.Size = New System.Drawing.Size(77, 18)
+        Me.lbl_tipo_documento.Size = New System.Drawing.Size(62, 15)
         Me.lbl_tipo_documento.TabIndex = 6
         Me.lbl_tipo_documento.Text = "Tipo Doc :"
         '
         'txt_nro_documento
         '
         Me.txt_nro_documento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_nro_documento.Location = New System.Drawing.Point(117, 112)
-        Me.txt_nro_documento.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_nro_documento.Location = New System.Drawing.Point(88, 91)
+        Me.txt_nro_documento.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_nro_documento.MaxLength = 8
         Me.txt_nro_documento.Name = "txt_nro_documento"
-        Me.txt_nro_documento.Size = New System.Drawing.Size(157, 22)
+        Me.txt_nro_documento.Size = New System.Drawing.Size(118, 20)
         Me.txt_nro_documento.TabIndex = 2
         '
         'lbl_nro_documento
         '
         Me.lbl_nro_documento.AutoSize = True
         Me.lbl_nro_documento.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nro_documento.Location = New System.Drawing.Point(21, 110)
+        Me.lbl_nro_documento.Location = New System.Drawing.Point(16, 89)
+        Me.lbl_nro_documento.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_nro_documento.Name = "lbl_nro_documento"
-        Me.lbl_nro_documento.Size = New System.Drawing.Size(90, 18)
+        Me.lbl_nro_documento.Size = New System.Drawing.Size(74, 15)
         Me.lbl_nro_documento.TabIndex = 4
         Me.lbl_nro_documento.Text = "Documento:"
         '
         'txt_apellido
         '
         Me.txt_apellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_apellido.Location = New System.Drawing.Point(413, 74)
-        Me.txt_apellido.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_apellido.Location = New System.Drawing.Point(310, 60)
+        Me.txt_apellido.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_apellido.Name = "txt_apellido"
-        Me.txt_apellido.Size = New System.Drawing.Size(151, 22)
+        Me.txt_apellido.Size = New System.Drawing.Size(114, 20)
         Me.txt_apellido.TabIndex = 1
         '
         'lbl_apellido
         '
         Me.lbl_apellido.AutoSize = True
         Me.lbl_apellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_apellido.Location = New System.Drawing.Point(344, 78)
+        Me.lbl_apellido.Location = New System.Drawing.Point(258, 63)
+        Me.lbl_apellido.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_apellido.Name = "lbl_apellido"
-        Me.lbl_apellido.Size = New System.Drawing.Size(63, 18)
+        Me.lbl_apellido.Size = New System.Drawing.Size(54, 15)
         Me.lbl_apellido.TabIndex = 1
         Me.lbl_apellido.Text = "Apellido:"
         '
         'txt_nombre
         '
         Me.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_nombre.Location = New System.Drawing.Point(117, 74)
-        Me.txt_nombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_nombre.Location = New System.Drawing.Point(88, 60)
+        Me.txt_nombre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(157, 22)
+        Me.txt_nombre.Size = New System.Drawing.Size(118, 20)
         Me.txt_nombre.TabIndex = 0
         '
         'lbl_nombre
         '
         Me.lbl_nombre.AutoSize = True
         Me.lbl_nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nombre.Location = New System.Drawing.Point(45, 74)
+        Me.lbl_nombre.Location = New System.Drawing.Point(34, 60)
+        Me.lbl_nombre.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_nombre.Name = "lbl_nombre"
-        Me.lbl_nombre.Size = New System.Drawing.Size(66, 18)
+        Me.lbl_nombre.Size = New System.Drawing.Size(55, 15)
         Me.lbl_nombre.TabIndex = 0
         Me.lbl_nombre.Text = "Nombre:"
         '
         'frm_registrar_Afiliado
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.ClientSize = New System.Drawing.Size(1046, 545)
+        Me.ClientSize = New System.Drawing.Size(784, 443)
         Me.Controls.Add(Me.dgv_afiliados)
         Me.Controls.Add(Me.cmd_Salir)
         Me.Controls.Add(Me.btn_Buscar)
@@ -636,7 +664,6 @@ Partial Class frm_registrar_Afiliado
         Me.Controls.Add(Me.btn_Nuevo)
         Me.Controls.Add(Me.txt_direccion)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frm_registrar_Afiliado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registrar Afiliado"

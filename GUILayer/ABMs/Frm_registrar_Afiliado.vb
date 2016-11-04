@@ -140,7 +140,7 @@ Public Class frm_registrar_Afiliado
             If String.IsNullOrEmpty(txt_telefono.Text) = True Then
                 .telefono = 0
             Else
-                .telefono = Integer.Parse(txt_telefono.Text)
+                .telefono = Convert.ToInt64(txt_telefono.Text)
             End If
             .mailAfiliado = txt_mail.Text
         End With
@@ -593,7 +593,7 @@ Public Class frm_registrar_Afiliado
             End If
         End If
 
-        If campos_completos = False Or ValidateEmail(txt_mail.Text) = False Then
+        If campos_completos = False Then
             MsgBox(mensajeAdvertencia, MsgBoxStyle.Exclamation, "Importante")
         End If
         Return campos_completos

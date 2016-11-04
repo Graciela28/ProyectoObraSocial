@@ -18,10 +18,10 @@
     End Function
 
     Public Function registrarAfiliado(ByVal oAfiliado As ConsultaDeAfiliado) As Boolean
-        If oAfiliadoDao.addAfiliado(oAfiliado) = 1 Then
-            Return True
-        Else
+        If oAfiliadoDao.addAfiliado(oAfiliado) = 0 Then
             Return False
+        Else
+            Return True
         End If
     End Function
 
