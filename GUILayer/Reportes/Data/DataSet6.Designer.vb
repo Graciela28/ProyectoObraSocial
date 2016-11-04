@@ -285,7 +285,7 @@ Partial Public Class DataSet6
 
         Private columnn_centro As Global.System.Data.DataColumn
 
-        Private columnn_profesional_ As Global.System.Data.DataColumn
+        Private columnn_profesional As Global.System.Data.DataColumn
 
         Private columnn_especialidad As Global.System.Data.DataColumn
 
@@ -338,9 +338,9 @@ Partial Public Class DataSet6
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property n_profesional_Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property n_profesionalColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnn_profesional_
+                Return Me.columnn_profesional
             End Get
         End Property
 
@@ -405,9 +405,9 @@ Partial Public Class DataSet6
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddFacturacionMensualRow(ByVal n_centro As String, ByVal n_profesional_ As String, ByVal n_especialidad As String, ByVal n_afiliado As String, ByVal total As Double) As FacturacionMensualRow
+        Public Overloads Function AddFacturacionMensualRow(ByVal n_centro As String, ByVal n_profesional As String, ByVal n_especialidad As String, ByVal n_afiliado As String, ByVal total As Double) As FacturacionMensualRow
             Dim rowFacturacionMensualRow As FacturacionMensualRow = CType(Me.NewRow, FacturacionMensualRow)
-            Dim columnValuesArray() As Object = New Object() {n_centro, n_profesional_, n_especialidad, n_afiliado, total}
+            Dim columnValuesArray() As Object = New Object() {n_centro, n_profesional, n_especialidad, n_afiliado, total}
             rowFacturacionMensualRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowFacturacionMensualRow)
             Return rowFacturacionMensualRow
@@ -431,7 +431,7 @@ Partial Public Class DataSet6
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Friend Sub InitVars()
             Me.columnn_centro = MyBase.Columns("n_centro")
-            Me.columnn_profesional_ = MyBase.Columns("n_profesional ")
+            Me.columnn_profesional = MyBase.Columns("n_profesional")
             Me.columnn_especialidad = MyBase.Columns("n_especialidad")
             Me.columnn_afiliado = MyBase.Columns("n_afiliado")
             Me.columntotal = MyBase.Columns("total")
@@ -442,8 +442,8 @@ Partial Public Class DataSet6
         Private Sub InitClass()
             Me.columnn_centro = New Global.System.Data.DataColumn("n_centro", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnn_centro)
-            Me.columnn_profesional_ = New Global.System.Data.DataColumn("n_profesional ", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnn_profesional_)
+            Me.columnn_profesional = New Global.System.Data.DataColumn("n_profesional", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnn_profesional)
             Me.columnn_especialidad = New Global.System.Data.DataColumn("n_especialidad", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnn_especialidad)
             Me.columnn_afiliado = New Global.System.Data.DataColumn("n_afiliado", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -611,17 +611,17 @@ Partial Public Class DataSet6
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property n_profesional_() As String
+        Public Property n_profesional() As String
             Get
                 Try
-                    Return CType(Me(Me.tableFacturacionMensual.n_profesional_Column), String)
+                    Return CType(Me(Me.tableFacturacionMensual.n_profesionalColumn), String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'n_profesional ' de la tabla 'FacturacionMensual' es DBNul" & _
-                            "l.", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'n_profesional' de la tabla 'FacturacionMensual' es DBNull" & _
+                            ".", e)
                 End Try
             End Get
             Set(value As String)
-                Me(Me.tableFacturacionMensual.n_profesional_Column) = value
+                Me(Me.tableFacturacionMensual.n_profesionalColumn) = value
             End Set
         End Property
 
@@ -685,14 +685,14 @@ Partial Public Class DataSet6
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function Isn_profesional_Null() As Boolean
-            Return Me.IsNull(Me.tableFacturacionMensual.n_profesional_Column)
+        Public Function Isn_profesionalNull() As Boolean
+            Return Me.IsNull(Me.tableFacturacionMensual.n_profesionalColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub Setn_profesional_Null()
-            Me(Me.tableFacturacionMensual.n_profesional_Column) = Global.System.Convert.DBNull
+        Public Sub Setn_profesionalNull()
+            Me(Me.tableFacturacionMensual.n_profesionalColumn) = Global.System.Convert.DBNull
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
