@@ -268,8 +268,8 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSetEstadistica1</DataSetName>
-        <Top>0.17583in</Top>
-        <Left>0.32167in</Left>
+        <Top>0.54042in</Top>
+        <Left>0.92583in</Left>
         <Height>2.27083in</Height>
         <Width>6.33333in</Width>
         <Style>
@@ -282,11 +282,31 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>2.68625in</Height>
+    <Height>5.43625in</Height>
     <Style />
   </Body>
-  <Width>6.91542in</Width>
+  <Width>8.51958in</Width>
   <Page>
+    <PageHeader>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
