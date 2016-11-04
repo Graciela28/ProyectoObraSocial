@@ -1,4 +1,5 @@
-﻿
+﻿Imports System.Data.SqlClient
+
 Public Class frm_registrar_profesional
 
     Enum termino
@@ -29,16 +30,16 @@ Public Class frm_registrar_profesional
     Dim num_documento As Integer
 
     Private Sub frm_ABM_Profesional_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-       
+        LimpiarCampos()
         'Carga de combos 
-        cargaCombo(Me.cbo_tipo_documento, oTablaTipoService.listarTipos("TiposDocumento"), "id", "nombre")
-        cargaCombo(Me.cbo_provincias, oTablaTipoService.listarTipos("Provincias"), "id", "nombre")
+        cargaCombo(Me.cbo_tipo_documento, oTablaTipoService.ListarTipos("TiposDocumento"), "id", "nombre")
+        cargaCombo(Me.cbo_provincias, oTablaTipoService.ListarTipos("Provincias"), "id", "nombre")
         Me.LimpiarCombos()
-        
-       
+
+
         Me.cargaGrilla()
         dgv_profesionales.ClearSelection()
-       
+
         Me.deshabilitarControles()
         Me.deshabilitarBotones()
     End Sub
@@ -79,7 +80,7 @@ Public Class frm_registrar_profesional
                 Else
                     activo_grilla = "Si"
                 End If
-               
+
                 If (String.IsNullOrEmpty(.mailProfesional)) Then
                     mail_grilla = " - "
                 Else
@@ -430,7 +431,7 @@ Public Class frm_registrar_profesional
             Return termino.aprobado
         End If
     End Function
-   
+
     'Valida que la matricula ingresada no esté registrada
     Private Function validarExistenciaMatricula() As termino
         If (oProfesionalService.validarExistenciaMatricula(txt_matricula.Text) = True) Then
@@ -489,38 +490,72 @@ Public Class frm_registrar_profesional
         Return termino.aprobado
     End Function
 
-   
+
 
     Private Sub cmd_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
 
-        Dim documento As Integer = Me.dgv_profesionales.CurrentRow.Cells(0).Value
         Me.accion = estado.modificar
         Dim tabla As New Data.DataTable
-        Dim connection As New Data.OleDb.OleDbConnection
-        Dim command As New Data.OleDb.OleDbCommand
-        connection.ConnectionString = Me.stringConexion
-        connection.Open()
-        command.CommandType = CommandType.StoredProcedure
-        command.CommandText = "stpro_consultar_profesional"
-        command.Connection = connection
-        command.Parameters.AddWithValue("@documento", documento)
-        tabla.Load(command.ExecuteReader())
-        connection.Close()
+        Dim connection As New SqlConnection
+        Dim command As New SqlCommand
 
-        txt_nombre.Text = tabla.Rows(0)("nombre")
+        connection.ConnectionString = Me.stringConexion
+        command.Connection = connection
+        connection.Open()
+
+
+        command.CommandType = CommandType.StoredProcedure
+
+
+        command.CommandText = "stpro_consultar_profesional"
+
+        command.Parameters.AddWithValue("@documento", Convert.ToInt64(dgv_profesionales.CurrentRow.Cells("col_documento").Value.ToString))
+
+
+        tabla.Load(command.ExecuteReader())
+
+        connection.Close()
+        Me.habilitarControles()
+
+        txt_nombre.Text = tabla.Rows(0)("nombre").ToString
         txt_apellido.Text = tabla.Rows(0)("apellido")
         txt_nro_documento.Text = tabla.Rows(0)("numero_doc")
         cbo_tipo_documento.SelectedValue = tabla.Rows(0)("id_tipo_doc")
         dtp_fecha.Value = tabla.Rows(0)("fecha_nacimiento")
         txt_matricula.Text = tabla.Rows(0)("matricula")
         txt_telefono.Text = tabla.Rows(0)("telefono")
-        txt_mail.Text = tabla.Rows(0)("mail")
+        If IsDBNull(tabla.Rows(0)("mail")) Then
+            txt_mail.Text = ""
+        Else
+            txt_mail.Text = tabla.Rows(0)("mail")
+        End If
         txt_calle.Text = tabla.Rows(0)("calle")
-        txt_altura.Text = tabla.Rows(0)("numero")
-        cbo_provincias.SelectedValue = tabla.Rows(0)("id")
-        cbo_localidades.SelectedValue = tabla.Rows(0)("id_localidad")
-        cbo_barrios.SelectedValue = tabla.Rows(0)("id_barrio")
-        Me.habilitarControles()
+        If IsDBNull(tabla.Rows(0)("numero")) Then
+            txt_altura.Text = "s/n"
+        Else
+            txt_altura.Text = tabla.Rows(0)("numero")
+        End If
+
+
+        
+        cbo_provincias.SelectedIndex = 6
+        cbo_provincias_SelectionChangeCommitted(sender, Nothing)
+
+        cbo_localidades.SelectedValue = tabla.Rows(0)("id_localidad").ToString
+        cbo_localidades_SelectionChangeCommitted(sender, Nothing)
+
+        cbo_barrios.SelectedValue = tabla.Rows(0)("id_barrio").ToString
+
+    
+
+        'cbo_barrios.SelectedValue = tabla.Rows(0)("id_barrio").ToString
+        ' cbo_provincias.SelectedText = dgv_profesionales.CurrentRow.Cells("col_provincia").Value.ToString
+        ' cbo_localidades.SelectedText = dgv_profesionales.CurrentRow.Cells("col_localidad").Value.ToString
+        ' cbo_barrios.SelectedText = dgv_profesionales.CurrentRow.Cells("col_barrio").Value.ToString
+        'cbo_provincias.SelectedValue = Convert.ToDouble(tabla.Rows(0)("id_barrio").ToString)
+        'cbo_barrios.SelectedValue = tabla.Rows(0)("id_barrio")
+        'cbo_barrios.SelectedValue = tabla.Rows(0)("id_barrio")
+        ' Me.habilitarControles()
         txt_nro_documento.Enabled = False
         cbo_tipo_documento.Enabled = False
     End Sub
@@ -602,7 +637,11 @@ Public Class frm_registrar_profesional
                 dtp_fecha.Value = tabla.Rows(0)("fecha_nacimiento")
                 txt_matricula.Text = tabla.Rows(0)("matricula")
                 txt_telefono.Text = tabla.Rows(0)("telefono")
-                txt_mail.Text = tabla.Rows(0)("mail")
+                If IsDBNull(tabla.Rows(0)("mail")) Then
+                    txt_mail.Text = ""
+                Else
+                    txt_mail.Text = tabla.Rows(0)("mail")
+                End If
                 txt_calle.Text = tabla.Rows(0)("calle")
                 txt_altura.Text = tabla.Rows(0)("numero")
                 cbo_provincias.SelectedValue = tabla.Rows(0)("id")
