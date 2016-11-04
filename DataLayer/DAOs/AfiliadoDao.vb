@@ -141,7 +141,7 @@
             command.Parameters.AddWithValue("@nombre", oAfiliado.nombreAfiliado)
             command.Parameters.AddWithValue("@apellido", oAfiliado.apellidoAfiliado)
             command.Parameters.AddWithValue("@fechaNacimiento", oAfiliado.fechaNacimiento)
-            command.Parameters.AddWithValue("@activo", oAfiliado.activo)
+            command.Parameters.AddWithValue("@activo", 1)
             command.Parameters.AddWithValue("@tipo_afil", oAfiliado.idTipoAfil)
             command.Parameters.AddWithValue("@codDomicilio", oAfiliado.id_domicilio)
             command.Parameters.AddWithValue("@calle", oAfiliado.calle)

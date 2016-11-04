@@ -83,4 +83,8 @@
     Private Sub ReporteEstadísticoDePrácticaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteEstadísticoDePrácticaToolStripMenuItem.Click
         Frm_ReporteEstadisticoDePracticas.ShowDialog()
     End Sub
+
+    Private Sub ReporteEstadísticoDeTiposDeAfiliadoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteEstadísticoDeTiposDeAfiliadoToolStripMenuItem.Click
+        Frm_EstadisticaTiposAfiliado.ShowDialog()
+    End Sub
 End Class

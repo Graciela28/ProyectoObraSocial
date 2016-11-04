@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet6" targetNamespace="http://tempuri.org/DataSet6.xsd" xmlns:mstns="http://tempuri.org/DataSet6.xsd" xmlns="http://tempuri.org/DataSet6.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet6" msprop:Generator_UserDSName="DataSet6">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FacturacionMensual" msprop:Generator_TableClassName="FacturacionMensualDataTable" msprop:Generator_TableVarName="tableFacturacionMensual" msprop:Generator_TablePropName="FacturacionMensual" msprop:Generator_RowDeletingName="FacturacionMensualRowDeleting" msprop:Generator_RowChangingName="FacturacionMensualRowChanging" msprop:Generator_RowEvHandlerName="FacturacionMensualRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturacionMensualRowDeleted" msprop:Generator_UserTableName="FacturacionMensual" msprop:Generator_RowChangedName="FacturacionMensualRowChanged" msprop:Generator_RowEvArgName="FacturacionMensualRowChangeEvent" msprop:Generator_RowClassName="FacturacionMensualRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="n_centro" msprop:Generator_ColumnVarNameInTable="columnn_centro" msprop:Generator_ColumnPropNameInRow="n_centro" msprop:Generator_ColumnPropNameInTable="n_centroColumn" msprop:Generator_UserColumnName="n_centro" type="xs:string" minOccurs="0" />
+              <xs:element name="n_profesional_x0020_" msprop:Generator_ColumnVarNameInTable="columnn_profesional_" msprop:Generator_ColumnPropNameInRow="n_profesional_" msprop:Generator_ColumnPropNameInTable="n_profesional_Column" msprop:Generator_UserColumnName="n_profesional " type="xs:string" minOccurs="0" />
+              <xs:element name="n_especialidad" msprop:Generator_ColumnVarNameInTable="columnn_especialidad" msprop:Generator_ColumnPropNameInRow="n_especialidad" msprop:Generator_ColumnPropNameInTable="n_especialidadColumn" msprop:Generator_UserColumnName="n_especialidad" type="xs:string" minOccurs="0" />
+              <xs:element name="n_afiliado" msprop:Generator_ColumnVarNameInTable="columnn_afiliado" msprop:Generator_ColumnPropNameInRow="n_afiliado" msprop:Generator_ColumnPropNameInTable="n_afiliadoColumn" msprop:Generator_UserColumnName="n_afiliado" type="xs:string" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
