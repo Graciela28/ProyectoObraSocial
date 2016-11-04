@@ -79,4 +79,8 @@
     Private Sub ListadoDeCoberturasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeCoberturasToolStripMenuItem.Click
         Frm_ListadoCoberturas.ShowDialog()
     End Sub
+
+    Private Sub ReporteEstadísticoDePrácticaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteEstadísticoDePrácticaToolStripMenuItem.Click
+        Frm_ReporteEstadisticoDePracticas.ShowDialog()
+    End Sub
 End Class

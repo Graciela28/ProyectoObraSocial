@@ -134,6 +134,11 @@
     <Compile Include="GUILayer\ABMs\Frm_registrar_EspecialidadesXCentroXProfesional.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\Reportes\Data\DataSet4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Reportes\Data\DataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,6 +173,12 @@
       <DependentUpon>Frm_ListadoProfesionales.vb</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Reportes\Frm_ListadoProfesionales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_ReporteEstadisticoDePracticas.Designer.vb">
+      <DependentUpon>Frm_ReporteEstadisticoDePracticas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_ReporteEstadisticoDePracticas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUILayer\Transacciones\Frm_mostrar_Atencion.Designer.vb">
@@ -238,6 +249,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUILayer\Reportes\Diseño\EstadisticaPracticas.rdlc" />
     <EmbeddedResource Include="GUILayer\Reportes\Frm_ListadoAfiliados.resx">
       <DependentUpon>Frm_ListadoAfiliados.vb</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Reportes\Diseño\ListadoProfesionales.rdlc" />
     <EmbeddedResource Include="GUILayer\Reportes\Diseño\ListadoAfiliados.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\Frm_ReporteEstadisticoDePracticas.resx">
+      <DependentUpon>Frm_ReporteEstadisticoDePracticas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Transacciones\Frm_mostrar_Atencion.resx">
       <DependentUpon>Frm_mostrar_Atencion.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -289,6 +304,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="GUILayer\Reportes\Data\DataSet4.xsc">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet4.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet4.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet4.xss">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
     <None Include="GUILayer\Reportes\Data\DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
