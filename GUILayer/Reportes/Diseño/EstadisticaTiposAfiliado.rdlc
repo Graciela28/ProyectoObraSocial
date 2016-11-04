@@ -8,32 +8,32 @@
             <ChartMember>
               <Group Name="Chart1_CategoryGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!n_practica.Value</GroupExpression>
+                  <GroupExpression>=Fields!Tipo_Afiliado.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!n_practica.Value</Value>
+                  <Value>=Fields!Tipo_Afiliado.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Fields!n_practica.Value</Label>
+              <Label>=Fields!Tipo_Afiliado.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label>porcentaje</Label>
+              <Label>Porcentaje</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
         <ChartData>
           <ChartSeriesCollection>
-            <ChartSeries Name="porcentaje">
+            <ChartSeries Name="Porcentaje">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!porcentaje.Value)</Y>
+                    <Y>=Sum(Fields!Porcentaje.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
@@ -242,7 +242,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Porcentaje de Prácticas realizadas (%)</Caption>
+            <Caption>Porcentaje de Tipos de Afiliado (%)</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -267,11 +267,11 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>DataSetEstadistica1</DataSetName>
-        <Top>0.55431in</Top>
-        <Left>0.5925in</Left>
-        <Height>2.55416in</Height>
-        <Width>6.96666in</Width>
+        <DataSetName>DataSetEstadistica2</DataSetName>
+        <Top>0.7112cm</Top>
+        <Left>4.358cm</Left>
+        <Height>5cm</Height>
+        <Width>7.5cm</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -281,36 +281,14 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
-      <Line Name="Line1">
-        <Top>0.06944in</Top>
-        <Height>0in</Height>
-        <Width>8.66125in</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
-      <Line Name="Line2">
-        <Top>3.49458in</Top>
-        <Height>0in</Height>
-        <Width>8.66125in</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
     </ReportItems>
-    <Height>3.49458in</Height>
+    <Height>2.73184in</Height>
     <Style />
   </Body>
-  <Width>8.66125in</Width>
+  <Width>6.61075in</Width>
   <Page>
     <PageHeader>
-      <Height>0.825in</Height>
+      <Height>3.14cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -321,7 +299,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte Estadístico  de Porcentaje de Prácticas </Value>
+                  <Value>Reporte Estadístico de Porcentaje de Tipos de Afiliado </Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -334,10 +312,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.37167in</Top>
-          <Left>0.14167in</Left>
-          <Height>0.25in</Height>
-          <Width>7.41749in</Width>
+          <Top>1.0287cm</Top>
+          <Left>1.20417cm</Left>
+          <Height>0.6cm</Height>
+          <Width>14.98833cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -349,6 +327,17 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Line Name="Line2">
+          <Top>2.251cm</Top>
+          <Height>0cm</Height>
+          <Width>16.7913cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -357,7 +346,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.7in</Height>
+      <Height>1.397cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -376,10 +365,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.28542in</Top>
-          <Left>7.28in</Left>
-          <Height>0.25in</Height>
-          <Width>1.26667in</Width>
+          <Top>0.461cm</Top>
+          <Left>13.20567cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.30433cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -405,10 +394,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.28542in</Top>
-          <Left>0.14167in</Left>
-          <Height>0.25in</Height>
-          <Width>1.78333in</Width>
+          <Top>0.461cm</Top>
+          <Left>0.37867cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -420,6 +409,17 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Line Name="Line3">
+          <Top>0.03528cm</Top>
+          <Height>0cm</Height>
+          <Width>16.7913cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -427,52 +427,51 @@
         </Border>
       </Style>
     </PageFooter>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataSet4">
+    <DataSource Name="DataSet5">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>e54ce56d-6d10-4a7e-9b9b-187c7e65ebfc</rd:DataSourceID>
+      <rd:DataSourceID>0b5d383f-5574-40cf-82a4-c2670157d37f</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetEstadistica1">
+    <DataSet Name="DataSetEstadistica2">
       <Query>
-        <DataSourceName>DataSet4</DataSourceName>
+        <DataSourceName>DataSet5</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="n_practica">
-          <DataField>n_practica</DataField>
+        <Field Name="Tipo_Afiliado">
+          <DataField>Tipo_Afiliado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ctd">
-          <DataField>ctd</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="porcentaje">
-          <DataField>porcentaje</DataField>
+        <Field Name="Porcentaje">
+          <DataField>Porcentaje</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataSet4</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\martin.navarro\Documents\Code\ProyectoObraSocial\GUILayer\Reportes\Data\DataSet4.xsd</rd:SchemaPath>
-        <rd:TableName>EstadisticaPracticas</rd:TableName>
+        <rd:DataSetName>DataSet5</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\vania\Desktop\ProyectoObraSocial\GUILayer\Reportes\Data\DataSet5.xsd</rd:SchemaPath>
+        <rd:TableName>Estadistica2</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>ce4d40fa-153a-4636-b92a-31fb64eaae1d</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>6b1076b0-f74d-43d3-bfc4-049f304bd285</rd:ReportID>
 </Report>

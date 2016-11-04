@@ -55,65 +55,72 @@ Partial Class Frm_ReporteEstadisticoDePracticas
         ReportDataSource1.Value = Me.EstadisticaPracticasBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "primeraEntrega.EstadisticaPracticas.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(12, 51)
+        Me.ReportViewer1.Location = New System.Drawing.Point(16, 63)
+        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(601, 403)
+        Me.ReportViewer1.Size = New System.Drawing.Size(801, 496)
         Me.ReportViewer1.TabIndex = 0
         '
         'dtp_desde
         '
-        Me.dtp_desde.Location = New System.Drawing.Point(15, 25)
+        Me.dtp_desde.Location = New System.Drawing.Point(20, 31)
+        Me.dtp_desde.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtp_desde.Name = "dtp_desde"
-        Me.dtp_desde.Size = New System.Drawing.Size(200, 20)
+        Me.dtp_desde.Size = New System.Drawing.Size(265, 22)
         Me.dtp_desde.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(16, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 13)
+        Me.Label1.Size = New System.Drawing.Size(53, 17)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Desde:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(218, 9)
+        Me.Label2.Location = New System.Drawing.Point(291, 11)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(38, 13)
+        Me.Label2.Size = New System.Drawing.Size(49, 17)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Hasta:"
         '
         'dtp_hasta
         '
-        Me.dtp_hasta.Location = New System.Drawing.Point(221, 25)
+        Me.dtp_hasta.Location = New System.Drawing.Point(295, 31)
+        Me.dtp_hasta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtp_hasta.Name = "dtp_hasta"
-        Me.dtp_hasta.Size = New System.Drawing.Size(200, 20)
+        Me.dtp_hasta.Size = New System.Drawing.Size(265, 22)
         Me.dtp_hasta.TabIndex = 3
         '
         'btn_generar
         '
-        Me.btn_generar.Location = New System.Drawing.Point(427, 22)
+        Me.btn_generar.Location = New System.Drawing.Point(569, 27)
+        Me.btn_generar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_generar.Name = "btn_generar"
-        Me.btn_generar.Size = New System.Drawing.Size(75, 23)
+        Me.btn_generar.Size = New System.Drawing.Size(100, 28)
         Me.btn_generar.TabIndex = 5
         Me.btn_generar.Text = "Generar"
         Me.btn_generar.UseVisualStyleBackColor = True
         '
         'Frm_ReporteEstadisticoDePracticas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(625, 466)
+        Me.ClientSize = New System.Drawing.Size(833, 574)
         Me.Controls.Add(Me.btn_generar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.dtp_hasta)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dtp_desde)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Frm_ReporteEstadisticoDePracticas"
-        Me.Text = "Frm_ReporteEstadisticoDePracticas"
+        Me.Text = "Estadística de Prácticas"
         CType(Me.EstadisticaPracticasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

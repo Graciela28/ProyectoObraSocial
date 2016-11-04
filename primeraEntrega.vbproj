@@ -157,6 +157,22 @@
     <Compile Include="GUILayer\Reportes\Data\DataSet3.vb">
       <DependentUpon>DataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Reportes\Data\DataSet5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Data\DataSet6.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_EstadisticaTiposAfiliado.Designer.vb">
+      <DependentUpon>Frm_EstadisticaTiposAfiliado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_EstadisticaTiposAfiliado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\Reportes\Frm_ListadoAfiliados.Designer.vb">
       <DependentUpon>Frm_ListadoAfiliados.vb</DependentUpon>
     </Compile>
@@ -250,6 +266,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GUILayer\Reportes\Diseño\EstadisticaPracticas.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\Diseño\EstadisticaTiposAfiliado.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\Diseño\ReporteFacturacionMensual.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\Frm_EstadisticaTiposAfiliado.resx">
+      <DependentUpon>Frm_EstadisticaTiposAfiliado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Reportes\Frm_ListadoAfiliados.resx">
       <DependentUpon>Frm_ListadoAfiliados.vb</DependentUpon>
     </EmbeddedResource>
@@ -347,6 +368,28 @@
     </None>
     <None Include="GUILayer\Reportes\Data\DataSet3.xss">
       <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet5.xsc">
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet5.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet5.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet5.xss">
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet6.xsc">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet6.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet6.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet6.xss">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

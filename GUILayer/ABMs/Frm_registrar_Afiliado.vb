@@ -127,7 +127,7 @@ Public Class frm_registrar_Afiliado
 
         With oAfiliado
             .idTipoDoc = Integer.Parse(cbo_tipo_documento.SelectedValue)
-            .numeroDoc = Integer.Parse(txt_nro_documento.Text)
+            .numeroDoc = Convert.ToInt64(txt_nro_documento.Text)
             .nombreAfiliado = txt_nombre.Text
             .apellidoAfiliado = txt_apellido.Text
             .fechaNacimiento = dtp_fecha.Value.ToString("dd/MM/yyyy")
@@ -233,7 +233,7 @@ Public Class frm_registrar_Afiliado
         If Me.validarCamposObligatorios() = True Then
             If Me.accion = estado.insertar Then
                 tipo_documento_id = Integer.Parse(cbo_tipo_documento.SelectedValue)
-                num_documento = Integer.Parse(txt_nro_documento.Text)
+                num_documento = Convert.ToInt64(txt_nro_documento.Text)
 
                 If Me.validarExistenciaAfiliado() = termino.aprobado Then
                     If Me.validarExistenciaPersona() = termino.aprobado Then
