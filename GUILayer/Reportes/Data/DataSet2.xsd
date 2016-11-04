@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet2" targetNamespace="http://tempuri.org/DataSet2.xsd" xmlns:mstns="http://tempuri.org/DataSet2.xsd" xmlns="http://tempuri.org/DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet2" msprop:Generator_UserDSName="DataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Afiliados" msprop:Generator_TableClassName="AfiliadosDataTable" msprop:Generator_TableVarName="tableAfiliados" msprop:Generator_TablePropName="Afiliados" msprop:Generator_RowDeletingName="AfiliadosRowDeleting" msprop:Generator_RowChangingName="AfiliadosRowChanging" msprop:Generator_RowEvHandlerName="AfiliadosRowChangeEventHandler" msprop:Generator_RowDeletedName="AfiliadosRowDeleted" msprop:Generator_UserTableName="Afiliados" msprop:Generator_RowChangedName="AfiliadosRowChanged" msprop:Generator_RowEvArgName="AfiliadosRowChangeEvent" msprop:Generator_RowClassName="AfiliadosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="numero_doc" msprop:Generator_ColumnVarNameInTable="columnnumero_doc" msprop:Generator_ColumnPropNameInRow="numero_doc" msprop:Generator_ColumnPropNameInTable="numero_docColumn" msprop:Generator_UserColumnName="numero_doc" type="xs:long" minOccurs="0" />
+              <xs:element name="NombreAfiliado" msprop:Generator_ColumnVarNameInTable="columnNombreAfiliado" msprop:Generator_ColumnPropNameInRow="NombreAfiliado" msprop:Generator_ColumnPropNameInTable="NombreAfiliadoColumn" msprop:Generator_UserColumnName="NombreAfiliado" type="xs:string" minOccurs="0" />
+              <xs:element name="Edad" msprop:Generator_ColumnVarNameInTable="columnEdad" msprop:Generator_ColumnPropNameInRow="Edad" msprop:Generator_ColumnPropNameInTable="EdadColumn" msprop:Generator_UserColumnName="Edad" type="xs:int" minOccurs="0" />
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

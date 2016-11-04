@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D03229B0-A3AF-4802-8016-BF50F019C5CA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>primeraEntrega.My.MyApplication</StartupObject>
+    <RootNamespace>primeraEntrega</RootNamespace>
+    <AssemblyName>primeraEntrega</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>primeraEntrega.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>primeraEntrega.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLayer\Entities\Afiliado.vb" />
+    <Compile Include="BusinessLayer\Entities\Atencion.vb" />
+    <Compile Include="BusinessLayer\Entities\Barrio.vb" />
+    <Compile Include="BusinessLayer\Entities\CentroMedico.vb" />
+    <Compile Include="BusinessLayer\Entities\Cobertura.vb" />
+    <Compile Include="BusinessLayer\Entities\ConsultaDeAfiliado.vb" />
+    <Compile Include="BusinessLayer\Entities\ConsultaDeCentros.vb" />
+    <Compile Include="BusinessLayer\Entities\ConsultaDeProfesional.vb" />
+    <Compile Include="BusinessLayer\Entities\DetalleAtencion.vb" />
+    <Compile Include="BusinessLayer\Entities\Domicilio.vb" />
+    <Compile Include="BusinessLayer\Entities\ListadoAfiliados.vb" />
+    <Compile Include="BusinessLayer\Entities\Localidad.vb" />
+    <Compile Include="BusinessLayer\Entities\Persona.vb" />
+    <Compile Include="BusinessLayer\Entities\Practica.vb" />
+    <Compile Include="BusinessLayer\Entities\PracticasxEspecialidad.vb" />
+    <Compile Include="BusinessLayer\Entities\Profesional.vb" />
+    <Compile Include="BusinessLayer\Entities\ProfesionalesxCentroxEspecialidad.vb" />
+    <Compile Include="BusinessLayer\Entities\Provincia.vb" />
+    <Compile Include="BusinessLayer\Entities\TablaTipo.vb" />
+    <Compile Include="BusinessLayer\Entities\TipoAfiliado.vb" />
+    <Compile Include="BusinessLayer\Entities\TipoDocumento.vb" />
+    <Compile Include="BusinessLayer\Services\AfiliadoService.vb" />
+    <Compile Include="BusinessLayer\Services\AtencionService.vb" />
+    <Compile Include="BusinessLayer\Services\BarrioService.vb" />
+    <Compile Include="BusinessLayer\Services\CentroMedicoService.vb" />
+    <Compile Include="BusinessLayer\Services\CoberturaService.vb" />
+    <Compile Include="BusinessLayer\Services\ConsultaDeAfiliadoService.vb" />
+    <Compile Include="BusinessLayer\Services\ConsultaDeProfesionalService.vb" />
+    <Compile Include="BusinessLayer\Services\DomicilioService.vb" />
+    <Compile Include="BusinessLayer\Services\LocalidadService.vb" />
+    <Compile Include="BusinessLayer\Services\PersonaService.vb" />
+    <Compile Include="BusinessLayer\Services\PracticasxEspecialidadService.vb" />
+    <Compile Include="BusinessLayer\Services\ProfesionalesxCentroxEspecialidadService.vb" />
+    <Compile Include="BusinessLayer\Services\ProfesionalService.vb" />
+    <Compile Include="BusinessLayer\Services\TablaTipoService.vb" />
+    <Compile Include="BusinessLayer\Services\TipoDocumentoService.vb" />
+    <Compile Include="DataLayer\AccesoDatos\acceso_a_datos.vb" />
+    <Compile Include="DataLayer\AccesoDatos\combo.vb" />
+    <Compile Include="DataLayer\DAOs\AfiliadoDao.vb" />
+    <Compile Include="DataLayer\DAOs\AtencionDao.vb" />
+    <Compile Include="DataLayer\DAOs\BarrioDao.vb" />
+    <Compile Include="DataLayer\DAOs\CentroMedicoDao.vb" />
+    <Compile Include="DataLayer\DAOs\CoberturaDao.vb" />
+    <Compile Include="DataLayer\DAOs\ConsultaDeAfiliadoDao.vb" />
+    <Compile Include="DataLayer\DAOs\ConsultaDeProfesionalDao.vb" />
+    <Compile Include="DataLayer\DAOs\DomicilioDao.vb" />
+    <Compile Include="DataLayer\DAOs\LocalidadDao.vb" />
+    <Compile Include="DataLayer\DAOs\PersonaDao.vb" />
+    <Compile Include="DataLayer\DAOs\PracticasxEspecialidadDao.vb" />
+    <Compile Include="DataLayer\DAOs\ProfesionalDao.vb" />
+    <Compile Include="DataLayer\DAOs\ProfesionalesxCentroxEspecialidadDao.vb" />
+    <Compile Include="DataLayer\DAOs\TablaTipoDao.vb" />
+    <Compile Include="DataLayer\DAOs\TipoDocumentoDao.vb" />
+    <Compile Include="DataLayer\Helper\BDHelper.vb" />
+    <Compile Include="GUILayer\ABMs\Frm_registrar_EspecialidadesXCentroXProfesional.Designer.vb">
+      <DependentUpon>Frm_registrar_EspecialidadesXCentroXProfesional.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMs\Frm_registrar_EspecialidadesXCentroXProfesional.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Data\DataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Data\DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Data\DataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Data\DataSet3.vb">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_ListadoAfiliados.Designer.vb">
+      <DependentUpon>Frm_ListadoAfiliados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_ListadoAfiliados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_ListadoCoberturas.Designer.vb">
+      <DependentUpon>Frm_ListadoCoberturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_ListadoCoberturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_ListadoProfesionales.Designer.vb">
+      <DependentUpon>Frm_ListadoProfesionales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_ListadoProfesionales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Transacciones\Frm_mostrar_Atencion.Designer.vb">
+      <DependentUpon>Frm_mostrar_Atencion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Transacciones\Frm_mostrar_Atencion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Transacciones\Frm_registrar_Atencion.Designer.vb">
+      <DependentUpon>Frm_registrar_Atencion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Transacciones\Frm_registrar_Atencion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Transacciones\Frm_buscar_Atencion.Designer.vb">
+      <DependentUpon>Frm_buscar_Atencion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Transacciones\Frm_buscar_Atencion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMs\Frm_registrar_TablasTipo.Designer.vb">
+      <DependentUpon>Frm_registrar_TablasTipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMs\Frm_registrar_TablasTipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Menu\Frm_Menu_Principal.Designer.vb">
+      <DependentUpon>Frm_Menu_Principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Menu\Frm_Menu_Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMs\Frm_registrar_Afiliado.Designer.vb">
+      <DependentUpon>Frm_registrar_Afiliado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMs\Frm_registrar_Afiliado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMs\Frm_registrar_CentroMedico.Designer.vb">
+      <DependentUpon>Frm_registrar_CentroMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMs\Frm_registrar_CentroMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\ABMs\Frm_registrar_Profesional.vb">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="GUILayer\ABMs\Frm_registrar_Profesional.Designer.vb">
+      <DependentUpon>Frm_registrar_Profesional.vb</DependentUpon>
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUILayer\Reportes\Frm_ListadoAfiliados.resx">
+      <DependentUpon>Frm_ListadoAfiliados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\Frm_ListadoCoberturas.resx">
+      <DependentUpon>Frm_ListadoCoberturas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\Diseño\ListadoCoberturas.rdlc" />
+    <EmbeddedResource Include="GUILayer\ABMs\Frm_registrar_EspecialidadesXCentroXProfesional.resx">
+      <DependentUpon>Frm_registrar_EspecialidadesXCentroXProfesional.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMs\Frm_registrar_TablasTipo.resx">
+      <DependentUpon>Frm_registrar_TablasTipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Menu\Frm_Menu_Principal.resx">
+      <DependentUpon>Frm_Menu_Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMs\Frm_registrar_Afiliado.resx">
+      <DependentUpon>Frm_registrar_Afiliado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMs\Frm_registrar_CentroMedico.resx">
+      <DependentUpon>Frm_registrar_CentroMedico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\ABMs\Frm_registrar_Profesional.resx">
+      <DependentUpon>Frm_registrar_Profesional.vb</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\Frm_ListadoProfesionales.resx">
+      <DependentUpon>Frm_ListadoProfesionales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\Diseño\ListadoProfesionales.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\Diseño\ListadoAfiliados.rdlc" />
+    <EmbeddedResource Include="GUILayer\Transacciones\Frm_mostrar_Atencion.resx">
+      <DependentUpon>Frm_mostrar_Atencion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Transacciones\Frm_registrar_Atencion.resx">
+      <DependentUpon>Frm_registrar_Atencion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Transacciones\Frm_buscar_Atencion.resx">
+      <DependentUpon>Frm_buscar_Atencion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GUILayer\Reportes\Data\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\acceso_a_datos.datasource" />
+    <None Include="My Project\DataSources\acceso_a_datos.motores.datasource" />
+    <None Include="My Project\DataSources\Afiliado.datasource" />
+    <None Include="My Project\DataSources\AfiliadoDao.datasource" />
+    <None Include="My Project\DataSources\AfiliadoService.datasource" />
+    <None Include="My Project\DataSources\Atencion.datasource" />
+    <None Include="My Project\DataSources\AtencionDao.datasource" />
+    <None Include="My Project\DataSources\AtencionService.datasource" />
+    <None Include="My Project\DataSources\Barrio.datasource" />
+    <None Include="My Project\DataSources\BarrioDao.datasource" />
+    <None Include="My Project\DataSources\BarrioService.datasource" />
+    <None Include="My Project\DataSources\BDHelper.datasource" />
+    <None Include="My Project\DataSources\CentroMedico.datasource" />
+    <None Include="My Project\DataSources\CentroMedicoDao.datasource" />
+    <None Include="My Project\DataSources\CentroMedicoService.datasource" />
+    <None Include="My Project\DataSources\Cobertura.datasource" />
+    <None Include="My Project\DataSources\CoberturaDao.datasource" />
+    <None Include="My Project\DataSources\CoberturaService.datasource" />
+    <None Include="My Project\DataSources\combo.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeAfiliado.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeAfiliadoDao.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeAfiliados.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeAfiliados.DataTable1DataTable.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeAfiliados.DataTable1Row.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeAfiliados.DataTable1RowChangeEvent.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeAfiliados.DataTable1RowChangeEventHandler.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeAfiliadoService.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeCentros.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeProfesional.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeProfesionalDao.datasource" />
+    <None Include="My Project\DataSources\ConsultaDeProfesionalService.datasource" />
+    <None Include="My Project\DataSources\DataSet1.datasource" />
+    <None Include="My Project\DataSources\DataSet1.ProfesionalesDataTable.datasource" />
+    <None Include="My Project\DataSources\DataSet1.ProfesionalesRow.datasource" />
+    <None Include="My Project\DataSources\DataSet1.ProfesionalesRowChangeEvent.datasource" />
+    <None Include="My Project\DataSources\DataSet1.ProfesionalesRowChangeEventHandler.datasource" />
+    <None Include="My Project\DataSources\DataSet2.datasource" />
+    <None Include="My Project\DataSources\DataSet2.DataTable1DataTable.datasource" />
+    <None Include="My Project\DataSources\DataSet2.DataTable1Row.datasource" />
+    <None Include="My Project\DataSources\DataSet2.DataTable1RowChangeEvent.datasource" />
+    <None Include="My Project\DataSources\DataSet2.DataTable1RowChangeEventHandler.datasource" />
+    <None Include="My Project\DataSources\DataSet3.CoberturasDataTable.datasource" />
+    <None Include="My Project\DataSources\DataSet3.CoberturasDataTable1.datasource" />
+    <None Include="My Project\DataSources\DataSet3.CoberturasRow.datasource" />
+    <None Include="My Project\DataSources\DataSet3.CoberturasRow1.datasource" />
+    <None Include="My Project\DataSources\DataSet3.CoberturasRowChangeEvent.datasource" />
+    <None Include="My Project\DataSources\DataSet3.CoberturasRowChangeEvent1.datasource" />
+    <None Include="My Project\DataSources\DataSet3.CoberturasRowChangeEventHandler.datasource" />
+    <None Include="My Project\DataSources\DataSet3.CoberturasRowChangeEventHandler1.datasource" />
+    <None Include="My Project\DataSources\DataSet3.datasource" />
+    <None Include="My Project\DataSources\DataSet31.datasource" />
+    <None Include="My Project\DataSources\DetalleAtencion.datasource" />
+    <None Include="My Project\DataSources\Domicilio.datasource" />
+    <None Include="My Project\DataSources\DomicilioDao.datasource" />
+    <None Include="My Project\DataSources\DomicilioService.datasource" />
+    <None Include="My Project\DataSources\frm_buscar_atencion.datasource" />
+    <None Include="My Project\DataSources\Frm_ListadoCoberturas.datasource" />
+    <None Include="My Project\DataSources\frm_Menu_Principal.datasource" />
+    <None Include="My Project\DataSources\frm_mostrar_atencion.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_Afiliado.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_Afiliado.estado.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_Afiliado.termino.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_Atencion.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_Atencion.estado.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_Atencion.termino.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_centroMedico.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_centroMedico.estado.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_centroMedico.termino.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_EspecialidadesXCentroXProfesional.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_profesional.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_profesional.estado.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_profesional.termino.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_TablasTipo.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_TablasTipo.estado.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_TablasTipo.respuesta.datasource" />
+    <None Include="My Project\DataSources\frm_registrar_TablasTipo.valida.datasource" />
+    <None Include="My Project\DataSources\ListadoAfiliados.datasource" />
+    <None Include="My Project\DataSources\ListadoProfesionales.datasource" />
+    <None Include="My Project\DataSources\Localidad.datasource" />
+    <None Include="My Project\DataSources\LocalidadDao.datasource" />
+    <None Include="My Project\DataSources\LocalidadService.datasource" />
+    <None Include="My Project\DataSources\Persona.datasource" />
+    <None Include="My Project\DataSources\PersonaDao.datasource" />
+    <None Include="My Project\DataSources\PersonaService.datasource" />
+    <None Include="My Project\DataSources\Practica.datasource" />
+    <None Include="My Project\DataSources\PracticasxEspecialidad.datasource" />
+    <None Include="My Project\DataSources\PracticasxEspecialidadDao.datasource" />
+    <None Include="My Project\DataSources\PracticasxEspecialidadService.datasource" />
+    <None Include="My Project\DataSources\primeraEntrega.My.MyApplication.datasource" />
+    <None Include="My Project\DataSources\primeraEntrega.My.MyApplication1.datasource" />
+    <None Include="My Project\DataSources\primeraEntrega.My.MySettings.datasource" />
+    <None Include="My Project\DataSources\primeraEntrega.My.MySettings1.datasource" />
+    <None Include="My Project\DataSources\Profesional.datasource" />
+    <None Include="My Project\DataSources\ProfesionalDao.datasource" />
+    <None Include="My Project\DataSources\ProfesionalesxCentroxEspecialidad.datasource" />
+    <None Include="My Project\DataSources\ProfesionalesxCentroxEspecialidadDao.datasource" />
+    <None Include="My Project\DataSources\ProfesionalesxCentroxEspecialidadService.datasource" />
+    <None Include="My Project\DataSources\ProfesionalService.datasource" />
+    <None Include="My Project\DataSources\Provincia.datasource" />
+    <None Include="My Project\DataSources\ReporteAfiliado.datasource" />
+    <None Include="My Project\DataSources\TablaTipo.datasource" />
+    <None Include="My Project\DataSources\TablaTipoDao.datasource" />
+    <None Include="My Project\DataSources\TablaTipoService.datasource" />
+    <None Include="My Project\DataSources\TipoAfiliado.datasource" />
+    <None Include="My Project\DataSources\TipoDocumento.datasource" />
+    <None Include="My Project\DataSources\TipoDocumentoDao.datasource" />
+    <None Include="My Project\DataSources\TipoDocumentoService.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

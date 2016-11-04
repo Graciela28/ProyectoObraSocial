@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet3" targetNamespace="http://tempuri.org/DataSet3.xsd" xmlns:mstns="http://tempuri.org/DataSet3.xsd" xmlns="http://tempuri.org/DataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet3" msprop:Generator_UserDSName="DataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Coberturas" msprop:Generator_TableClassName="CoberturasDataTable" msprop:Generator_TableVarName="tableCoberturas" msprop:Generator_TablePropName="Coberturas" msprop:Generator_RowDeletingName="CoberturasRowDeleting" msprop:Generator_RowChangingName="CoberturasRowChanging" msprop:Generator_RowEvHandlerName="CoberturasRowChangeEventHandler" msprop:Generator_RowDeletedName="CoberturasRowDeleted" msprop:Generator_UserTableName="Coberturas" msprop:Generator_RowChangedName="CoberturasRowChanged" msprop:Generator_RowEvArgName="CoberturasRowChangeEvent" msprop:Generator_RowClassName="CoberturasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="n_centro" msprop:Generator_ColumnVarNameInTable="columnn_centro" msprop:Generator_ColumnPropNameInRow="n_centro" msprop:Generator_ColumnPropNameInTable="n_centroColumn" msprop:Generator_UserColumnName="n_centro" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo_afiliado" msprop:Generator_ColumnVarNameInTable="columntipo_afiliado" msprop:Generator_ColumnPropNameInRow="tipo_afiliado" msprop:Generator_ColumnPropNameInTable="tipo_afiliadoColumn" msprop:Generator_UserColumnName="tipo_afiliado" type="xs:string" minOccurs="0" />
+              <xs:element name="n_especialidad" msprop:Generator_ColumnVarNameInTable="columnn_especialidad" msprop:Generator_ColumnPropNameInRow="n_especialidad" msprop:Generator_ColumnPropNameInTable="n_especialidadColumn" msprop:Generator_UserColumnName="n_especialidad" type="xs:string" minOccurs="0" />
+              <xs:element name="n_practica" msprop:Generator_ColumnVarNameInTable="columnn_practica" msprop:Generator_ColumnPropNameInRow="n_practica" msprop:Generator_ColumnPropNameInTable="n_practicaColumn" msprop:Generator_UserColumnName="n_practica" type="xs:string" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="precio_practica" msprop:Generator_ColumnVarNameInTable="columnprecio_practica" msprop:Generator_ColumnPropNameInRow="precio_practica" msprop:Generator_ColumnPropNameInTable="precio_practicaColumn" msprop:Generator_UserColumnName="precio_practica" type="xs:double" minOccurs="0" />
+              <xs:element name="porcentaje_cobertura" msprop:Generator_ColumnVarNameInTable="columnporcentaje_cobertura" msprop:Generator_ColumnPropNameInRow="porcentaje_cobertura" msprop:Generator_ColumnPropNameInTable="porcentaje_coberturaColumn" msprop:Generator_UserColumnName="porcentaje_cobertura" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
