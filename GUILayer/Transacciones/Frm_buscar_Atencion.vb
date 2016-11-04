@@ -17,8 +17,8 @@ Public Class frm_buscar_atencion
         Me.habilitarControles()
 
         'Estado inicial de los filtros
-        dtp_fechaInicio.Value = Convert.ToDateTime("02/02/2002")
-        dtp_fechaFinal.Value = Convert.ToDateTime("02/02/2002")
+        'dtp_fechaInicio.Value = Convert.ToDateTime("02/02/2002")
+        'dtp_fechaFinal.Value = Convert.ToDateTime("02/02/2002")
         dtp_fechaInicio.Enabled = False
         dtp_fechaFinal.Enabled = False
         chk_usoFiltros.CheckState = CheckState.Unchecked
@@ -73,7 +73,7 @@ Public Class frm_buscar_atencion
         If frm_registrar_Atencion.busqueda = False Then
             If usoFiltrosFecha = True Then
                 If (cbo_tiposDocumento.SelectedIndex <> -1 And txt_docAfiliado.Text <> String.Empty) = True Then
-                    Me.llenarGrilla(Nothing, Me.fechaInicial.ToString("dd/MM/yyyy"), Me.fechaFinal.ToString("dd/MM/yyyy"), Integer.Parse(cbo_tiposDocumento.SelectedValue), Convert.ToInt32(txt_docAfiliado.Text))
+                    Me.llenarGrilla(Nothing, dtp_fechaInicio.Value.ToString("dd/MM/yyyy"), dtp_fechaFinal.Value.ToString("dd/MM/yyyy"), Integer.Parse(cbo_tiposDocumento.SelectedValue), Convert.ToInt32(txt_docAfiliado.Text))
                 Else
                     MessageBox.Show("Debe ingresar el tipo y número de documento del Afiliado", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation _
                                  , MessageBoxDefaultButton.Button1)
@@ -93,7 +93,7 @@ Public Class frm_buscar_atencion
             'Si no hay datos se llena la grilla con todas las atenciones 
             If frm_registrar_Atencion.busqueda = True And (cbo_tiposDocumento.SelectedIndex <> -1 And txt_docAfiliado.Text <> String.Empty) = True Then
                 If usoFiltrosFecha = True Then
-                    Me.llenarGrilla(Nothing, Me.fechaInicial, Me.fechaFinal, Integer.Parse(cbo_tiposDocumento.SelectedValue), Convert.ToInt32(txt_docAfiliado.Text))
+                    Me.llenarGrilla(Nothing, dtp_fechaInicio.Value, dtp_fechaFinal.Value, Integer.Parse(cbo_tiposDocumento.SelectedValue), Convert.ToInt32(txt_docAfiliado.Text))
                 Else
                     Me.llenarGrilla(Nothing, Nothing, Nothing, Integer.Parse(cbo_tiposDocumento.SelectedValue), Convert.ToInt32(txt_docAfiliado.Text))
                 End If

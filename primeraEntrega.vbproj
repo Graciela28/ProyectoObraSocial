@@ -167,6 +167,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Reportes\Data\DataSet6.vb">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Reportes\Frm_EstadisticaTiposAfiliado.Designer.vb">
       <DependentUpon>Frm_EstadisticaTiposAfiliado.vb</DependentUpon>
     </Compile>
@@ -195,6 +198,12 @@
       <DependentUpon>Frm_ReporteEstadisticoDePracticas.vb</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Reportes\Frm_ReporteEstadisticoDePracticas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_ReporteFacturacionMensual.Designer.vb">
+      <DependentUpon>Frm_ReporteFacturacionMensual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_ReporteFacturacionMensual.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUILayer\Transacciones\Frm_mostrar_Atencion.Designer.vb">
@@ -304,6 +313,9 @@
     <EmbeddedResource Include="GUILayer\Reportes\Diseño\ListadoAfiliados.rdlc" />
     <EmbeddedResource Include="GUILayer\Reportes\Frm_ReporteEstadisticoDePracticas.resx">
       <DependentUpon>Frm_ReporteEstadisticoDePracticas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\Frm_ReporteFacturacionMensual.resx">
+      <DependentUpon>Frm_ReporteFacturacionMensual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Transacciones\Frm_mostrar_Atencion.resx">
       <DependentUpon>Frm_mostrar_Atencion.vb</DependentUpon>
