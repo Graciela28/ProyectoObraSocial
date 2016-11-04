@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class BDHelper
 
+
     Public Shared string_conexion As String = "Data Source=VANIA-PC\SQLEXPRESS;Initial Catalog=BD_OBRA_SOCIAL;Integrated Security=True"
 
     Public Shared Function EjecutarSQL(ByVal strSql As String) As Integer

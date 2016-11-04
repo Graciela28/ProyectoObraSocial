@@ -48,6 +48,32 @@ Public Class frm_registrar_Atencion
         End Set
     End Property
 
+    ' Private Function validar() As Boolean
+    'If cbo_centros.SelectedIndex = -1 Then
+    '  MessageBox.Show("Debe seleccionar un centro medico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '   Return False
+    '    Exit Function
+    ' Else
+    ' If cbo_especialidades.SelectedIndex = -1 Then
+    '  MessageBox.Show("Debe seleccionar una especialidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '   Return False
+    '    Exit Function
+    ' Else
+    '  If cbo_profesionales.SelectedIndex = -1 Then
+    '       MessageBox.Show("Debe seleccionar un profesional", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        Return False
+    '         Exit Function
+    '      Else
+    '           If cbo_tiposDocumento.SelectedIndex = -1 Then
+    '                MessageBox.Show("Debe seleccionar un profesional", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '                 Return False
+    '                  Exit Function
+    '               End If
+    '            End If
+    '         End If
+    '      End If
+    '   End Function
+
     Private Sub frm_registrar_Atencion_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         dtp_fecha.Value = oAtencionService.obtenerFechaActual()

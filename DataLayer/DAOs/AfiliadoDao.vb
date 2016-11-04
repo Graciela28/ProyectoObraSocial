@@ -153,7 +153,7 @@
 
         Catch ex As Exception
             Throw ex
-            MsgBox("Hubo un error en la inserción de Afiliados")
+            MsgBox("Hubo un error en la inserción de Afiliados ")
             Exit Function
         Finally
             connection.Close()
