@@ -10,7 +10,11 @@
     End Function
 
     Public Function listarProfesionalesConFiltros(ByVal activo As Integer) As List(Of ConsultaDeProfesional)
-        Return oProfesionalDao.getByFilters(activo)
+        Return oProfesionalDao.getByFilters(activo, -1, -1)
+    End Function
+
+    Public Function listarProfesionalesConFiltros(ByVal tipoDoc As Integer, ByVal nroDoc As Integer) As List(Of ConsultaDeProfesional)
+        Return oProfesionalDao.getByFilters(-1, tipoDoc, nroDoc)
     End Function
 
     Public Function registrarProfesional(ByVal oProfesional As ConsultaDeProfesional) As Boolean
@@ -27,7 +31,7 @@
         Return True
     End Function
 
-    Public Function eliminarProfesional(ByVal oProfesional As ConsultaDeProfesional, ByVal isNew As Boolean) As Boolean
+    Public Function registrarBaja(ByVal oProfesional As ConsultaDeProfesional) As Boolean
         oProfesionalDao.deleteProfesional(oProfesional)
         Return True
     End Function

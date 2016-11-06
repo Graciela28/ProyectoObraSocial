@@ -30,12 +30,13 @@ Public Class frm_registrar_profesional
     Dim num_documento As Integer
 
     Private Sub frm_ABM_Profesional_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LimpiarCampos()
+        Me.setearLabelsAColorInicial()
+        Me.LimpiarCampos()
+
         'Carga de combos 
         cargaCombo(Me.cbo_tipo_documento, oTablaTipoService.ListarTipos("TiposDocumento"), "id", "nombre")
         cargaCombo(Me.cbo_provincias, oTablaTipoService.ListarTipos("Provincias"), "id", "nombre")
         Me.LimpiarCombos()
-
 
         Me.cargaGrilla()
         dgv_profesionales.ClearSelection()
@@ -177,6 +178,7 @@ Public Class frm_registrar_profesional
     End Sub
 
     Private Sub cmd_Nuevo_Click(sender As Object, e As EventArgs) Handles btn_Nuevo.Click
+        Me.setearLabelsAColorInicial()
         Me.LimpiarCampos()
         Me.habilitarControles()
         Me.btn_Grabar.Enabled = True
@@ -195,6 +197,20 @@ Public Class frm_registrar_profesional
         Me.txt_altura.Text = ""
 
         Me.cbo_tipo_documento.SelectedIndex = -1
+        Me.cbo_provincias.SelectedIndex = -1
+        Me.cbo_localidades.SelectedIndex = -1
+        Me.cbo_barrios.SelectedIndex = -1
+    End Sub
+
+    Private Sub LimpiarCamposParaBtnBuscar()
+        Me.txt_nombre.Text = ""
+        Me.txt_apellido.Text = ""
+        Me.txt_matricula.Text = ""
+        Me.txt_telefono.Text = ""
+        Me.txt_mail.Text = ""
+        Me.txt_calle.Text = ""
+        Me.txt_altura.Text = ""
+
         Me.cbo_provincias.SelectedIndex = -1
         Me.cbo_localidades.SelectedIndex = -1
         Me.cbo_barrios.SelectedIndex = -1
@@ -333,7 +349,6 @@ Public Class frm_registrar_profesional
         End If
     End Sub
 
-
     Private Sub txt_telefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_telefono.KeyPress
         Select Case Asc(e.KeyChar)
             Case 4, 24, 4, 19, 127, 13, 9, 15, 14
@@ -353,22 +368,6 @@ Public Class frm_registrar_profesional
         If IsNumeric(e.KeyChar) = False Then
             MsgBox("Este carater no es un numero ( " + e.KeyChar + " )", vbCritical, "Importante")
             e.KeyChar = ""
-        End If
-    End Sub
-
-
-    Private Sub mtxt_fecha_nac_Validated(sender As Object, e As EventArgs)
-        If IsDate(sender.Text) Then
-            If Not sender.Text = Format(CDate(sender.text), "dd/mm/yyyy") Then
-            Else
-                MsgBox("Fecha invalida", vbOKOnly + vbCritical, "Atención")
-                sender.Focus()
-                Exit Sub
-            End If
-        Else
-            MsgBox("Fecha invalida", vbOKOnly + vbCritical, "Atención")
-            sender.Focus()
-            Exit Sub
         End If
     End Sub
 
@@ -490,10 +489,7 @@ Public Class frm_registrar_profesional
         Return termino.aprobado
     End Function
 
-
-
     Private Sub cmd_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
-
         Me.accion = estado.modificar
         Dim tabla As New Data.DataTable
         Dim connection As New SqlConnection
@@ -502,18 +498,11 @@ Public Class frm_registrar_profesional
         connection.ConnectionString = Me.stringConexion
         command.Connection = connection
         connection.Open()
-
-
         command.CommandType = CommandType.StoredProcedure
-
-
         command.CommandText = "stpro_consultar_profesional"
-
         command.Parameters.AddWithValue("@documento", Convert.ToInt64(dgv_profesionales.CurrentRow.Cells("col_documento").Value.ToString))
 
-
         tabla.Load(command.ExecuteReader())
-
         connection.Close()
         Me.habilitarControles()
 
@@ -536,17 +525,11 @@ Public Class frm_registrar_profesional
             txt_altura.Text = tabla.Rows(0)("numero")
         End If
 
-
-        
         cbo_provincias.SelectedIndex = 6
         cbo_provincias_SelectionChangeCommitted(sender, Nothing)
-
         cbo_localidades.SelectedValue = tabla.Rows(0)("id_localidad").ToString
         cbo_localidades_SelectionChangeCommitted(sender, Nothing)
-
         cbo_barrios.SelectedValue = tabla.Rows(0)("id_barrio").ToString
-
-    
 
         'cbo_barrios.SelectedValue = tabla.Rows(0)("id_barrio").ToString
         ' cbo_provincias.SelectedText = dgv_profesionales.CurrentRow.Cells("col_provincia").Value.ToString
@@ -561,126 +544,88 @@ Public Class frm_registrar_profesional
     End Sub
 
     Private Sub cmd_Eliminar_Click(sender As Object, e As EventArgs) Handles btn_Eliminar.Click
-        Dim documento As Integer = Me.dgv_profesionales.CurrentRow.Cells(0).Value
-        Me.accion = estado.modificar
-        Dim tabla As New Data.DataTable
-
-        Dim connection As New SqlClient.SqlConnection
-        Dim command As New SqlClient.SqlCommand
-        connection.ConnectionString = Me.stringConexion
-        connection.Open()
-        command.CommandType = CommandType.StoredProcedure
-        command.CommandText = "stpro_consultar_profesional"
-        command.Connection = connection
-        command.Parameters.AddWithValue("@documento", documento)
-        tabla.Load(command.ExecuteReader())
-        connection.Close()
-
-        txt_nombre.Text = tabla.Rows(0)("nombre")
-        txt_apellido.Text = tabla.Rows(0)("apellido")
-        txt_nro_documento.Text = tabla.Rows(0)("numero_doc")
-        cbo_tipo_documento.SelectedValue = tabla.Rows(0)("id_tipo_doc")
-        dtp_fecha.Value = tabla.Rows(0)("fecha_nacimiento")
-        txt_matricula.Text = tabla.Rows(0)("matricula")
-        txt_telefono.Text = tabla.Rows(0)("telefono")
-        txt_mail.Text = tabla.Rows(0)("mail")
-        txt_calle.Text = tabla.Rows(0)("calle")
-        txt_altura.Text = tabla.Rows(0)("numero")
-        cbo_provincias.SelectedValue = tabla.Rows(0)("id")
-        cbo_localidades.SelectedValue = tabla.Rows(0)("id_localidad")
-        cbo_barrios.SelectedValue = tabla.Rows(0)("id_barrio")
-        txt_nro_documento.Enabled = False
-        cbo_tipo_documento.Enabled = False
-        Dim msg As String = "Está seguro que desea eliminar el Profesional con dni = " & documento.ToString
-        Dim rpta As Integer
-        rpta = MsgBox(msg, vbOKCancel, "Confirmación")
-        If rpta = 1 Then
-            connection.ConnectionString = Me.stringConexion
-            connection.Open()
-            command.CommandType = CommandType.StoredProcedure
-            command.CommandText = "stpro_eliminar_profesional"
-            command.Parameters.Clear()
-            command.Parameters.AddWithValue("@numerodocumentoE", documento)
-            command.Parameters.AddWithValue("@tipoDocumentoE", tabla.Rows(0)("id_tipo_doc"))
-            command.Parameters.AddWithValue("@activo", 0)
-            command.ExecuteNonQuery()
-            connection.Close()
-            MessageBox.Show("Se eliminó exitosamente", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Me.cargaGrilla()
+        Dim activo As Boolean
+        If (dgv_profesionales.CurrentRow.Cells("col_estaActivo").Value.ToString.CompareTo("Si") = 0) Then
+            activo = True
         Else
-            End
+            activo = False
         End If
+        Dim oProfesional As New ConsultaDeProfesional
 
+        With oProfesional
+            .idTipoDoc = Integer.Parse(dgv_profesionales.CurrentRow.Cells("col_idTipoDoc").Value)
+            .numeroDoc = Integer.Parse(dgv_profesionales.CurrentRow.Cells("col_documento").Value)
+        End With
+
+        If (activo = True) Then
+
+            If MessageBox.Show("El profesional [" & dgv_profesionales.CurrentRow.Cells.Item("col_nombre").Value.ToString & "] se encuentra activo. ¿Desea darlo de BAJA?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
+                oProfesionalService.registrarBaja(oProfesional)
+                MessageBox.Show("Se eliminó el profesional con éxito!", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+                Me.cargaGrilla()
+            End If
+        Else
+            MessageBox.Show("El Profesional ya se encuentra inactivo", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+        End If
     End Sub
 
     Private Sub cmd_Buscar_Click(sender As Object, e As EventArgs) Handles btn_Buscar.Click
-        If txt_nro_documento.Text = "" Then
-            MessageBox.Show("No se pudo realizar la búsqueda. Ingrese un documento", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            Dim documento As Integer = txt_nro_documento.Text
-            Dim tabla As New Data.DataTable
-            Dim connection As New SqlClient.SqlConnection
-            Dim command As New SqlClient.SqlCommand
-            connection.ConnectionString = Me.stringConexion
-            connection.Open()
-            command.CommandType = CommandType.StoredProcedure
-            command.CommandText = "stpro_consultar_profesional"
-            command.Connection = connection
-            command.Parameters.AddWithValue("@documento", documento)
-            tabla.Load(command.ExecuteReader())
-            connection.Close()
-            If tabla.Rows.Count > 0 Then
-                txt_nombre.Text = tabla.Rows(0)("nombre")
-                txt_apellido.Text = tabla.Rows(0)("apellido")
-                txt_nro_documento.Text = tabla.Rows(0)("numero_doc")
-                cbo_tipo_documento.SelectedValue = tabla.Rows(0)("id_tipo_doc")
-                dtp_fecha.Value = tabla.Rows(0)("fecha_nacimiento")
-                txt_matricula.Text = tabla.Rows(0)("matricula")
-                txt_telefono.Text = tabla.Rows(0)("telefono")
-                If IsDBNull(tabla.Rows(0)("mail")) Then
-                    txt_mail.Text = ""
-                Else
-                    txt_mail.Text = tabla.Rows(0)("mail")
-                End If
-                txt_calle.Text = tabla.Rows(0)("calle")
-                txt_altura.Text = tabla.Rows(0)("numero")
-                cbo_provincias.SelectedValue = tabla.Rows(0)("id")
-                cbo_localidades.SelectedValue = tabla.Rows(0)("id_localidad")
-                cbo_barrios.SelectedValue = tabla.Rows(0)("id_barrio")
-                Dim activo As Integer = tabla.Rows(0)("activo")
-                Me.deshabilitarControles()
-                If activo = 0 Then
-                    Dim msg As String = "El Profesional se encuentra inactivo. ¿Desea volver a activar el Profesional con dni = " & txt_nro_documento.Text & " ?"
-                    Dim rpta As Integer
-                    rpta = MsgBox(msg, vbOKCancel, "Confirmación")
-                    If rpta = 1 Then
-                        connection.ConnectionString = Me.stringConexion
-                        connection.Open()
-                        command.CommandType = CommandType.StoredProcedure
-                        command.CommandText = "stpro_eliminar_profesional"
-                        command.Parameters.Clear()
-                        command.Parameters.AddWithValue("@numerodocumentoE", documento)
-                        command.Parameters.AddWithValue("@tipoDocumentoE", tabla.Rows(0)("id_tipo_doc"))
-                        command.Parameters.AddWithValue("@activo", 1)
-                        command.ExecuteNonQuery()
-                        connection.Close()
-                        MessageBox.Show("Se activó exitosamente", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Me.cargaGrilla()
-                    End If
-                End If
-            Else
-                MessageBox.Show("No se encontró un profesional con ese documento", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
+        Me.LimpiarCamposParaBtnBuscar()
+        Me.deshabilitarControles()
+
+        Dim oProfesionalService As New ProfesionalService
+        Dim tipo_documento As Integer = -1
+
+        If cbo_tipo_documento.SelectedIndex <> -1 Then
+            tipo_documento = cbo_tipo_documento.SelectedValue
         End If
 
+        If txt_nro_documento.Text = String.Empty Then
+            MessageBox.Show("No se pudo realizar la búsqueda. Ingrese un tipo y nro de documento", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            lbl_tipo_documento.BackColor = Color.AntiqueWhite
+            lbl_nro_documento.BackColor = Color.AntiqueWhite
+            txt_nro_documento.Focus()
+            Exit Sub
+        Else
+            lbl_tipo_documento.BackColor = Color.CornflowerBlue
+            lbl_nro_documento.BackColor = Color.CornflowerBlue
+            Dim nro_documento As Integer = txt_nro_documento.Text
+            Me.cargaGrilla(oProfesionalService.listarProfesionalesConFiltros(tipo_documento, nro_documento))
 
+            If (dgv_profesionales.Rows.Count > 0) Then
+                MessageBox.Show("La Búsqueda se realizó con exito!", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("No se encontró ningún Profesional con ese tipo y nro de documento", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+            '    If activo = 0 Then
+            '        Dim msg As String = "El Profesional se encuentra inactivo. ¿Desea volver a activar el Profesional con dni = " & txt_nro_documento.Text & " ?"
+            '        Dim rpta As Integer
+            '        rpta = MsgBox(msg, vbOKCancel, "Confirmación")
+            '        If rpta = 1 Then
+            '            connection.ConnectionString = Me.stringConexion
+            '            connection.Open()
+            '            Command.CommandType = CommandType.StoredProcedure
+            '            Command.CommandText = "stpro_eliminar_profesional"
+            '            Command.Parameters.Clear()
+            '            Command.Parameters.AddWithValue("@numerodocumentoE", documento)
+            '            Command.Parameters.AddWithValue("@tipoDocumentoE", tabla.Rows(0)("id_tipo_doc"))
+            '            Command.Parameters.AddWithValue("@activo", 1)
+            '            Command.ExecuteNonQuery()
+            '            connection.Close()
+            '            MessageBox.Show("Se activó exitosamente", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            '            Me.cargaGrilla()
+            '        End If
+            '    End If
+            '    Else
+            '    MessageBox.Show("No se encontró un profesional con ese documento", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'End If
+        End If
     End Sub
 
     Private Sub deshabilitarControles()
         txt_nombre.Enabled = False
         txt_apellido.Enabled = False
-        txt_nro_documento.Enabled = False
-        cbo_tipo_documento.Enabled = False
         dtp_fecha.Enabled = False
         txt_matricula.Enabled = False
         txt_telefono.Enabled = False
@@ -708,28 +653,21 @@ Public Class frm_registrar_profesional
         cbo_barrios.Enabled = True
     End Sub
 
+    Private Sub setearLabelsAColorInicial()
+        lbl_nombre.ForeColor = Color.Black
+        lbl_apellido.ForeColor = Color.Black
+        lbl_nro_documento.ForeColor = Color.Black
+        lbl_fecha_nac.ForeColor = Color.Black
+        lbl_matricula.ForeColor = Color.Black
+        lbl_direccion.ForeColor = Color.Black
+        lbl_numero.ForeColor = Color.Black
+        lbl_tipo_documento.ForeColor = Color.Black
+        lbl_Provincia.ForeColor = Color.Black
+        lbl_localidad.ForeColor = Color.Black
+        lbl_barrio.ForeColor = Color.Black
+    End Sub
+
     Private Sub cmd_Salir_Click(sender As Object, e As EventArgs) Handles cmd_Salir.Click
         Me.Close()
     End Sub
-
-    Private Sub frm_ABM_Profesional_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        'Me.Close()
-        Me.Visible = False
-        'If cierre_ventana() = 1 Then
-        '    frm_Menu_Principal.Show()
-        'Else
-        '    e.Cancel = True
-        'End If
-    End Sub
-
-    'Private Function cierre_ventana() As Integer
-    '    Dim rpta As Integer = 0
-    '    'Confirmación de salida.
-    '    If MessageBox.Show("Seguro que desea salir?", _
-    '            "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question _
-    '            , MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
-    '        rpta = 1
-    '    End If
-    '    Return rpta
-    'End Function
 End Class

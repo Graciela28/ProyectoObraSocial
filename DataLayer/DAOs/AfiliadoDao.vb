@@ -56,7 +56,7 @@
         Return listaAfiliados
     End Function
 
-    'Devuelve el Afiliado con el tipo de documento y el número de documento pasado por parámetro 
+    'Devuelve el Afiliado con el número de documento pasado por parámetro 
     Public Function getByFiltersAfiliados(ByVal tipo_doc As Integer, ByVal num_doc As Integer) As List(Of ConsultaDeAfiliado)
 
         Dim listaAfiliados As New List(Of ConsultaDeAfiliado)
@@ -161,8 +161,6 @@
         End Try
         Return status
     End Function
-
-    
 
     'Recibe el tipo y el nro de documento a actualizar 
     Public Sub UpdateAfiliado(ByVal documento As Integer, ByVal tipo_documento As Integer, ByVal oAfiliado As ConsultaDeAfiliado)

@@ -239,10 +239,10 @@ Partial Class frm_buscar_atencion
         'btn_buscar2
         '
         Me.btn_buscar2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_buscar2.Location = New System.Drawing.Point(605, 118)
+        Me.btn_buscar2.Location = New System.Drawing.Point(588, 119)
         Me.btn_buscar2.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_buscar2.Name = "btn_buscar2"
-        Me.btn_buscar2.Size = New System.Drawing.Size(69, 28)
+        Me.btn_buscar2.Size = New System.Drawing.Size(87, 28)
         Me.btn_buscar2.TabIndex = 6
         Me.btn_buscar2.Text = "Buscar"
         Me.btn_buscar2.UseVisualStyleBackColor = True
@@ -250,7 +250,7 @@ Partial Class frm_buscar_atencion
         'btn_buscar
         '
         Me.btn_buscar.Image = CType(resources.GetObject("btn_buscar.Image"), System.Drawing.Image)
-        Me.btn_buscar.Location = New System.Drawing.Point(311, 110)
+        Me.btn_buscar.Location = New System.Drawing.Point(309, 108)
         Me.btn_buscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(40, 38)
@@ -281,7 +281,7 @@ Partial Class frm_buscar_atencion
         '
         Me.txt_nombreAfiliado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_nombreAfiliado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nombreAfiliado.Location = New System.Drawing.Point(360, 122)
+        Me.txt_nombreAfiliado.Location = New System.Drawing.Point(360, 120)
         Me.txt_nombreAfiliado.Name = "txt_nombreAfiliado"
         Me.txt_nombreAfiliado.Size = New System.Drawing.Size(225, 24)
         Me.txt_nombreAfiliado.TabIndex = 5

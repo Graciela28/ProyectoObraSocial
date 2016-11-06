@@ -56,7 +56,7 @@ Partial Class Frm_ReporteEstadisticoDePracticas
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "primeraEntrega.EstadisticaPracticas.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(16, 63)
-        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(4)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(801, 496)
         Me.ReportViewer1.TabIndex = 0
@@ -64,7 +64,7 @@ Partial Class Frm_ReporteEstadisticoDePracticas
         'dtp_desde
         '
         Me.dtp_desde.Location = New System.Drawing.Point(20, 31)
-        Me.dtp_desde.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtp_desde.Margin = New System.Windows.Forms.Padding(4)
         Me.dtp_desde.Name = "dtp_desde"
         Me.dtp_desde.Size = New System.Drawing.Size(265, 22)
         Me.dtp_desde.TabIndex = 1
@@ -92,7 +92,7 @@ Partial Class Frm_ReporteEstadisticoDePracticas
         'dtp_hasta
         '
         Me.dtp_hasta.Location = New System.Drawing.Point(295, 31)
-        Me.dtp_hasta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtp_hasta.Margin = New System.Windows.Forms.Padding(4)
         Me.dtp_hasta.Name = "dtp_hasta"
         Me.dtp_hasta.Size = New System.Drawing.Size(265, 22)
         Me.dtp_hasta.TabIndex = 3
@@ -100,7 +100,7 @@ Partial Class Frm_ReporteEstadisticoDePracticas
         'btn_generar
         '
         Me.btn_generar.Location = New System.Drawing.Point(569, 27)
-        Me.btn_generar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_generar.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_generar.Name = "btn_generar"
         Me.btn_generar.Size = New System.Drawing.Size(100, 28)
         Me.btn_generar.TabIndex = 5
@@ -118,8 +118,9 @@ Partial Class Frm_ReporteEstadisticoDePracticas
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dtp_desde)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Frm_ReporteEstadisticoDePracticas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Estadística de Prácticas"
         CType(Me.EstadisticaPracticasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet4, System.ComponentModel.ISupportInitialize).EndInit()

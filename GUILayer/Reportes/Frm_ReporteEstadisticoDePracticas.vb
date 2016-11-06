@@ -3,7 +3,7 @@
 Public Class Frm_ReporteEstadisticoDePracticas
 
     Private Sub Frm_ReporteEstadisticoDePracticas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        
+        Me.ReportViewer1.LocalReport.DataSources.Clear()
     End Sub
 
     Private Sub btn_generar_Click(sender As Object, e As EventArgs) Handles btn_generar.Click

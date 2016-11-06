@@ -49,19 +49,20 @@ Partial Class Frm_EstadisticaTiposAfiliado
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "primeraEntrega.EstadisticaTiposAfiliado.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(462, 309)
+        Me.ReportViewer1.Size = New System.Drawing.Size(616, 380)
         Me.ReportViewer1.TabIndex = 0
         '
         'Frm_EstadisticaTiposAfiliado
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(462, 309)
+        Me.ClientSize = New System.Drawing.Size(616, 380)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Frm_EstadisticaTiposAfiliado"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Estadistica Tipos Afiliado"
         CType(Me.Estadistica2BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet5, System.ComponentModel.ISupportInitialize).EndInit()

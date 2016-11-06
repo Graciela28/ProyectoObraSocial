@@ -85,7 +85,8 @@
             End If
 
             .mail = row.Item("mail").ToString
-            If Convert.ToInt16(row.Item("esPropio").ToString) = 1 Then
+            MsgBox(row.Item("esPropio").ToString)
+            If (row.Item("esPropio").ToString.CompareTo("True") = 0) Then
                 .esPropio = True
             Else
                 .esPropio = False
@@ -196,14 +197,14 @@
             command.Parameters.AddWithValue("@denominacion", oCentroMedico.denominacion)
             command.Parameters.AddWithValue("@calle", oCentroMedico.calle)
             command.Parameters.AddWithValue("@numero", oCentroMedico.numero.ToString)
-            command.Parameters.AddWithValue("@id_barrio", oCentroMedico.codBarrio.ToString)
+            command.Parameters.AddWithValue("@cod_barrio", oCentroMedico.codBarrio.ToString)
             If oCentroMedico.telefonoCentro = 0 Then
                 command.Parameters.AddWithValue("@telefono", DBNull.Value)
             Else
                 command.Parameters.AddWithValue("@telefono", oCentroMedico.telefonoCentro.ToString)
             End If
             command.Parameters.AddWithValue("@mail", oCentroMedico.mail)
-            command.Parameters.AddWithValue("@esPropio", oCentroMedico.esPropio.ToString)
+            command.Parameters.AddWithValue("@es_propio", oCentroMedico.esPropio.ToString)
             command.Parameters.AddWithValue("@activo", oCentroMedico.activo)
             status = command.ExecuteNonQuery()
 

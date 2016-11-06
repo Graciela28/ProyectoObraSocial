@@ -19,7 +19,7 @@
     End Function
 
     'Devuelve un listado de Profesionales según el estado que se pasa por parámetro 
-    Public Function getByFilters(ByVal estado As Integer) As List(Of ConsultaDeProfesional)
+    Public Function getByFilters(ByVal estado As Integer, ByVal tipoDoc As Integer, ByVal nroDoc As Integer) As List(Of ConsultaDeProfesional)
 
         Dim listadoProfesionales As New List(Of ConsultaDeProfesional)
         Dim strSQL = "select P.id_tipo_doc, TD.nombre as Tipo_documento, P.numero_doc, PRO.matricula, " & _
@@ -31,7 +31,10 @@
             "D.id_barrio = B.id_barrio inner join Localidades L on B.id_localidad = L.id inner join " & _
             "Provincias PR on L.id_provincia = PR.id"
         If estado <> -1 Then strSQL += " and PRO.activo = " & estado
-        For Each row As DataRow In BDHelper.ConsultaSQL("strSQL").Rows
+        If tipoDoc <> -1 Then strSQL += " and P.id_tipo_doc = " & tipoDoc
+        If nroDoc <> -1 Then strSQL += " and P.numero_doc = " & nroDoc
+
+        For Each row As DataRow In BDHelper.ConsultaSQL(strSQL).Rows
             listadoProfesionales.Add(map(row))
         Next
         Return listadoProfesionales
@@ -149,6 +152,7 @@
         Try
             connection.ConnectionString = BDHelper.string_conexion
             connection.Open()
+            command.Connection = connection
             command.CommandType = CommandType.StoredProcedure
             command.CommandText = "stpro_eliminar_profesional"
             command.Parameters.Clear()

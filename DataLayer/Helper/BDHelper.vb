@@ -23,9 +23,6 @@ Public Class BDHelper
         End Try
     End Function
 
-
-   
-
     Public Shared Function ConsultaSQL(ByVal strSql As String) As Data.DataTable
         Dim conexion As New SqlClient.SqlConnection
         Dim cmd As New SqlClient.SqlCommand

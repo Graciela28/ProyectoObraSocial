@@ -24,12 +24,22 @@ Partial Class Frm_ListadoAfiliados
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewerAfiliados = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet2 = New primeraEntrega.DataSet2()
         Me.AfiliadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataSet2 = New primeraEntrega.DataSet2()
+        Me.ReportViewerAfiliados = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.AfiliadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'AfiliadosBindingSource
+        '
+        Me.AfiliadosBindingSource.DataMember = "Afiliados"
+        Me.AfiliadosBindingSource.DataSource = Me.DataSet2
+        '
+        'DataSet2
+        '
+        Me.DataSet2.DataSetName = "DataSet2"
+        Me.DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewerAfiliados
         '
@@ -43,16 +53,6 @@ Partial Class Frm_ListadoAfiliados
         Me.ReportViewerAfiliados.Size = New System.Drawing.Size(806, 441)
         Me.ReportViewerAfiliados.TabIndex = 0
         '
-        'DataSet2
-        '
-        Me.DataSet2.DataSetName = "DataSet2"
-        Me.DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'AfiliadosBindingSource
-        '
-        Me.AfiliadosBindingSource.DataMember = "Afiliados"
-        Me.AfiliadosBindingSource.DataSource = Me.DataSet2
-        '
         'Frm_ListadoAfiliados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -60,9 +60,10 @@ Partial Class Frm_ListadoAfiliados
         Me.ClientSize = New System.Drawing.Size(806, 441)
         Me.Controls.Add(Me.ReportViewerAfiliados)
         Me.Name = "Frm_ListadoAfiliados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Afiliados"
-        CType(Me.DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AfiliadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

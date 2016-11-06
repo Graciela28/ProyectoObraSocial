@@ -180,6 +180,7 @@ Public Class frm_registrar_Atencion
         tabla = oAfiliadoService.buscarAfiliado(cbo_tiposDocumento.SelectedValue, txt_docAfiliado.Text.Trim())
         If tabla.Rows.Count > 0 Then
             txt_n_afiliado.Text = tabla.Rows(0)("nombreCompleto").ToString
+            txt_n_afiliado.Enabled = False
             txt_n_afiliado.Tag = tabla.Rows(0)("tipoAfiliado").ToString
 
             oAtencion.fechaAtencion = Convert.ToDateTime(Me.dtp_fecha.Value.ToString("dd/MM/yyyy"))

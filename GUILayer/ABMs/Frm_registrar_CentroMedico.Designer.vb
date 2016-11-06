@@ -381,7 +381,7 @@ Partial Class frm_registrar_centroMedico
         Me.btn_Buscar.BackColor = System.Drawing.Color.Silver
         Me.btn_Buscar.BackgroundImage = CType(resources.GetObject("btn_Buscar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_Buscar.Location = New System.Drawing.Point(298, 425)
+        Me.btn_Buscar.Location = New System.Drawing.Point(298, 423)
         Me.btn_Buscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Buscar.Name = "btn_Buscar"
         Me.btn_Buscar.Size = New System.Drawing.Size(65, 62)

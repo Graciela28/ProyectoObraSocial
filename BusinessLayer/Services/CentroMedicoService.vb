@@ -14,7 +14,7 @@
     End Function
 
     Public Function registrarCentroMedico(ByVal oCentroMedico As CentroMedico) As Boolean
-        If oCentroMedicoDao.addCentroMedico(oCentroMedico) = 1 Then
+        If oCentroMedicoDao.addCentroMedico(oCentroMedico) <> 0 Then
             Return True
         Else
             Return False

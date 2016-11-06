@@ -27,6 +27,8 @@ Public Class frm_registrar_Afiliado
     Dim num_documento As Integer
 
     Private Sub frm_registrar_afiliado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.LimpiarCampos()
+        Me.seterarLabelsAColorInicial()
 
         'Carga de combos  
         cargaCombo(Me.cbo_tipo_documento, oTablaTipoService.ListarTipos("TiposDocumento"), "id", "nombre")
@@ -104,9 +106,7 @@ Public Class frm_registrar_Afiliado
     End Sub
 
     Private Sub cmd_Nuevo_Click(sender As Object, e As EventArgs) Handles btn_Nuevo.Click
-        lbl_nro_documento.BackColor = Color.CornflowerBlue
-        lbl_tipo_documento.BackColor = Color.CornflowerBlue
-
+        Me.seterarLabelsAColorInicial()
         Me.LimpiarCampos()
         Me.habilitarControles()
         Me.btn_Grabar.Enabled = True
@@ -152,7 +152,19 @@ Public Class frm_registrar_Afiliado
         End If
     End Function
 
-    
+    Private Sub LimpiarCamposParaBtnBuscar()
+        Me.txt_nombre.Text = ""
+        Me.txt_apellido.Text = ""
+        Me.cbo_tipo_afiliado.Text = ""
+        Me.txt_telefono.Text = ""
+        Me.txt_mail.Text = ""
+        Me.txt_calle.Text = ""
+        Me.txt_altura.Text = ""
+        Me.cbo_tipo_afiliado.SelectedIndex = -1
+        Me.cbo_provincias.SelectedIndex = -1
+        Me.cbo_localidades.SelectedIndex = -1
+        Me.cbo_barrios.SelectedIndex = -1
+    End Sub
 
     Private Sub LimpiarCampos()
         Me.txt_nombre.Text = ""
@@ -401,8 +413,9 @@ Public Class frm_registrar_Afiliado
     End Sub
 
     Private Sub cmd_Buscar_Click(sender As Object, e As EventArgs) Handles btn_Buscar.Click
+        Me.LimpiarCamposParaBtnBuscar()
         Me.deshabilitarControles()
-        'Me.LimpiarCampos()
+
         Dim oAfiliadoService As New AfiliadoService
         Dim tipo_documento As Integer = -1
 
@@ -425,8 +438,6 @@ Public Class frm_registrar_Afiliado
                 MessageBox.Show("No se encontró ningún Afiliado con ese documento", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
-
-
     End Sub
 
     Private Sub deshabilitarControles()
@@ -599,7 +610,23 @@ Public Class frm_registrar_Afiliado
         Return campos_completos
     End Function
 
+    Private Sub seterarLabelsAColorInicial()
+        lbl_nombre.ForeColor = Color.Black
+        lbl_apellido.ForeColor = Color.Black
+        lbl_tipo_documento.ForeColor = Color.Black
+        lbl_nro_documento.ForeColor = Color.Black
+        lbl_fecha_nac.ForeColor = Color.Black
+        lbl_direccion.ForeColor = Color.Black
+        lbl_numero.ForeColor = Color.Black
+        lbl_TipoAfiliado.ForeColor = Color.Black
+        lbl_Provincia.ForeColor = Color.Black
+        lbl_localidad.ForeColor = Color.Black
+        lbl_barrio.ForeColor = Color.Black
+        lbl_nro_documento.BackColor = Color.CornflowerBlue
+        lbl_tipo_documento.BackColor = Color.CornflowerBlue
+    End Sub
+
     Private Sub frm_registrar_afiliado_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        Me.Visible = False
+        Me.Close()
     End Sub
 End Class

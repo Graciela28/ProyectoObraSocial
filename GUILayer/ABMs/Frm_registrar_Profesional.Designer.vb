@@ -73,7 +73,7 @@ Partial Class frm_registrar_profesional
         Me.col_barrio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_localidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_estaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -463,7 +463,7 @@ Partial Class frm_registrar_profesional
         Me.dgv_profesionales.AllowUserToAddRows = False
         Me.dgv_profesionales.AllowUserToDeleteRows = False
         Me.dgv_profesionales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_profesionales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idTipoDoc, Me.col_nombreTipoDoc, Me.col_documento, Me.col_matricula, Me.col_nombre, Me.col_edad, Me.col_telefono, Me.col_eMail, Me.col_direccion, Me.col_barrio, Me.col_localidad, Me.col_provincia, Me.col_activo, Me.nombre})
+        Me.dgv_profesionales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idTipoDoc, Me.col_nombreTipoDoc, Me.col_documento, Me.col_matricula, Me.col_nombre, Me.col_edad, Me.col_telefono, Me.col_eMail, Me.col_direccion, Me.col_barrio, Me.col_localidad, Me.col_provincia, Me.col_estaActivo, Me.nombre})
         Me.dgv_profesionales.Location = New System.Drawing.Point(553, 12)
         Me.dgv_profesionales.Name = "dgv_profesionales"
         Me.dgv_profesionales.ReadOnly = True
@@ -553,12 +553,12 @@ Partial Class frm_registrar_profesional
         Me.col_provincia.Name = "col_provincia"
         Me.col_provincia.ReadOnly = True
         '
-        'col_activo
+        'col_estaActivo
         '
-        Me.col_activo.HeaderText = "Activo"
-        Me.col_activo.Name = "col_activo"
-        Me.col_activo.ReadOnly = True
-        Me.col_activo.Width = 50
+        Me.col_estaActivo.HeaderText = "Activo"
+        Me.col_estaActivo.Name = "col_estaActivo"
+        Me.col_estaActivo.ReadOnly = True
+        Me.col_estaActivo.Width = 50
         '
         'nombre
         '
@@ -648,7 +648,7 @@ Partial Class frm_registrar_profesional
     Friend WithEvents col_barrio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_localidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_provincia As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_activo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_estaActivo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

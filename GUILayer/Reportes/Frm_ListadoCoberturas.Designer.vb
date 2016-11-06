@@ -24,12 +24,22 @@ Partial Class Frm_ListadoCoberturas
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewerCoberturas = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet3 = New primeraEntrega.DataSet3()
         Me.CoberturasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DataSet3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataSet3 = New primeraEntrega.DataSet3()
+        Me.ReportViewerCoberturas = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.CoberturasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'CoberturasBindingSource
+        '
+        Me.CoberturasBindingSource.DataMember = "Coberturas"
+        Me.CoberturasBindingSource.DataSource = Me.DataSet3
+        '
+        'DataSet3
+        '
+        Me.DataSet3.DataSetName = "DataSet3"
+        Me.DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewerCoberturas
         '
@@ -43,16 +53,6 @@ Partial Class Frm_ListadoCoberturas
         Me.ReportViewerCoberturas.Size = New System.Drawing.Size(806, 414)
         Me.ReportViewerCoberturas.TabIndex = 0
         '
-        'DataSet3
-        '
-        Me.DataSet3.DataSetName = "DataSet3"
-        Me.DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CoberturasBindingSource
-        '
-        Me.CoberturasBindingSource.DataMember = "Coberturas"
-        Me.CoberturasBindingSource.DataSource = Me.DataSet3
-        '
         'Frm_ListadoCoberturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -60,9 +60,10 @@ Partial Class Frm_ListadoCoberturas
         Me.ClientSize = New System.Drawing.Size(806, 414)
         Me.Controls.Add(Me.ReportViewerCoberturas)
         Me.Name = "Frm_ListadoCoberturas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Coberturas"
-        CType(Me.DataSet3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CoberturasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

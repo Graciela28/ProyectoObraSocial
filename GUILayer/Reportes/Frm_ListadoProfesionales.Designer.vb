@@ -24,12 +24,22 @@ Partial Class Frm_ListadoProfesionales
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewerProfesionales = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet1 = New primeraEntrega.DataSet1()
         Me.ProfesionalesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataSet1 = New primeraEntrega.DataSet1()
+        Me.ReportViewerProfesionales = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.ProfesionalesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ProfesionalesBindingSource
+        '
+        Me.ProfesionalesBindingSource.DataMember = "Profesionales"
+        Me.ProfesionalesBindingSource.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewerProfesionales
         '
@@ -43,16 +53,6 @@ Partial Class Frm_ListadoProfesionales
         Me.ReportViewerProfesionales.Size = New System.Drawing.Size(699, 414)
         Me.ReportViewerProfesionales.TabIndex = 0
         '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ProfesionalesBindingSource
-        '
-        Me.ProfesionalesBindingSource.DataMember = "Profesionales"
-        Me.ProfesionalesBindingSource.DataSource = Me.DataSet1
-        '
         'Frm_ListadoProfesionales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -60,9 +60,10 @@ Partial Class Frm_ListadoProfesionales
         Me.ClientSize = New System.Drawing.Size(699, 414)
         Me.Controls.Add(Me.ReportViewerProfesionales)
         Me.Name = "Frm_ListadoProfesionales"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Profesionales "
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfesionalesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

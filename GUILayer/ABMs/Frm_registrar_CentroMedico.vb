@@ -27,6 +27,9 @@ Public Class frm_registrar_centroMedico
     Dim stringConexion As String = BDHelper.string_conexion
    
     Private Sub frm_registrar_centroMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.setearLabelsAColorInicial()
+        Me.LimpiarCampos()
+
         'Carga de Combos
         cargaCombo(Me.cbo_provincias, oTablaTipoService.listarTipos("Provincias"), "id", "nombre")
         Me.LimpiarCombos()
@@ -104,7 +107,7 @@ Public Class frm_registrar_centroMedico
     End Sub
 
     Private Sub cmd_nuevo_Click(sender As Object, e As EventArgs) Handles btn_Nuevo.Click
-
+        Me.setearLabelsAColorInicial()
         Me.LimpiarCampos()
         Me.habilitarControles()
         Me.btn_Grabar.Enabled = True
@@ -238,7 +241,7 @@ Public Class frm_registrar_centroMedico
             End If
         End If
 
-        If campos_completos = False Or ValidateEmail(txt_mail.Text) = False Then
+        If campos_completos = False Then
             MsgBox(mensajeAdvertencia, MsgBoxStyle.Exclamation, "Importante")
         End If
         Return campos_completos
@@ -259,6 +262,8 @@ Public Class frm_registrar_centroMedico
                 If Me.actualizarCentroMedico() = termino.aprobado Then
                     MessageBox.Show("Se modificó exitosamente", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     txt_nombre.Tag = ""
+                    Me.cargaGrilla()
+                    Me.LimpiarCampos()
                 Else
                     MessageBox.Show("Hubo un error en la actualización", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
@@ -280,10 +285,10 @@ Public Class frm_registrar_centroMedico
             If String.IsNullOrEmpty(txt_telefono.Text) = True Then
                 .telefonoCentro = 0
             Else
-                .telefonoCentro = 0 = Integer.Parse(txt_telefono.Text)
+                .telefonoCentro = Convert.ToInt64(txt_telefono.Text)
             End If
             .mail = txt_mail.Text
-            If (cbo_esPropio.SelectedText = "SI") Then
+            If (cbo_esPropio.Text = "SI") Then
                 .esPropio = True
             Else
                 .esPropio = False
@@ -325,61 +330,66 @@ Public Class frm_registrar_centroMedico
     End Function
 
     Private Sub cmd_Eliminar_Click(sender As Object, e As EventArgs) Handles btn_Eliminar.Click
-        Dim conexion As New SqlClient.SqlConnection
-        Dim command As New SqlClient.SqlCommand
+        If Not IsNothing(dgv_centros.CurrentRow) Then
+            If MessageBox.Show("Esta seguro que desea eliminar ese Centro?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
+                Dim conexion As New SqlClient.SqlConnection
+                Dim command As New SqlClient.SqlCommand
 
-        conexion.ConnectionString = Me.stringConexion
-        conexion.Open()
+                conexion.ConnectionString = Me.stringConexion
+                conexion.Open()
 
-        command.Connection = conexion
-        command.CommandType = CommandType.Text
-        command.CommandText = "UPDATE CentrosMedicos SET activo = 0 WHERE id_centro = " + dgv_centros.CurrentRow.Cells("id_centro").Value.ToString
-        command.ExecuteNonQuery()
+                command.Connection = conexion
+                command.CommandType = CommandType.Text
+                command.CommandText = "UPDATE CentrosMedicos SET activo = 0 WHERE id_centro = " + dgv_centros.CurrentRow.Cells("col_idCentro").Value.ToString
+                command.ExecuteNonQuery()
 
-        conexion.Close()
-        cargaGrilla()
+                conexion.Close()
+                cargaGrilla()
+            End If
+        Else
+            MessageBox.Show("Debe seleccionar un centro de la grilla")
+        End If
+        
     End Sub
 
     Private Sub cmd_Buscar_Click(sender As Object, e As EventArgs) Handles btn_Buscar.Click
-        Dim connection As New SqlClient.SqlConnection
-        Dim command As New SqlClient.SqlCommand
-        Dim tabla As New Data.DataTable
-        connection.ConnectionString = Me.stringConexion
+        If Not IsNothing(dgv_centros.CurrentRow) Then
+            Dim connection As New SqlClient.SqlConnection
+            Dim command As New SqlClient.SqlCommand
+            Dim tabla As New Data.DataTable
+            connection.ConnectionString = Me.stringConexion
 
-        connection.Open()
-        command.CommandType = CommandType.Text
-        command.CommandText = "SELECT * FROM CentrosMedicos C WHERE id_centro = " + dgv_centros.CurrentRow.Cells("id_centro").Value.ToString
-        command.Connection = connection
-        tabla.Load(command.ExecuteReader())
+            connection.Open()
+            command.CommandType = CommandType.Text
+            command.CommandText = "SELECT * FROM CentrosMedicos C WHERE id_centro = " + dgv_centros.CurrentRow.Cells("col_idCentro").Value.ToString
+            command.Connection = connection
+            tabla.Load(command.ExecuteReader())
 
-        txt_nombre.Text = tabla.Rows(0)("denominacion").ToString
-        txt_telefono.Text = tabla.Rows(0)("telefono").ToString
-        txt_mail.Text = tabla.Rows(0)("mail").ToString
+            txt_nombre.Text = tabla.Rows(0)("denominacion").ToString
+            txt_telefono.Text = tabla.Rows(0)("telefono").ToString
+            txt_mail.Text = tabla.Rows(0)("mail").ToString
 
-        If (tabla.Rows(0)("esPropio").ToString.CompareTo("True")) Then
-            cbo_esPropio.Text = "s"
+            If (tabla.Rows(0)("esPropio").ToString.CompareTo("True")) Then
+                cbo_esPropio.Text = "s"
+            Else
+                cbo_esPropio.Text = "n"
+            End If
+
+            'txt_calle.Text = tabla.Rows(0)("calle").ToString
+            'txt_altura.Text = tabla.Rows(0)("numero").ToString
+            'tabla.Rows(0)("nombre")
+            'tabla.Rows(0)("nombre1")
+            'tabla.Rows(0)("nombre2")
+            'tabla.Rows(0)("id_centro")
+            connection.Close()
         Else
-            cbo_esPropio.Text = "n"
+            MessageBox.Show("Debe seleccionar un centro de la grilla")
         End If
-
-        'txt_calle.Text = tabla.Rows(0)("calle").ToString
-        'txt_altura.Text = tabla.Rows(0)("numero").ToString
-        'tabla.Rows(0)("nombre")
-        'tabla.Rows(0)("nombre1")
-        'tabla.Rows(0)("nombre2")
-        'tabla.Rows(0)("id_centro")
-        connection.Close()
-    End Sub
-
-    Private Sub cmd_Salir_Click(sender As Object, e As EventArgs) Handles cmd_salir.Click
-        Me.Close()
-    End Sub
-
-    Private Sub frm_registrar_centroMedico_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        Me.Visible = False
+        
     End Sub
 
     Private Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
+        Me.habilitarControles()
         Dim idCentro As Integer
         idCentro = Integer.Parse(Me.dgv_centros.CurrentRow.Cells.Item("col_idCentro").Value.ToString)
 
@@ -391,21 +401,64 @@ Public Class frm_registrar_centroMedico
                 txt_nombre.Text = oCentroMedico.denominacion
                 txt_nombre.Tag = idCentro
                 If oCentroMedico.esPropio = True Then
-                    cbo_esPropio.SelectedText = "SI"
+                    cbo_esPropio.Text = "SI"
                 Else
-                    cbo_esPropio.SelectedText = "NO"
+                    cbo_esPropio.Text = "NO"
                 End If
                 txt_telefono.Text = oCentroMedico.telefonoCentro.ToString
                 txt_mail.Text = oCentroMedico.mail
                 txt_calle.Text = oCentroMedico.calle
                 txt_altura.Text = oCentroMedico.numero.ToString
-                cbo_barrios.SelectedValue = oCentroMedico.codBarrio
-                cbo_localidades.SelectedValue = oCentroMedico.idLocalidad
                 cbo_provincias.SelectedValue = oCentroMedico.idProvincia
+                cbo_provincias_SelectionChangeCommitted(sender, Nothing)
+                cbo_localidades.SelectedValue = oCentroMedico.idLocalidad
+                cbo_localidades_SelectionChangeCommitted(sender, Nothing)
+                cbo_barrios.SelectedValue = oCentroMedico.codBarrio
             End With
         Next
         btn_Grabar.Enabled = True
         Me.accion = estado.modificar
     End Sub
 
+    Private Sub setearLabelsAColorInicial()
+        lbl_nombre.ForeColor = Color.Black
+        lbl_direccion.ForeColor = Color.Black
+        lbl_altura.ForeColor = Color.Black
+        lbl_provincia.ForeColor = Color.Black
+        lbl_localidad.ForeColor = Color.Black
+        lbl_barrio.ForeColor = Color.Black
+        lbl_esPropio.ForeColor = Color.Black
+    End Sub
+
+    Private Sub dgv_centros_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_centros.CellClick
+        btn_Modificar.Enabled = True
+        btn_Eliminar.Enabled = True
+    End Sub
+
+    Private Sub cmd_Salir_Click(sender As Object, e As EventArgs) Handles cmd_salir.Click
+        Me.Close()
+    End Sub
+
+    
+    Private Sub txt_telefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_telefono.KeyPress
+        Select Case Asc(e.KeyChar)
+            Case 4, 24, 4, 19, 127, 13, 9, 15, 14
+                Exit Sub
+        End Select
+        If IsNumeric(e.KeyChar) = False Then
+            MsgBox("Este carater no es un numero ( " + e.KeyChar + " )", vbCritical, "Importante")
+            e.KeyChar = ""
+        End If
+    End Sub
+
+    Private Sub txt_altura_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_altura.KeyPress
+        Select Case Asc(e.KeyChar)
+            Case 4, 24, 4, 19, 127, 13, 9, 15, 14
+                Exit Sub
+        End Select
+        If IsNumeric(e.KeyChar) = False Then
+            MsgBox("Este carater no es un numero ( " + e.KeyChar + " )", vbCritical, "Importante")
+            e.KeyChar = ""
+        End If
+    End Sub
 End Class

@@ -53,10 +53,11 @@
         txt_codigo.Enabled = False
         txt_nombre.Enabled = False
         btn_grabar.Enabled = False
+        btn_modificar.Enabled = False
     End Sub
 
     Private Sub habilitarControles()
-        txt_codigo.Enabled = True
+        txt_codigo.Enabled = False
         txt_nombre.Enabled = True
     End Sub
 
@@ -161,10 +162,8 @@
         conexion.Close()
     End Sub
 
-    'Método para modificar en la tabla que estemos, utilizando los datos actuales en formulario
-    Private Sub modificar(ByVal con As String)
 
-        'Definición de los objetos que se requieren para lograr acceso a datos con una base de datos Access 
+    Private Sub modificar(ByVal con As String)
         Dim conexion As New SqlClient.SqlConnection
         Dim cmd As New SqlClient.SqlCommand
         Dim tabla As New Data.DataTable
@@ -178,20 +177,13 @@
         conexion.Open()
         'Asigna al objeto que corre los comando SQL con cual conexión va a trabajar 
         cmd.Connection = conexion
-        'Se especifica que se correrá un comando de tipo texto. En otras palabras este comando proviene desde
-        'la programación del "Form"
         cmd.CommandType = CommandType.Text
 
-        'Arma el "update" en forma genérica para insertar los datos que están en el "form" dentro de la tabla
-        'que se esta operando 
         sql_update = "update " & Me._tabla & " "
         sql_update &= "set nombre = '" & Me.txt_nombre.Text & "'"
         sql_update &= "where id= " & Me.txt_codigo.Text
 
-        'Le asigna al objeto comando "cmd" la instrucción "insert" que debe ejecutar 
         cmd.CommandText = sql_update
-        'Ejecuta el comando asignado, con el tipo especial "ExecuteNonQuery" que es para este tipo de 
-        'comando que no devuelve información hacia el "form"  
         cmd.ExecuteNonQuery()
         conexion.Close()
     End Sub
@@ -224,8 +216,6 @@
 
         'Le asigna al objeto comando "cmd" la instrucción "insert" que debe ejecutar 
         cmd.CommandText = sql_delete
-        'Ejecuta el comando asignado, con el tipo especial "ExecuteNonQuery" que es para este tipo de 
-        'comando que no devuelve información hacia el "form"  
         cmd.ExecuteNonQuery()
         conexion.Close()
     End Sub
@@ -261,5 +251,13 @@
 
     Private Sub frm_ABM_gener_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Me.Visible = False
+    End Sub
+
+    Private Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
+        txt_nombre.Enabled = True
+        txt_codigo.Text = row_selected.Cells(0).Value.ToString
+        txt_nombre.Text = row_selected.Cells(1).Value.ToString
+        Me.accion = estado.modificar
+        btn_grabar.Enabled = True
     End Sub
 End Class

@@ -9,7 +9,7 @@
         Return oAtencionDao.obtenerFechaActual()
     End Function
 
-    Public Function listarAtencionesConFiltro(Optional ByVal fechaInicio As DateTime = Nothing, Optional ByVal fechaFin As DateTime = Nothing, Optional ByVal tipoDoc As Integer = Nothing, Optional ByVal numDoc As Integer = Nothing) As List(Of Atencion)
+    Public Function listarAtencionesConFiltro(Optional ByVal fechaInicio As Date = Nothing, Optional ByVal fechaFin As Date = Nothing, Optional ByVal tipoDoc As Integer = Nothing, Optional ByVal numDoc As Integer = Nothing) As List(Of Atencion)
         Return oAtencionDao.ListarAtencionesConFiltro(fechaInicio, fechaFin, tipoDoc, numDoc)
     End Function
 
