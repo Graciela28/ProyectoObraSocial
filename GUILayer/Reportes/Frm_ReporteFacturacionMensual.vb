@@ -3,6 +3,15 @@
 Public Class Frm_ReporteFacturacionMensual
 
     Private Sub Frm_ReporteFacturacionMensual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.ReportViewer1.LocalReport.DataSources.Clear()
+    End Sub
+
+    Private Sub btn_generar_Click(sender As Object, e As EventArgs) Handles btn_generar.Click
+        If (dtp_desde.Value > dtp_hasta.Value) Then
+            MsgBox("Periodo incorrecto", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+
         Dim consulta As String = ""
         Dim tabla As DataTable
         consulta = "select T7.denominacion as n_centro, "
@@ -28,7 +37,9 @@ Public Class Frm_ReporteFacturacionMensual
         consulta += "on T6.id_tipo_doc = T8.id_tipo_doc "
         consulta += "and T6.numero_doc = T8.numero_doc inner join CentrosMedicos T7 "
         consulta += "on T4.id_centro = T7.id_centro "
+        consulta += "where T1.fecha_atencion BETWEEN CONVERT(datetime, '" + dtp_desde.Value.ToString("dd/MM/yyyy") + "', 103) AND CONVERT(datetime, '" + dtp_hasta.Value.ToString("dd/MM/yyyy") + "',103) "
         consulta += "group by T7.denominacion, T8.apellido, T8.nombre, T5.nombre, T9.apellido, T9.nombre "
+
         Me.ReportViewer1.RefreshReport()
         tabla = BDHelper.ConsultaSQL(consulta)
         Me.ReportViewer1.LocalReport.DataSources.Clear()

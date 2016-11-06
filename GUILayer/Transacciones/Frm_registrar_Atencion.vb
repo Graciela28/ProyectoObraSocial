@@ -77,6 +77,8 @@ Public Class frm_registrar_Atencion
     Private Sub frm_registrar_Atencion_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         dtp_fecha.Value = oAtencionService.obtenerFechaActual()
+        dtp_fecha.Enabled = False
+
         'Carga de Combos
         cargaCombo(Me.cbo_centros, oProfesionalesxCentroxEspecialidadService.getCentrosMedicos(), "id_centro", "denominacion")
         cargaCombo(Me.cbo_tiposDocumento, oTablaTipoService.ListarTipos("TiposDocumento"), "id", "nombre")
@@ -102,7 +104,6 @@ Public Class frm_registrar_Atencion
     End Sub
 
     Private Sub deshabilitarControles()
-        dtp_fecha.Enabled = False
         Me.grp_detalles.Enabled = False
         txt_total_sc.Enabled = False
         txt_total_cc.Enabled = False
@@ -123,6 +124,7 @@ Public Class frm_registrar_Atencion
         combo.DataSource = datos
         combo.ValueMember = pk
         combo.DisplayMember = descripcion
+        combo.SelectedIndex = -1
     End Sub
 
     Private Sub cbo_centros_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbo_centros.SelectionChangeCommitted
@@ -130,12 +132,14 @@ Public Class frm_registrar_Atencion
         cbo_especialidades.DataSource = oProfesionalesxCentroxEspecialidadService.getEspecialidadesConFiltro(cbo_centros.SelectedValue)
         cbo_especialidades.ValueMember = "id_especialidad"
         cbo_especialidades.DisplayMember = "nombre"
+        cbo_especialidades.SelectedIndex = -1
     End Sub
 
     Private Sub cbo_especialidades_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbo_especialidades.SelectionChangeCommitted
         cbo_profesionales.DataSource = oProfesionalesxCentroxEspecialidadService.getProfesionalesConFiltro(cbo_centros.SelectedValue, cbo_especialidades.SelectedValue)
         cbo_profesionales.ValueMember = "matricula"
         cbo_profesionales.DisplayMember = "nombreCompleto"
+        cbo_profesionales.SelectedIndex = -1
 
         cbo_practicas.DataSource = oPracticasxEspecialidadService.getPracticasConFiltro(cbo_especialidades.SelectedValue)
         cbo_practicas.ValueMember = "id"
@@ -157,6 +161,7 @@ Public Class frm_registrar_Atencion
                 txt_subtotal.Text = oCoberturaService.calcularSubTotal(oCobertura.precioPractica, oCobertura.porcentajeCobertura, 1)
             End With
         Next
+        Me.btn_agregarAGrilla.Enabled = True
     End Sub
 
     Private Sub cbo_profesionales_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbo_profesionales.SelectionChangeCommitted
@@ -166,10 +171,8 @@ Public Class frm_registrar_Atencion
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        Dim oAtencion As New Atencion
-        Dim tabla As New DataTable
-        Dim tabla2 As New DataTable
 
+        Dim tabla As New DataTable
 
         If cbo_tiposDocumento.SelectedIndex = -1 Or txt_docAfiliado.Text = String.Empty Then
             MessageBox.Show("Debe ingresar un tipo y número de documento", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation _
@@ -182,40 +185,6 @@ Public Class frm_registrar_Atencion
             txt_n_afiliado.Text = tabla.Rows(0)("nombreCompleto").ToString
             txt_n_afiliado.Enabled = False
             txt_n_afiliado.Tag = tabla.Rows(0)("tipoAfiliado").ToString
-
-            oAtencion.fechaAtencion = Convert.ToDateTime(Me.dtp_fecha.Value.ToString("dd/MM/yyyy"))
-            oAtencion.tipoDocAfiliado = Convert.ToInt16(cbo_tiposDocumento.SelectedValue)
-            oAtencion.nroDocAfiliado = Convert.ToInt32(txt_docAfiliado.Text)
-            oAtencion.idCentro = Convert.ToInt16(cbo_centros.SelectedValue)
-            oAtencion.matriculaProfesional = Convert.ToInt64(cbo_profesionales.SelectedValue)
-            oAtencion.idEspecialidad = Convert.ToInt16(cbo_especialidades.SelectedValue)
-            oAtencion.fechaAltaProfesional = Convert.ToDateTime(cbo_profesionales.Tag)
-            tabla2 = validar_Existencia(oAtencion)
-
-            If tabla2.Rows.Count() <> 1 Then
-                Me.grp_detalles.Enabled = True
-                Me.btn_grabar.Enabled = True
-            Else
-                If MsgBox("La Atención para ese paciente ya existe, desea modificarla?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Importante") = MsgBoxResult.Yes Then
-                    frm_mostrar_atencion.fecha = oAtencion.fechaAtencion
-                    frm_mostrar_atencion.selected_tipoDoc = oAtencion.tipoDocAfiliado
-                    frm_mostrar_atencion.selected_nroDoc = oAtencion.nroDocAfiliado
-                    frm_mostrar_atencion.selected_centro = oAtencion.idCentro
-                    frm_mostrar_atencion.selected_profesional = oAtencion.matriculaProfesional
-                    frm_mostrar_atencion.selected_especialidad = oAtencion.idEspecialidad
-                    frm_mostrar_atencion.fecha_altaProf = oAtencion.fechaAltaProfesional
-                    frm_mostrar_atencion.nombre_completo = txt_n_afiliado.Text
-                    frm_mostrar_atencion.tipoAfiliado = txt_n_afiliado.Tag
-                    frm_mostrar_atencion.modificar = True
-                    frm_mostrar_atencion.listaDetalles = oAtencionService.getDetallesAtencionByFilters(oAtencion)
-                    frm_mostrar_atencion.totalSinCobertura = Convert.ToDouble(tabla2.Rows(0)("total_sc").ToString)
-                    frm_mostrar_atencion.totalConCobertura = Convert.ToDouble(tabla2.Rows(0)("total_cc").ToString)
-                    frm_mostrar_atencion.total = Convert.ToDouble(tabla2.Rows(0)("total").ToString)
-                    frm_mostrar_atencion.idEstado = 1
-
-                    frm_mostrar_atencion.ShowDialog()
-                End If
-            End If
         Else
             MessageBox.Show("El tipo y número de documento ingresado no corresponde a un Afiliado", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation _
                , MessageBoxDefaultButton.Button1)
@@ -240,25 +209,35 @@ Public Class frm_registrar_Atencion
 
 
     Private Sub btn_agregarAGrilla_Click(sender As Object, e As EventArgs) Handles btn_agregarAGrilla.Click
-        Dim fila As Integer = Me.buscarPracticaDuplicada()
-        If fila > -1 Then
-            dgv_practicas.Rows(fila).Cells(5).Value = Convert.ToDouble(dgv_practicas.Rows(fila).Cells(5).Value) + Convert.ToDouble(txt_cantidad.Text)
-            dgv_practicas.Rows(fila).Cells(6).Value = Convert.ToDouble(dgv_practicas.Rows(fila).Cells(6).Value) + Convert.ToDouble(txt_subtotal.Text)
+        If (cbo_practicas.SelectedIndex <> -1) Then
+            Dim fila As Integer = Me.buscarPracticaDuplicada()
+            If fila > -1 Then
+                dgv_practicas.Rows(fila).Cells(5).Value = Convert.ToDouble(dgv_practicas.Rows(fila).Cells(5).Value) + Convert.ToDouble(txt_cantidad.Text)
+                dgv_practicas.Rows(fila).Cells(6).Value = Convert.ToDouble(dgv_practicas.Rows(fila).Cells(6).Value) + Convert.ToDouble(txt_subtotal.Text)
+            Else
+                dgv_practicas.Rows.Add(cbo_practicas.SelectedValue, _
+                                       cbo_practicas.Text.ToString, _
+                                       txt_preciosc.Text, _
+                                       txt_cobertura.Text, _
+                                       txt_preciocc.Text, _
+                                       txt_cantidad.Text, _
+                                       txt_subtotal.Text)
+            End If
+            Me.txt_total_sc.Text = Me.calcularTotal(2)
+            Me.txt_total_cc.Text = Me.calcularTotal(4)
+
+            'Limpia campos para volver a seleccionar una práctica
+            Me.txt_preciosc.Text = String.Empty
+            Me.txt_cobertura.Text = String.Empty
+            Me.txt_preciocc.Text = String.Empty
+            Me.txt_cantidad.Text = String.Empty
+            Me.txt_subtotal.Text = String.Empty
+            Me.btn_agregarAGrilla.Enabled = False
+            Me.cbo_practicas.SelectedIndex = -1
         Else
-            dgv_practicas.Rows.Add(cbo_practicas.SelectedValue, _
-                                   cbo_practicas.Text.ToString, _
-                                   txt_preciosc.Text, _
-                                   txt_cobertura.Text, _
-                                   txt_preciocc.Text, _
-                                   txt_cantidad.Text, _
-                                   txt_subtotal.Text)
+            MessageBox.Show("Debe seleccionar una práctica", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
-        Me.txt_total_sc.Text = Me.calcularTotal(2)
-        Me.txt_total_cc.Text = Me.calcularTotal(4)
-
     End Sub
-
-
 
     Private Function calcularTotal(ByVal columna As Integer) As Double
         Dim c As Integer
@@ -291,6 +270,7 @@ Public Class frm_registrar_Atencion
     Private Sub btn_nuevo_Click(sender As Object, e As EventArgs) Handles btn_nuevo.Click
         Me.LimpiarCampos()
         Me.habilitarCabecera()
+        Me.deshabilitarControles()
         Me.cbo_centros.Focus()
         Me.accion = estado.insertar
     End Sub
@@ -366,12 +346,10 @@ Public Class frm_registrar_Atencion
                 frm_mostrar_atencion.idEstado = 1
                 Me.LimpiarCampos()
                 frm_mostrar_atencion.ShowDialog()
-
             End If
         Else
             MsgBox("Debe seleccionar al menos una práctica para registrar la Atención")
         End If
-
     End Sub
 
     Private Function mapToDetalleAtencion(row As DataGridViewRow) As DetalleAtencion
@@ -390,7 +368,6 @@ Public Class frm_registrar_Atencion
 
     Public Sub mostrarAtencion(ByVal oAtencion As Atencion)
         Me.Text = " Mostrar Atención"
-        MsgBox(oAtencion.fechaAtencion.ToString("dd/MM/yyyy"))
         Me.dtp_fecha.Value = oAtencion.fechaAtencion.ToString()
         Me.cbo_centros.SelectedValue = oAtencion.idCentro
 
@@ -448,10 +425,85 @@ Public Class frm_registrar_Atencion
     Private Sub txt_total_cc_TextChanged(sender As Object, e As EventArgs) Handles txt_total_cc.TextChanged
         Dim total As Double
         If txt_total_cc.Text <> String.Empty Then
-            total = Convert.ToDouble(txt_total_sc.Text) - Convert.ToDouble(txt_total_cc.Text)
+            total = Convert.ToDouble(txt_total_cc.Text)
             txt_total.Text = total
         Else
             txt_total.Text = String.Empty
         End If
     End Sub
+
+    Private Sub btn_agregarDetalle_Click(sender As Object, e As EventArgs) Handles btn_agregarDetalle.Click
+
+        If (validarCabeceraCompleta()) Then
+            Dim oAtencion As New Atencion
+            Dim tabla2 As New DataTable
+
+            oAtencion.fechaAtencion = Convert.ToDateTime(Me.dtp_fecha.Value.ToString("dd/MM/yyyy"))
+            oAtencion.tipoDocAfiliado = Convert.ToInt16(cbo_tiposDocumento.SelectedValue)
+            oAtencion.nroDocAfiliado = Convert.ToInt32(txt_docAfiliado.Text)
+            oAtencion.idCentro = Convert.ToInt16(cbo_centros.SelectedValue)
+            oAtencion.matriculaProfesional = Convert.ToInt64(cbo_profesionales.SelectedValue)
+            oAtencion.idEspecialidad = Convert.ToInt16(cbo_especialidades.SelectedValue)
+            oAtencion.fechaAltaProfesional = Convert.ToDateTime(cbo_profesionales.Tag)
+            tabla2 = validar_Existencia(oAtencion)
+
+            If tabla2.Rows.Count() <> 1 Then
+                Me.grp_detalles.Enabled = True
+                Me.txt_preciosc.Enabled = False
+                Me.txt_cobertura.Enabled = False
+                Me.txt_preciocc.Enabled = False
+                Me.txt_cantidad.Enabled = False
+                Me.txt_subtotal.Enabled = False
+                Me.btn_agregarAGrilla.Enabled = False
+                Me.btn_grabar.Enabled = True
+            Else
+                If MsgBox("La Atención para ese paciente ya existe, desea modificarla?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Importante") = MsgBoxResult.Yes Then
+                    frm_mostrar_atencion.fecha = oAtencion.fechaAtencion
+                    frm_mostrar_atencion.selected_tipoDoc = oAtencion.tipoDocAfiliado
+                    frm_mostrar_atencion.selected_nroDoc = oAtencion.nroDocAfiliado
+                    frm_mostrar_atencion.selected_centro = oAtencion.idCentro
+                    frm_mostrar_atencion.selected_profesional = oAtencion.matriculaProfesional
+                    frm_mostrar_atencion.selected_especialidad = oAtencion.idEspecialidad
+                    frm_mostrar_atencion.fecha_altaProf = oAtencion.fechaAltaProfesional
+                    frm_mostrar_atencion.nombre_completo = txt_n_afiliado.Text
+                    frm_mostrar_atencion.tipoAfiliado = txt_n_afiliado.Tag
+                    frm_mostrar_atencion.modificar = True
+                    frm_mostrar_atencion.listaDetalles = oAtencionService.getDetallesAtencionByFilters(oAtencion)
+                    frm_mostrar_atencion.totalSinCobertura = Convert.ToDouble(tabla2.Rows(0)("total_sc").ToString)
+                    frm_mostrar_atencion.totalConCobertura = Convert.ToDouble(tabla2.Rows(0)("total_cc").ToString)
+                    frm_mostrar_atencion.total = Convert.ToDouble(tabla2.Rows(0)("total").ToString)
+                    frm_mostrar_atencion.idEstado = 1
+                    frm_mostrar_atencion.ShowDialog()
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Function validarCabeceraCompleta() As Boolean
+        Dim estaCompleta As Boolean = True
+        If (cbo_centros.SelectedIndex = -1) Then
+            MessageBox.Show("Debe seleccionar un centro médico", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            estaCompleta = False
+            Return estaCompleta
+        End If
+
+        If (cbo_especialidades.SelectedIndex = -1) Then
+            MessageBox.Show("Debe seleccionar una especialidad", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            estaCompleta = False
+            Return estaCompleta
+        End If
+
+        If (cbo_profesionales.SelectedIndex = -1) Then
+            MessageBox.Show("Debe seleccionar un profesional", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            estaCompleta = False
+            Return estaCompleta
+        End If
+
+        If (txt_n_afiliado.Text = String.Empty) Then
+            MessageBox.Show("Debe buscar un afiliado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            estaCompleta = False
+            Return estaCompleta
+        End If
+        Return estaCompleta
+    End Function
 End Class

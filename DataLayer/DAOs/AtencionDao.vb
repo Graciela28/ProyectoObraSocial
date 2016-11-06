@@ -292,4 +292,38 @@
         End With
         Return oDetalleAtencion
     End Function
+
+    Public Function cerrarAtenciones() As Boolean
+
+        Dim conexion As New SqlClient.SqlConnection
+        Dim cmd As SqlClient.SqlCommand = Nothing
+        Dim status As Boolean
+        Dim consulta As String = ""
+
+        Try
+            conexion.ConnectionString = BDHelper.string_conexion
+            conexion.Open()
+
+            consulta = "UPDATE Atenciones set estado = 2 "
+            consulta += "where fecha_atencion < @fecha and estado = 1"
+
+            cmd = New SqlClient.SqlCommand(consulta, conexion)
+
+            cmd.Parameters.AddWithValue("@fecha", Date.Now.ToString("dd/MM/yyyy"))
+            If (cmd.ExecuteNonQuery() <> 0) Then
+                status = True
+            Else
+                status = False
+            End If
+        Catch sqlEx As SqlClient.SqlException
+            status = False
+            Throw sqlEx
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexion.Close()
+            conexion.Dispose()
+        End Try
+        Return status
+    End Function
 End Class

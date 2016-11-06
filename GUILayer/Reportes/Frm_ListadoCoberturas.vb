@@ -13,7 +13,7 @@ Public Class Frm_ListadoCoberturas
         consulta += "on T1.id_centro = T3.id_centro inner join "
         consulta += "PracticasxEspecialidad T4 on T1.id_practica = T4.id_practica "
         consulta += "and T1.id_especialidad = T4.id_especialidad inner join "
-        consulta += "Especialidades T6 on T4.id_practica = T6.id inner join "
+        consulta += "Especialidades T6 on T4.id_especialidad = T6.id inner join "
         consulta += "Practicas T5 on T4.id_practica = T5.id  "
         consulta += "order by T3.denominacion  "
 

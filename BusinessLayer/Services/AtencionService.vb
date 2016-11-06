@@ -28,4 +28,8 @@
     Public Function eliminarAtencion(ByVal oAtencion As Atencion) As Boolean
         Return oAtencionDao.eliminarAtencion(oAtencion)
     End Function
+
+    Public Function cerrarAtenciones() As Boolean
+        Return oAtencionDao.cerrarAtenciones()
+    End Function
 End Class

@@ -50,14 +50,14 @@ Partial Class Frm_ListadoCoberturas
         Me.ReportViewerCoberturas.LocalReport.ReportEmbeddedResource = "primeraEntrega.ListadoCoberturas.rdlc"
         Me.ReportViewerCoberturas.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewerCoberturas.Name = "ReportViewerCoberturas"
-        Me.ReportViewerCoberturas.Size = New System.Drawing.Size(806, 414)
+        Me.ReportViewerCoberturas.Size = New System.Drawing.Size(832, 427)
         Me.ReportViewerCoberturas.TabIndex = 0
         '
         'Frm_ListadoCoberturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(806, 414)
+        Me.ClientSize = New System.Drawing.Size(832, 427)
         Me.Controls.Add(Me.ReportViewerCoberturas)
         Me.Name = "Frm_ListadoCoberturas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

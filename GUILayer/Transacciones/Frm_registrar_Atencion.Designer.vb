@@ -76,6 +76,7 @@ Partial Class frm_registrar_Atencion
         Me.txt_estado = New System.Windows.Forms.TextBox()
         Me.txt_total = New System.Windows.Forms.MaskedTextBox()
         Me.lbl_total = New System.Windows.Forms.Label()
+        Me.btn_agregarDetalle = New System.Windows.Forms.Button()
         Me.grp_detalles.SuspendLayout()
         CType(Me.dgv_practicas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -85,7 +86,7 @@ Partial Class frm_registrar_Atencion
         '
         Me.lbl_fecha.AutoSize = True
         Me.lbl_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_fecha.Location = New System.Drawing.Point(48, 29)
+        Me.lbl_fecha.Location = New System.Drawing.Point(48, 42)
         Me.lbl_fecha.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_fecha.Name = "lbl_fecha"
         Me.lbl_fecha.Size = New System.Drawing.Size(53, 18)
@@ -96,7 +97,7 @@ Partial Class frm_registrar_Atencion
         '
         Me.lbl_centro.AutoSize = True
         Me.lbl_centro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_centro.Location = New System.Drawing.Point(42, 66)
+        Me.lbl_centro.Location = New System.Drawing.Point(42, 86)
         Me.lbl_centro.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_centro.Name = "lbl_centro"
         Me.lbl_centro.Size = New System.Drawing.Size(57, 18)
@@ -121,7 +122,7 @@ Partial Class frm_registrar_Atencion
         Me.grp_detalles.Controls.Add(Me.txt_preciosc)
         Me.grp_detalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.grp_detalles.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.grp_detalles.Location = New System.Drawing.Point(15, 189)
+        Me.grp_detalles.Location = New System.Drawing.Point(15, 206)
         Me.grp_detalles.Margin = New System.Windows.Forms.Padding(4)
         Me.grp_detalles.Name = "grp_detalles"
         Me.grp_detalles.Padding = New System.Windows.Forms.Padding(4)
@@ -326,7 +327,7 @@ Partial Class frm_registrar_Atencion
         '
         Me.lbl_total_cc.AutoSize = True
         Me.lbl_total_cc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_total_cc.Location = New System.Drawing.Point(663, 640)
+        Me.lbl_total_cc.Location = New System.Drawing.Point(663, 649)
         Me.lbl_total_cc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_total_cc.Name = "lbl_total_cc"
         Me.lbl_total_cc.Size = New System.Drawing.Size(69, 18)
@@ -337,7 +338,7 @@ Partial Class frm_registrar_Atencion
         '
         Me.lbl_total_sc.AutoSize = True
         Me.lbl_total_sc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_total_sc.Location = New System.Drawing.Point(662, 607)
+        Me.lbl_total_sc.Location = New System.Drawing.Point(662, 617)
         Me.lbl_total_sc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_total_sc.Name = "lbl_total_sc"
         Me.lbl_total_sc.Size = New System.Drawing.Size(69, 18)
@@ -395,7 +396,7 @@ Partial Class frm_registrar_Atencion
         'txt_total_sc
         '
         Me.txt_total_sc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_total_sc.Location = New System.Drawing.Point(736, 603)
+        Me.txt_total_sc.Location = New System.Drawing.Point(736, 615)
         Me.txt_total_sc.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_total_sc.Name = "txt_total_sc"
         Me.txt_total_sc.ReadOnly = True
@@ -406,7 +407,7 @@ Partial Class frm_registrar_Atencion
         'txt_total_cc
         '
         Me.txt_total_cc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_total_cc.Location = New System.Drawing.Point(736, 638)
+        Me.txt_total_cc.Location = New System.Drawing.Point(736, 646)
         Me.txt_total_cc.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_total_cc.Name = "txt_total_cc"
         Me.txt_total_cc.ReadOnly = True
@@ -431,7 +432,7 @@ Partial Class frm_registrar_Atencion
         'txt_docAfiliado
         '
         Me.txt_docAfiliado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_docAfiliado.Location = New System.Drawing.Point(205, 147)
+        Me.txt_docAfiliado.Location = New System.Drawing.Point(205, 165)
         Me.txt_docAfiliado.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_docAfiliado.MaxLength = 8
         Me.txt_docAfiliado.Name = "txt_docAfiliado"
@@ -441,7 +442,7 @@ Partial Class frm_registrar_Atencion
         'txt_n_afiliado
         '
         Me.txt_n_afiliado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_n_afiliado.Location = New System.Drawing.Point(416, 148)
+        Me.txt_n_afiliado.Location = New System.Drawing.Point(411, 163)
         Me.txt_n_afiliado.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_n_afiliado.Name = "txt_n_afiliado"
         Me.txt_n_afiliado.Size = New System.Drawing.Size(205, 24)
@@ -451,7 +452,7 @@ Partial Class frm_registrar_Atencion
         '
         Me.lbl_Afiliado.AutoSize = True
         Me.lbl_Afiliado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Afiliado.Location = New System.Drawing.Point(40, 149)
+        Me.lbl_Afiliado.Location = New System.Drawing.Point(40, 172)
         Me.lbl_Afiliado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_Afiliado.Name = "lbl_Afiliado"
         Me.lbl_Afiliado.Size = New System.Drawing.Size(59, 18)
@@ -461,7 +462,7 @@ Partial Class frm_registrar_Atencion
         'btn_buscar
         '
         Me.btn_buscar.Image = CType(resources.GetObject("btn_buscar.Image"), System.Drawing.Image)
-        Me.btn_buscar.Location = New System.Drawing.Point(362, 133)
+        Me.btn_buscar.Location = New System.Drawing.Point(361, 150)
         Me.btn_buscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(41, 39)
@@ -470,7 +471,7 @@ Partial Class frm_registrar_Atencion
         '
         'dtp_fecha
         '
-        Me.dtp_fecha.Location = New System.Drawing.Point(110, 25)
+        Me.dtp_fecha.Location = New System.Drawing.Point(110, 41)
         Me.dtp_fecha.Name = "dtp_fecha"
         Me.dtp_fecha.Size = New System.Drawing.Size(287, 24)
         Me.dtp_fecha.TabIndex = 0
@@ -479,7 +480,7 @@ Partial Class frm_registrar_Atencion
         '
         Me.cbo_centros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_centros.FormattingEnabled = True
-        Me.cbo_centros.Location = New System.Drawing.Point(110, 63)
+        Me.cbo_centros.Location = New System.Drawing.Point(110, 81)
         Me.cbo_centros.Name = "cbo_centros"
         Me.cbo_centros.Size = New System.Drawing.Size(237, 26)
         Me.cbo_centros.TabIndex = 1
@@ -487,7 +488,7 @@ Partial Class frm_registrar_Atencion
         'lbl_especialidad
         '
         Me.lbl_especialidad.AutoSize = True
-        Me.lbl_especialidad.Location = New System.Drawing.Point(413, 71)
+        Me.lbl_especialidad.Location = New System.Drawing.Point(413, 84)
         Me.lbl_especialidad.Name = "lbl_especialidad"
         Me.lbl_especialidad.Size = New System.Drawing.Size(95, 18)
         Me.lbl_especialidad.TabIndex = 14
@@ -497,7 +498,7 @@ Partial Class frm_registrar_Atencion
         '
         Me.cbo_especialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_especialidades.FormattingEnabled = True
-        Me.cbo_especialidades.Location = New System.Drawing.Point(514, 65)
+        Me.cbo_especialidades.Location = New System.Drawing.Point(512, 80)
         Me.cbo_especialidades.Name = "cbo_especialidades"
         Me.cbo_especialidades.Size = New System.Drawing.Size(202, 26)
         Me.cbo_especialidades.TabIndex = 2
@@ -505,7 +506,7 @@ Partial Class frm_registrar_Atencion
         'lbl_profesional
         '
         Me.lbl_profesional.AutoSize = True
-        Me.lbl_profesional.Location = New System.Drawing.Point(12, 104)
+        Me.lbl_profesional.Location = New System.Drawing.Point(12, 122)
         Me.lbl_profesional.Name = "lbl_profesional"
         Me.lbl_profesional.Size = New System.Drawing.Size(87, 18)
         Me.lbl_profesional.TabIndex = 16
@@ -515,16 +516,16 @@ Partial Class frm_registrar_Atencion
         '
         Me.cbo_profesionales.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_profesionales.FormattingEnabled = True
-        Me.cbo_profesionales.Location = New System.Drawing.Point(110, 101)
+        Me.cbo_profesionales.Location = New System.Drawing.Point(110, 119)
         Me.cbo_profesionales.Name = "cbo_profesionales"
         Me.cbo_profesionales.Size = New System.Drawing.Size(237, 26)
         Me.cbo_profesionales.TabIndex = 3
         '
         'btn_verHistorial
         '
-        Me.btn_verHistorial.Location = New System.Drawing.Point(628, 137)
+        Me.btn_verHistorial.Location = New System.Drawing.Point(626, 153)
         Me.btn_verHistorial.Name = "btn_verHistorial"
-        Me.btn_verHistorial.Size = New System.Drawing.Size(106, 37)
+        Me.btn_verHistorial.Size = New System.Drawing.Size(103, 35)
         Me.btn_verHistorial.TabIndex = 9
         Me.btn_verHistorial.Text = "Ver Historial"
         Me.btn_verHistorial.UseVisualStyleBackColor = True
@@ -533,7 +534,7 @@ Partial Class frm_registrar_Atencion
         '
         Me.cbo_tiposDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_tiposDocumento.FormattingEnabled = True
-        Me.cbo_tiposDocumento.Location = New System.Drawing.Point(110, 146)
+        Me.cbo_tiposDocumento.Location = New System.Drawing.Point(110, 164)
         Me.cbo_tiposDocumento.Name = "cbo_tiposDocumento"
         Me.cbo_tiposDocumento.Size = New System.Drawing.Size(88, 26)
         Me.cbo_tiposDocumento.TabIndex = 4
@@ -541,7 +542,7 @@ Partial Class frm_registrar_Atencion
         'lbl_estado
         '
         Me.lbl_estado.AutoSize = True
-        Me.lbl_estado.Location = New System.Drawing.Point(677, 23)
+        Me.lbl_estado.Location = New System.Drawing.Point(677, 16)
         Me.lbl_estado.Name = "lbl_estado"
         Me.lbl_estado.Size = New System.Drawing.Size(59, 18)
         Me.lbl_estado.TabIndex = 17
@@ -549,7 +550,7 @@ Partial Class frm_registrar_Atencion
         '
         'txt_estado
         '
-        Me.txt_estado.Location = New System.Drawing.Point(736, 19)
+        Me.txt_estado.Location = New System.Drawing.Point(739, 13)
         Me.txt_estado.Name = "txt_estado"
         Me.txt_estado.Size = New System.Drawing.Size(114, 24)
         Me.txt_estado.TabIndex = 18
@@ -557,7 +558,7 @@ Partial Class frm_registrar_Atencion
         'txt_total
         '
         Me.txt_total.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_total.Location = New System.Drawing.Point(736, 670)
+        Me.txt_total.Location = New System.Drawing.Point(736, 678)
         Me.txt_total.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_total.Name = "txt_total"
         Me.txt_total.ReadOnly = True
@@ -569,19 +570,29 @@ Partial Class frm_registrar_Atencion
         '
         Me.lbl_total.AutoSize = True
         Me.lbl_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_total.Location = New System.Drawing.Point(681, 675)
+        Me.lbl_total.Location = New System.Drawing.Point(681, 682)
         Me.lbl_total.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_total.Name = "lbl_total"
         Me.lbl_total.Size = New System.Drawing.Size(51, 18)
         Me.lbl_total.TabIndex = 20
         Me.lbl_total.Text = "Total:"
         '
+        'btn_agregarDetalle
+        '
+        Me.btn_agregarDetalle.Location = New System.Drawing.Point(732, 153)
+        Me.btn_agregarDetalle.Name = "btn_agregarDetalle"
+        Me.btn_agregarDetalle.Size = New System.Drawing.Size(119, 35)
+        Me.btn_agregarDetalle.TabIndex = 21
+        Me.btn_agregarDetalle.Text = "Agregar Detalle"
+        Me.btn_agregarDetalle.UseVisualStyleBackColor = True
+        '
         'frm_registrar_Atencion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.ClientSize = New System.Drawing.Size(882, 713)
+        Me.ClientSize = New System.Drawing.Size(882, 719)
+        Me.Controls.Add(Me.btn_agregarDetalle)
         Me.Controls.Add(Me.lbl_total)
         Me.Controls.Add(Me.txt_total)
         Me.Controls.Add(Me.txt_estado)
@@ -672,5 +683,6 @@ Partial Class frm_registrar_Atencion
     Friend WithEvents txt_estado As System.Windows.Forms.TextBox
     Friend WithEvents txt_total As System.Windows.Forms.MaskedTextBox
     Friend WithEvents lbl_total As System.Windows.Forms.Label
+    Friend WithEvents btn_agregarDetalle As System.Windows.Forms.Button
 
 End Class

@@ -282,10 +282,10 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>2.73184in</Height>
+    <Height>2.74851in</Height>
     <Style />
   </Body>
-  <Width>6.61075in</Width>
+  <Width>6.94408in</Width>
   <Page>
     <PageHeader>
       <Height>3.14cm</Height>
@@ -313,9 +313,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>1.0287cm</Top>
-          <Left>1.20417cm</Left>
+          <Left>0.37867cm</Left>
           <Height>0.6cm</Height>
-          <Width>14.98833cm</Width>
+          <Width>16.7913cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -330,7 +330,7 @@
         <Line Name="Line2">
           <Top>2.251cm</Top>
           <Height>0cm</Height>
-          <Width>16.7913cm</Width>
+          <Width>17.16997cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -397,7 +397,7 @@
           <Top>0.461cm</Top>
           <Left>0.37867cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>5.06117cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -412,7 +412,7 @@
         <Line Name="Line3">
           <Top>0.03528cm</Top>
           <Height>0cm</Height>
-          <Width>16.7913cm</Width>
+          <Width>17.16997cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>

@@ -1,5 +1,4 @@
 Public Class frm_mostrar_atencion
-
     Public Property fecha As Date
     Public Property selected_centro As Integer
     Public Property selected_especialidad As Integer
@@ -131,9 +130,14 @@ Public Class frm_mostrar_atencion
         'Se tendría que poder modificar si es dentro del mismo día 
         Me.modificar = True
         grp_practicas.Enabled = True
+        Me.txt_preciosc.Enabled = False
+        Me.txt_porcenCobertura.Enabled = False
+        Me.txt_preciocc.Enabled = False
+        Me.txt_cantidad.Enabled = False
+        Me.txt_subtotal.Enabled = False
+        Me.btn_agregar.Enabled = False
+
         btn_grabar.Enabled = True
-        txt_total_sc.Enabled = True
-        txt_total_cc.Enabled = True
     End Sub
 
     Private Sub btn_salir_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
@@ -163,6 +167,7 @@ Public Class frm_mostrar_atencion
                 txt_subtotal.Text = oCoberturaService.calcularSubTotal(oCobertura.precioPractica, oCobertura.porcentajeCobertura, 1)
             End With
         Next
+        btn_agregar.Enabled = True
     End Sub
 
     Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
@@ -181,6 +186,13 @@ Public Class frm_mostrar_atencion
         End If
         Me.txt_total_sc.Text = Me.calcularTotal(2)
         Me.txt_total_cc.Text = Me.calcularTotal(4)
+
+        Me.txt_preciosc.Text = String.Empty
+        Me.txt_porcenCobertura.Text = String.Empty
+        Me.txt_preciocc.Text = String.Empty
+        Me.txt_cantidad.Text = String.Empty
+        Me.txt_subtotal.Text = String.Empty
+        Me.btn_agregar.Enabled = False
     End Sub
 
     Private Function buscarPracticaDuplicada() As Integer
@@ -237,13 +249,7 @@ Public Class frm_mostrar_atencion
             consulta += "and tipo_doc_Afil = @tipoDoc and nro_doc_Afil = @nroDoc and id_centro = @idCentro "
             consulta += "and matricula = @matricula and id_especialidad = @idEspecialidad "
             consulta += "and fecha_alta = @fechaAlta"
-            MsgBox(fecha.ToString())
-            MsgBox(selected_tipoDoc.ToString())
-            MsgBox(selected_nroDoc.ToString())
-            MsgBox(selected_centro.ToString())
-            MsgBox(selected_especialidad.ToString())
-            MsgBox(fecha_altaProf.ToString("dd/MM/yyyy"))
-
+           
             cmd = New SqlClient.SqlCommand(consulta, conexion, trans)
             cmd.Parameters.AddWithValue("@fecha", Me.fecha.ToString())
             cmd.Parameters.AddWithValue("@tipoDoc", selected_tipoDoc.ToString())
@@ -294,7 +300,7 @@ Public Class frm_mostrar_atencion
     Private Sub txt_total_cc_TextChanged(sender As Object, e As EventArgs) Handles txt_total_cc.TextChanged
         Dim total As Double
         If txt_total_cc.Text <> String.Empty Then
-            total = Convert.ToDouble(txt_total_sc.Text) - Convert.ToDouble(txt_total_cc.Text)
+            total = Convert.ToDouble(txt_total_cc.Text)
             txt_total.Text = total
         Else
             txt_total.Text = String.Empty

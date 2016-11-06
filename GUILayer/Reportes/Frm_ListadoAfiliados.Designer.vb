@@ -50,14 +50,14 @@ Partial Class Frm_ListadoAfiliados
         Me.ReportViewerAfiliados.LocalReport.ReportEmbeddedResource = "primeraEntrega.ListadoAfiliados.rdlc"
         Me.ReportViewerAfiliados.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewerAfiliados.Name = "ReportViewerAfiliados"
-        Me.ReportViewerAfiliados.Size = New System.Drawing.Size(806, 441)
+        Me.ReportViewerAfiliados.Size = New System.Drawing.Size(837, 499)
         Me.ReportViewerAfiliados.TabIndex = 0
         '
         'Frm_ListadoAfiliados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(806, 441)
+        Me.ClientSize = New System.Drawing.Size(837, 499)
         Me.Controls.Add(Me.ReportViewerAfiliados)
         Me.Name = "Frm_ListadoAfiliados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

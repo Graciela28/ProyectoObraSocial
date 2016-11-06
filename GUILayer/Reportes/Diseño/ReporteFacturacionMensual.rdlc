@@ -34,7 +34,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>n centro</Value>
+                              <Value>CENTRO</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -64,7 +64,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>n profesional</Value>
+                              <Value>PROFESIONAL</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -94,7 +94,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>n especialidad</Value>
+                              <Value>ESPECIALIDAD</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -124,7 +124,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>n afiliado</Value>
+                              <Value>AFILIADO</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -154,7 +154,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>total</Value>
+                              <Value>TOTAL</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -309,6 +309,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
+                              <Value> $ </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
                               <Value>=Fields!total.Value</Value>
                               <Style />
                             </TextRun>
@@ -354,22 +358,164 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetFacturacionMensual</DataSetName>
-        <Top>0.28in</Top>
+        <Top>0.33833in</Top>
         <Left>0.39458in</Left>
         <Height>0.5in</Height>
-        <Width>8.625in</Width>
+        <Width>8.62499in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Line Name="Line2">
+        <Top>1.94444in</Top>
+        <Left>0.12167in</Left>
+        <Height>0in</Height>
+        <Width>9.00833in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
     <Height>2in</Height>
     <Style />
   </Body>
   <Width>9.29042in</Width>
   <Page>
+    <PageHeader>
+      <Height>1.055in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Reporte de Facturación Mensual</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0.38in</Top>
+          <Left>0.12167in</Left>
+          <Height>0.25in</Height>
+          <Width>8.8979in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <BackgroundColor>CornflowerBlue</BackgroundColor>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>0.855in</Top>
+          <Left>0.12167in</Left>
+          <Height>0in</Height>
+          <Width>8.8979in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>0.54167in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.15in</Top>
+          <Left>7.92167in</Left>
+          <Height>0.25in</Height>
+          <Width>1.20833in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Now()</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox6</rd:DefaultName>
+          <Top>0.15in</Top>
+          <Left>0.12167in</Left>
+          <Height>0.25in</Height>
+          <Width>1.65833in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>

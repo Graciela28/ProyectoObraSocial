@@ -151,6 +151,7 @@ Public Class frm_buscar_atencion
         tabla = oAfiliadoService.buscarAfiliado(cbo_tiposDocumento.SelectedValue, txt_docAfiliado.Text.Trim())
         If tabla.Rows.Count > 0 Then
             txt_nombreAfiliado.Text = tabla.Rows(0)("nombreCompleto").ToString
+            txt_nombreAfiliado.Enabled = False
             txt_nombreAfiliado.Tag = tabla.Rows(0)("tipoAfiliado").ToString
         Else
             MessageBox.Show("El tipo y número de documento ingresado no corresponde a un Afiliado", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation _

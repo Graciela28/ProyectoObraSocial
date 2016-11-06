@@ -1,7 +1,8 @@
 ﻿Public Class frm_Menu_Principal
+    Dim oAtencionService As New AtencionService
 
     Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        oAtencionService.cerrarAtenciones()
     End Sub
 
     Private Sub frm_Menu_Principal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing

@@ -54,6 +54,7 @@
         txt_nombre.Enabled = False
         btn_grabar.Enabled = False
         btn_modificar.Enabled = False
+        btn_eliminar.Enabled = False
     End Sub
 
     Private Sub habilitarControles()

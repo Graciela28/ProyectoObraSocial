@@ -51,14 +51,14 @@ Partial Class Frm_EstadisticaTiposAfiliado
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(616, 380)
+        Me.ReportViewer1.Size = New System.Drawing.Size(781, 483)
         Me.ReportViewer1.TabIndex = 0
         '
         'Frm_EstadisticaTiposAfiliado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(616, 380)
+        Me.ClientSize = New System.Drawing.Size(781, 483)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Frm_EstadisticaTiposAfiliado"

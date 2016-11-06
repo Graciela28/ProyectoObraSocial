@@ -50,14 +50,14 @@ Partial Class Frm_ListadoProfesionales
         Me.ReportViewerProfesionales.LocalReport.ReportEmbeddedResource = "primeraEntrega.ListadoProfesionales.rdlc"
         Me.ReportViewerProfesionales.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewerProfesionales.Name = "ReportViewerProfesionales"
-        Me.ReportViewerProfesionales.Size = New System.Drawing.Size(699, 414)
+        Me.ReportViewerProfesionales.Size = New System.Drawing.Size(767, 490)
         Me.ReportViewerProfesionales.TabIndex = 0
         '
         'Frm_ListadoProfesionales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(699, 414)
+        Me.ClientSize = New System.Drawing.Size(767, 490)
         Me.Controls.Add(Me.ReportViewerProfesionales)
         Me.Name = "Frm_ListadoProfesionales"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
