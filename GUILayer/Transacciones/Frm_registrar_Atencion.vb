@@ -345,6 +345,8 @@ Public Class frm_registrar_Atencion
                 frm_mostrar_atencion.total = Convert.ToDouble(txt_total.Text.ToString())
                 frm_mostrar_atencion.idEstado = 1
                 Me.LimpiarCampos()
+                Me.habilitarCabecera()
+                Me.deshabilitarControles()
                 frm_mostrar_atencion.ShowDialog()
             End If
         Else

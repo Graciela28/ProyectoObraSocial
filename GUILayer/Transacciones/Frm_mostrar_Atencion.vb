@@ -48,8 +48,17 @@ Public Class frm_mostrar_atencion
             Me.deshabilitarControlesCabecera()
             dgv_practicas.Enabled = False
             btn_grabar.Enabled = True
+            Me.deshabilitarDetallesPractica()
             Me.deshabilitarTotales()
         End If
+    End Sub
+
+    Private Sub deshabilitarDetallesPractica()
+        Me.txt_preciosc.Enabled = False
+        Me.txt_porcenCobertura.Enabled = False
+        Me.txt_preciocc.Enabled = False
+        Me.txt_cantidad.Enabled = False
+        Me.txt_subtotal.Enabled = False
     End Sub
 
     Private Sub deshabilitarControlesCabecera()
@@ -221,14 +230,14 @@ Public Class frm_mostrar_atencion
     Private Sub btn_grabar_Click(sender As Object, e As EventArgs) Handles btn_grabar.Click
         If dgv_practicas.Rows.Count > 0 Then
             If Me.updateAtencion() > 0 Then
-                MsgBox("La Atención se modificó con exito")
+                MessageBox.Show("La Atención se modificó con exito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.modificar = False
                 Me.Visible = False
             Else
-                MsgBox("Hubo un error en la actualización de la Atención")
+                MessageBox.Show("Hubo un error en la actualización de la Atención")
             End If
         Else
-            MsgBox("No hay prácticas para grabar. Desea no guardar cambios o desea borrar la cabecera de la Atención?")
+            MessageBox.Show("No hay prácticas para grabar. Desea no guardar cambios o desea borrar la cabecera de la Atención?")
         End If
     End Sub
 
