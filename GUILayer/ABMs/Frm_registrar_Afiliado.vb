@@ -273,6 +273,7 @@ Public Class frm_registrar_Afiliado
 
                 If Me.actualizarAfiliado(num_documento, tipo_documento_id) = termino.aprobado Then
                     MessageBox.Show("Se modificó exitosamente", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Me.llenarGrilla()
                 Else
                     MessageBox.Show("Hubo un error en la actualización", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If

@@ -203,6 +203,10 @@ Public Class frm_registrar_profesional
     End Sub
 
     Private Sub LimpiarCamposParaBtnBuscar()
+        If (Me.accion = estado.modificar) Then
+            txt_nro_documento.Text = String.Empty
+            cbo_tipo_documento.SelectedIndex = -1
+        End If
         Me.txt_nombre.Text = ""
         Me.txt_apellido.Text = ""
         Me.txt_matricula.Text = ""
@@ -477,8 +481,7 @@ Public Class frm_registrar_profesional
         command.Parameters.AddWithValue("@numeroDocumento", txt_nro_documento.Text)
         command.Parameters.AddWithValue("@nombre", txt_nombre.Text)
         command.Parameters.AddWithValue("@apellido", txt_apellido.Text)
-        command.Parameters.AddWithValue("@fechaNacimiento", dtp_fecha.Value.ToString("MM/dd/yyyy"))
-        command.Parameters.AddWithValue("@codDomicilio", cod_domicilio)
+        command.Parameters.AddWithValue("@fechaNacimiento", Convert.ToDateTime(dtp_fecha.Value.ToString("dd/MM/yyyy")))
         command.Parameters.AddWithValue("@calle", txt_calle.Text)
         command.Parameters.AddWithValue("@numero", txt_altura.Text)
         command.Parameters.AddWithValue("@barrio", barrio)
@@ -541,6 +544,8 @@ Public Class frm_registrar_profesional
         ' Me.habilitarControles()
         txt_nro_documento.Enabled = False
         cbo_tipo_documento.Enabled = False
+        btn_Grabar.Enabled = True
+        Me.accion = estado.modificar
     End Sub
 
     Private Sub cmd_Eliminar_Click(sender As Object, e As EventArgs) Handles btn_Eliminar.Click
@@ -624,6 +629,8 @@ Public Class frm_registrar_profesional
     End Sub
 
     Private Sub deshabilitarControles()
+        Me.txt_nro_documento.Enabled = True
+        Me.cbo_tipo_documento.Enabled = True
         txt_nombre.Enabled = False
         txt_apellido.Enabled = False
         dtp_fecha.Enabled = False
