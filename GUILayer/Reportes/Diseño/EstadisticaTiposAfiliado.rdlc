@@ -299,7 +299,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte Estadístico de Porcentaje de Tipos de Afiliado </Value>
+                  <Value>Reporte Estadístico de Tipos de Afiliado </Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>

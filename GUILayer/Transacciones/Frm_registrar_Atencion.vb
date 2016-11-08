@@ -151,17 +151,21 @@ Public Class frm_registrar_Atencion
         Dim listaCoberturas As New List(Of Cobertura)
         Dim oCobertura As New Cobertura
         listaCoberturas = oCoberturaService.buscarCobertura(CInt(txt_n_afiliado.Tag.ToString), cbo_practicas.SelectedValue, cbo_especialidades.SelectedValue, cbo_centros.SelectedValue)
+        If listaCoberturas.Count > 0 Then
+            For Each oCobertura In listaCoberturas
+                With oCobertura
+                    txt_preciosc.Text = oCobertura.precioPractica
+                    txt_cobertura.Text = oCobertura.porcentajeCobertura
+                    txt_preciocc.Text = oCobertura.precioPractica - (oCobertura.precioPractica * oCobertura.porcentajeCobertura / 100)
+                    txt_cantidad.Text = 1
+                    txt_subtotal.Text = oCoberturaService.calcularSubTotal(oCobertura.precioPractica, oCobertura.porcentajeCobertura, 1)
+                End With
+            Next
+            Me.btn_agregarAGrilla.Enabled = True
+        Else
+            MessageBox.Show("No se registró ninguna cobertura para esa práctica", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
 
-        For Each oCobertura In listaCoberturas
-            With oCobertura
-                txt_preciosc.Text = oCobertura.precioPractica
-                txt_cobertura.Text = oCobertura.porcentajeCobertura
-                txt_preciocc.Text = oCobertura.precioPractica - (oCobertura.precioPractica * oCobertura.porcentajeCobertura / 100)
-                txt_cantidad.Text = 1
-                txt_subtotal.Text = oCoberturaService.calcularSubTotal(oCobertura.precioPractica, oCobertura.porcentajeCobertura, 1)
-            End With
-        Next
-        Me.btn_agregarAGrilla.Enabled = True
     End Sub
 
     Private Sub cbo_profesionales_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbo_profesionales.SelectionChangeCommitted
@@ -350,7 +354,7 @@ Public Class frm_registrar_Atencion
                 frm_mostrar_atencion.ShowDialog()
             End If
         Else
-            MsgBox("Debe seleccionar al menos una práctica para registrar la Atención")
+            MessageBox.Show("Debe seleccionar al menos una práctica para registrar la Atención", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 

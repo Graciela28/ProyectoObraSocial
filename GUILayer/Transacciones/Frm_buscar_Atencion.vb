@@ -156,6 +156,7 @@ Public Class frm_buscar_atencion
         Else
             MessageBox.Show("El tipo y número de documento ingresado no corresponde a un Afiliado", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation _
                , MessageBoxDefaultButton.Button1)
+            txt_nombreAfiliado.Text = String.Empty
         End If
     End Sub
 
