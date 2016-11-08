@@ -90,7 +90,6 @@
     <Compile Include="BusinessLayer\Entities\Practica.vb" />
     <Compile Include="BusinessLayer\Entities\PracticasxEspecialidad.vb" />
     <Compile Include="BusinessLayer\Entities\Profesional.vb" />
-    <Compile Include="BusinessLayer\Entities\ProfesionalesxCentroxEspecialidad.vb" />
     <Compile Include="BusinessLayer\Entities\Provincia.vb" />
     <Compile Include="BusinessLayer\Entities\TablaTipo.vb" />
     <Compile Include="BusinessLayer\Entities\TipoAfiliado.vb" />
@@ -128,6 +127,7 @@
     <Compile Include="DataLayer\DAOs\TablaTipoDao.vb" />
     <Compile Include="DataLayer\DAOs\TipoDocumentoDao.vb" />
     <Compile Include="DataLayer\Helper\BDHelper.vb" />
+    <Compile Include="BusinessLayer\Entities\EspecialidadXProfesionalXCentro.vb" />
     <Compile Include="GUILayer\ABMs\Frm_registrar_EspecialidadesXCentroXProfesional.Designer.vb">
       <DependentUpon>Frm_registrar_EspecialidadesXCentroXProfesional.vb</DependentUpon>
     </Compile>

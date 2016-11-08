@@ -53,4 +53,35 @@ Public Class BDHelper
         Return BDHelper.ConsultaSQL(strSQL)
     End Function
 
+    Shared Function eliminar_ExPxC(listaEliminar As List(Of EspecialidadXProfesionalXCentro)) As Boolean
+        Dim status As Boolean = False
+        Dim connection As New SqlClient.SqlConnection
+        Dim command As New SqlClient.SqlCommand
+        Dim transaction As SqlClient.SqlTransaction
+        Dim tabla As New DataTable
+
+        connection.ConnectionString = string_conexion
+        connection.Open()
+        command.Connection = connection
+        transaction = connection.BeginTransaction
+        command.Transaction = transaction
+        Try
+            For Each e As EspecialidadXProfesionalXCentro In listaEliminar
+                Dim consulta As String = "DELETE FROM ProfesionalesxCentroxEspecialidad WHERE id_centro = " + e.idCentro.ToString + " AND id_especialidad = " + e.idEspecialidad.ToString + " AND matricula = " + e.matriculaProfesional.ToString + " and fecha_alta = CONVERT(DATETIME, '" + e.fechaAltaProfesional.ToString("dd/MM/yyyy HH:mm:ss") + "', 103)"
+                command.CommandText = consulta
+                command.ExecuteNonQuery()
+            Next
+            transaction.Commit()
+            status = True
+        Catch ex As Exception
+            transaction.Rollback()
+            Throw ex
+        Finally
+            connection.Close()
+            connection.Dispose()
+        End Try
+        Return status
+    End Function
+
+
 End Class

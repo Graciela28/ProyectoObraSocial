@@ -26,9 +26,15 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         Me.cmd_salir = New System.Windows.Forms.Button()
         Me.cmd_Eliminar = New System.Windows.Forms.Button()
         Me.cmd_Grabar = New System.Windows.Forms.Button()
-        Me.cmd_Modificar = New System.Windows.Forms.Button()
         Me.cmd_Nuevo = New System.Windows.Forms.Button()
         Me.dgv_grilla = New System.Windows.Forms.DataGridView()
+        Me.Especialidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.centro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Profesional = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_especialidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_centro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.matricula = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_alta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cbo_especialidad = New System.Windows.Forms.ComboBox()
         Me.cbo_profesional = New System.Windows.Forms.ComboBox()
@@ -42,6 +48,7 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         '
         'cmd_salir
         '
+        Me.cmd_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_salir.BackColor = System.Drawing.Color.Silver
         Me.cmd_salir.BackgroundImage = CType(resources.GetObject("cmd_salir.BackgroundImage"), System.Drawing.Image)
         Me.cmd_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -54,10 +61,11 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         '
         'cmd_Eliminar
         '
+        Me.cmd_Eliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmd_Eliminar.BackColor = System.Drawing.Color.Silver
         Me.cmd_Eliminar.BackgroundImage = CType(resources.GetObject("cmd_Eliminar.BackgroundImage"), System.Drawing.Image)
         Me.cmd_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.cmd_Eliminar.Location = New System.Drawing.Point(169, 267)
+        Me.cmd_Eliminar.Location = New System.Drawing.Point(118, 265)
         Me.cmd_Eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.cmd_Eliminar.Name = "cmd_Eliminar"
         Me.cmd_Eliminar.Size = New System.Drawing.Size(52, 50)
@@ -66,30 +74,20 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         '
         'cmd_Grabar
         '
+        Me.cmd_Grabar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmd_Grabar.BackColor = System.Drawing.Color.Silver
         Me.cmd_Grabar.BackgroundImage = CType(resources.GetObject("cmd_Grabar.BackgroundImage"), System.Drawing.Image)
         Me.cmd_Grabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.cmd_Grabar.Location = New System.Drawing.Point(114, 265)
+        Me.cmd_Grabar.Location = New System.Drawing.Point(63, 265)
         Me.cmd_Grabar.Margin = New System.Windows.Forms.Padding(2)
         Me.cmd_Grabar.Name = "cmd_Grabar"
         Me.cmd_Grabar.Size = New System.Drawing.Size(51, 50)
         Me.cmd_Grabar.TabIndex = 11
         Me.cmd_Grabar.UseVisualStyleBackColor = False
         '
-        'cmd_Modificar
-        '
-        Me.cmd_Modificar.BackColor = System.Drawing.Color.Silver
-        Me.cmd_Modificar.BackgroundImage = CType(resources.GetObject("cmd_Modificar.BackgroundImage"), System.Drawing.Image)
-        Me.cmd_Modificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.cmd_Modificar.Location = New System.Drawing.Point(64, 265)
-        Me.cmd_Modificar.Margin = New System.Windows.Forms.Padding(2)
-        Me.cmd_Modificar.Name = "cmd_Modificar"
-        Me.cmd_Modificar.Size = New System.Drawing.Size(46, 49)
-        Me.cmd_Modificar.TabIndex = 10
-        Me.cmd_Modificar.UseVisualStyleBackColor = False
-        '
         'cmd_Nuevo
         '
+        Me.cmd_Nuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmd_Nuevo.BackColor = System.Drawing.Color.Silver
         Me.cmd_Nuevo.BackgroundImage = CType(resources.GetObject("cmd_Nuevo.BackgroundImage"), System.Drawing.Image)
         Me.cmd_Nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -104,12 +102,63 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         '
         Me.dgv_grilla.AllowUserToAddRows = False
         Me.dgv_grilla.AllowUserToDeleteRows = False
+        Me.dgv_grilla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Especialidad, Me.centro, Me.Profesional, Me.id_especialidad, Me.id_centro, Me.matricula, Me.fecha_alta})
         Me.dgv_grilla.Location = New System.Drawing.Point(365, 12)
         Me.dgv_grilla.Name = "dgv_grilla"
         Me.dgv_grilla.ReadOnly = True
+        Me.dgv_grilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_grilla.Size = New System.Drawing.Size(365, 250)
         Me.dgv_grilla.TabIndex = 18
+        '
+        'Especialidad
+        '
+        Me.Especialidad.HeaderText = "especialidad"
+        Me.Especialidad.Name = "Especialidad"
+        Me.Especialidad.ReadOnly = True
+        '
+        'centro
+        '
+        Me.centro.HeaderText = "Centro Médico"
+        Me.centro.Name = "centro"
+        Me.centro.ReadOnly = True
+        '
+        'Profesional
+        '
+        Me.Profesional.HeaderText = "profesional"
+        Me.Profesional.Name = "Profesional"
+        Me.Profesional.ReadOnly = True
+        '
+        'id_especialidad
+        '
+        Me.id_especialidad.HeaderText = "id_especialidad"
+        Me.id_especialidad.Name = "id_especialidad"
+        Me.id_especialidad.ReadOnly = True
+        Me.id_especialidad.Visible = False
+        '
+        'id_centro
+        '
+        Me.id_centro.HeaderText = "id_centro"
+        Me.id_centro.Name = "id_centro"
+        Me.id_centro.ReadOnly = True
+        Me.id_centro.Visible = False
+        '
+        'matricula
+        '
+        Me.matricula.HeaderText = "matricula"
+        Me.matricula.Name = "matricula"
+        Me.matricula.ReadOnly = True
+        Me.matricula.Visible = False
+        '
+        'fecha_alta
+        '
+        Me.fecha_alta.HeaderText = "fecha_alta"
+        Me.fecha_alta.Name = "fecha_alta"
+        Me.fecha_alta.ReadOnly = True
+        Me.fecha_alta.Visible = False
         '
         'Panel1
         '
@@ -186,7 +235,6 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         Me.Controls.Add(Me.cmd_salir)
         Me.Controls.Add(Me.cmd_Eliminar)
         Me.Controls.Add(Me.cmd_Grabar)
-        Me.Controls.Add(Me.cmd_Modificar)
         Me.Controls.Add(Me.cmd_Nuevo)
         Me.Name = "frm_registrar_EspecialidadesXCentroXProfesional"
         Me.Text = "Especialidades x Centro x Profesional"
@@ -199,7 +247,6 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
     Friend WithEvents cmd_salir As System.Windows.Forms.Button
     Friend WithEvents cmd_Eliminar As System.Windows.Forms.Button
     Friend WithEvents cmd_Grabar As System.Windows.Forms.Button
-    Friend WithEvents cmd_Modificar As System.Windows.Forms.Button
     Friend WithEvents cmd_Nuevo As System.Windows.Forms.Button
     Friend WithEvents dgv_grilla As System.Windows.Forms.DataGridView
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
@@ -209,4 +256,11 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
     Friend WithEvents lbl_profesional As System.Windows.Forms.Label
     Friend WithEvents lbl_centro As System.Windows.Forms.Label
     Friend WithEvents lbl_especialidad As System.Windows.Forms.Label
+    Friend WithEvents Especialidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents centro As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Profesional As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents id_especialidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents id_centro As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents matricula As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents fecha_alta As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
