@@ -625,8 +625,4 @@ Public Class frm_registrar_Afiliado
         lbl_nro_documento.BackColor = Color.CornflowerBlue
         lbl_tipo_documento.BackColor = Color.CornflowerBlue
     End Sub
-
-    Private Sub frm_registrar_afiliado_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        Me.Close()
-    End Sub
 End Class
