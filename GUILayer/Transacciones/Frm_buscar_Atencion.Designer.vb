@@ -20,27 +20,12 @@ Partial Class frm_buscar_atencion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_buscar_atencion))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_buscar_atencion))
         Me.dgv_historial = New System.Windows.Forms.DataGridView()
-        Me.btn_salir = New System.Windows.Forms.Button()
-        Me.lbl_fechaInicial = New System.Windows.Forms.Label()
-        Me.lbl_fechaFinal = New System.Windows.Forms.Label()
-        Me.btn_buscar2 = New System.Windows.Forms.Button()
-        Me.btn_buscar = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txt_docAfiliado = New System.Windows.Forms.TextBox()
-        Me.txt_nombreAfiliado = New System.Windows.Forms.TextBox()
-        Me.dtp_fechaInicio = New System.Windows.Forms.DateTimePicker()
-        Me.dtp_fechaFinal = New System.Windows.Forms.DateTimePicker()
-        Me.cbo_tiposDocumento = New System.Windows.Forms.ComboBox()
-        Me.btn_limpiarCampos = New System.Windows.Forms.Button()
-        Me.btn_eliminar = New System.Windows.Forms.Button()
-        Me.panel_filtros = New System.Windows.Forms.Panel()
-        Me.chk_usoFiltros = New System.Windows.Forms.CheckBox()
         Me.col_fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_tipoAfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_tipodoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,6 +45,21 @@ Partial Class frm_buscar_atencion
         Me.col_total_sc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_total_cc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_salir = New System.Windows.Forms.Button()
+        Me.lbl_fechaInicial = New System.Windows.Forms.Label()
+        Me.lbl_fechaFinal = New System.Windows.Forms.Label()
+        Me.btn_buscar2 = New System.Windows.Forms.Button()
+        Me.btn_buscar = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txt_docAfiliado = New System.Windows.Forms.TextBox()
+        Me.txt_nombreAfiliado = New System.Windows.Forms.TextBox()
+        Me.dtp_fechaInicio = New System.Windows.Forms.DateTimePicker()
+        Me.dtp_fechaFinal = New System.Windows.Forms.DateTimePicker()
+        Me.cbo_tiposDocumento = New System.Windows.Forms.ComboBox()
+        Me.btn_limpiarCampos = New System.Windows.Forms.Button()
+        Me.btn_eliminar = New System.Windows.Forms.Button()
+        Me.panel_filtros = New System.Windows.Forms.Panel()
+        Me.chk_usoFiltros = New System.Windows.Forms.CheckBox()
         CType(Me.dgv_historial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel_filtros.SuspendLayout()
         Me.SuspendLayout()
@@ -67,6 +67,7 @@ Partial Class frm_buscar_atencion
         'dgv_historial
         '
         Me.dgv_historial.AllowUserToAddRows = False
+        Me.dgv_historial.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.dgv_historial.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_historial.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -75,11 +76,154 @@ Partial Class frm_buscar_atencion
         Me.dgv_historial.Location = New System.Drawing.Point(20, 164)
         Me.dgv_historial.Margin = New System.Windows.Forms.Padding(4)
         Me.dgv_historial.Name = "dgv_historial"
+        Me.dgv_historial.ReadOnly = True
         Me.dgv_historial.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dgv_historial.RowHeadersWidth = 30
         Me.dgv_historial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_historial.Size = New System.Drawing.Size(655, 279)
         Me.dgv_historial.TabIndex = 7
+        '
+        'col_fecha
+        '
+        DataGridViewCellStyle2.Format = "N0"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.col_fecha.DefaultCellStyle = DataGridViewCellStyle2
+        Me.col_fecha.HeaderText = "Fecha"
+        Me.col_fecha.Name = "col_fecha"
+        Me.col_fecha.ReadOnly = True
+        Me.col_fecha.Width = 120
+        '
+        'col_tipoAfil
+        '
+        Me.col_tipoAfil.HeaderText = "Tipo"
+        Me.col_tipoAfil.Name = "col_tipoAfil"
+        Me.col_tipoAfil.ReadOnly = True
+        Me.col_tipoAfil.Width = 50
+        '
+        'col_tipodoc
+        '
+        Me.col_tipodoc.HeaderText = "Tipo Doc Afil"
+        Me.col_tipodoc.Name = "col_tipodoc"
+        Me.col_tipodoc.ReadOnly = True
+        Me.col_tipodoc.Visible = False
+        '
+        'col_numdoc
+        '
+        Me.col_numdoc.HeaderText = "Documento"
+        Me.col_numdoc.Name = "col_numdoc"
+        Me.col_numdoc.ReadOnly = True
+        '
+        'col_afiliado
+        '
+        DataGridViewCellStyle3.Format = "N0"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.col_afiliado.DefaultCellStyle = DataGridViewCellStyle3
+        Me.col_afiliado.HeaderText = "Afiliado"
+        Me.col_afiliado.Name = "col_afiliado"
+        Me.col_afiliado.ReadOnly = True
+        Me.col_afiliado.Width = 150
+        '
+        'col_idtipoafiliado
+        '
+        Me.col_idtipoafiliado.HeaderText = "Id Tipo Afil "
+        Me.col_idtipoafiliado.Name = "col_idtipoafiliado"
+        Me.col_idtipoafiliado.ReadOnly = True
+        Me.col_idtipoafiliado.Visible = False
+        '
+        'col_n_tipo
+        '
+        Me.col_n_tipo.HeaderText = "Tipo "
+        Me.col_n_tipo.Name = "col_n_tipo"
+        Me.col_n_tipo.ReadOnly = True
+        Me.col_n_tipo.Width = 80
+        '
+        'col_idcentro
+        '
+        Me.col_idcentro.HeaderText = "Id Centro"
+        Me.col_idcentro.Name = "col_idcentro"
+        Me.col_idcentro.ReadOnly = True
+        Me.col_idcentro.Visible = False
+        '
+        'col_centro
+        '
+        DataGridViewCellStyle4.Format = "d"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.col_centro.DefaultCellStyle = DataGridViewCellStyle4
+        Me.col_centro.HeaderText = "Centro"
+        Me.col_centro.Name = "col_centro"
+        Me.col_centro.ReadOnly = True
+        Me.col_centro.Width = 150
+        '
+        'col_matricula
+        '
+        Me.col_matricula.HeaderText = "Matricula"
+        Me.col_matricula.Name = "col_matricula"
+        Me.col_matricula.ReadOnly = True
+        '
+        'col_profesional
+        '
+        Me.col_profesional.HeaderText = "Profesional"
+        Me.col_profesional.Name = "col_profesional"
+        Me.col_profesional.ReadOnly = True
+        Me.col_profesional.Width = 150
+        '
+        'col_Idespecialidad
+        '
+        Me.col_Idespecialidad.HeaderText = "Id Especialidad"
+        Me.col_Idespecialidad.Name = "col_Idespecialidad"
+        Me.col_Idespecialidad.ReadOnly = True
+        Me.col_Idespecialidad.Visible = False
+        '
+        'col_especialidad
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.col_especialidad.DefaultCellStyle = DataGridViewCellStyle5
+        Me.col_especialidad.HeaderText = "Especialidad"
+        Me.col_especialidad.Name = "col_especialidad"
+        Me.col_especialidad.ReadOnly = True
+        Me.col_especialidad.Width = 105
+        '
+        'col_fecha_alta_prof
+        '
+        Me.col_fecha_alta_prof.HeaderText = "Fecha alta Prof"
+        Me.col_fecha_alta_prof.Name = "col_fecha_alta_prof"
+        Me.col_fecha_alta_prof.ReadOnly = True
+        Me.col_fecha_alta_prof.Visible = False
+        '
+        'col_idEstado
+        '
+        Me.col_idEstado.HeaderText = "IdEstado"
+        Me.col_idEstado.Name = "col_idEstado"
+        Me.col_idEstado.ReadOnly = True
+        Me.col_idEstado.Visible = False
+        '
+        'col_estado
+        '
+        Me.col_estado.HeaderText = "Estado"
+        Me.col_estado.Name = "col_estado"
+        Me.col_estado.ReadOnly = True
+        '
+        'col_total_sc
+        '
+        Me.col_total_sc.HeaderText = "Total S/C"
+        Me.col_total_sc.Name = "col_total_sc"
+        Me.col_total_sc.ReadOnly = True
+        Me.col_total_sc.Visible = False
+        '
+        'col_total_cc
+        '
+        Me.col_total_cc.HeaderText = "Total C/C"
+        Me.col_total_cc.Name = "col_total_cc"
+        Me.col_total_cc.ReadOnly = True
+        Me.col_total_cc.Visible = False
+        '
+        'col_total
+        '
+        Me.col_total.HeaderText = "Total"
+        Me.col_total.Name = "col_total"
+        Me.col_total.ReadOnly = True
         '
         'btn_salir
         '
@@ -232,129 +376,6 @@ Partial Class frm_buscar_atencion
         Me.chk_usoFiltros.Size = New System.Drawing.Size(18, 17)
         Me.chk_usoFiltros.TabIndex = 4
         Me.chk_usoFiltros.UseVisualStyleBackColor = True
-        '
-        'col_fecha
-        '
-        DataGridViewCellStyle2.Format = "N0"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.col_fecha.DefaultCellStyle = DataGridViewCellStyle2
-        Me.col_fecha.HeaderText = "Fecha"
-        Me.col_fecha.Name = "col_fecha"
-        Me.col_fecha.Width = 120
-        '
-        'col_tipoAfil
-        '
-        Me.col_tipoAfil.HeaderText = "Tipo"
-        Me.col_tipoAfil.Name = "col_tipoAfil"
-        Me.col_tipoAfil.Width = 50
-        '
-        'col_tipodoc
-        '
-        Me.col_tipodoc.HeaderText = "Tipo Doc Afil"
-        Me.col_tipodoc.Name = "col_tipodoc"
-        Me.col_tipodoc.Visible = False
-        '
-        'col_numdoc
-        '
-        Me.col_numdoc.HeaderText = "Documento"
-        Me.col_numdoc.Name = "col_numdoc"
-        '
-        'col_afiliado
-        '
-        DataGridViewCellStyle3.Format = "N0"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.col_afiliado.DefaultCellStyle = DataGridViewCellStyle3
-        Me.col_afiliado.HeaderText = "Afiliado"
-        Me.col_afiliado.Name = "col_afiliado"
-        Me.col_afiliado.Width = 150
-        '
-        'col_idtipoafiliado
-        '
-        Me.col_idtipoafiliado.HeaderText = "Id Tipo Afil "
-        Me.col_idtipoafiliado.Name = "col_idtipoafiliado"
-        Me.col_idtipoafiliado.Visible = False
-        '
-        'col_n_tipo
-        '
-        Me.col_n_tipo.HeaderText = "Tipo "
-        Me.col_n_tipo.Name = "col_n_tipo"
-        Me.col_n_tipo.Width = 80
-        '
-        'col_idcentro
-        '
-        Me.col_idcentro.HeaderText = "Id Centro"
-        Me.col_idcentro.Name = "col_idcentro"
-        Me.col_idcentro.Visible = False
-        '
-        'col_centro
-        '
-        DataGridViewCellStyle4.Format = "d"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.col_centro.DefaultCellStyle = DataGridViewCellStyle4
-        Me.col_centro.HeaderText = "Centro"
-        Me.col_centro.Name = "col_centro"
-        Me.col_centro.Width = 150
-        '
-        'col_matricula
-        '
-        Me.col_matricula.HeaderText = "Matricula"
-        Me.col_matricula.Name = "col_matricula"
-        '
-        'col_profesional
-        '
-        Me.col_profesional.HeaderText = "Profesional"
-        Me.col_profesional.Name = "col_profesional"
-        Me.col_profesional.Width = 150
-        '
-        'col_Idespecialidad
-        '
-        Me.col_Idespecialidad.HeaderText = "Id Especialidad"
-        Me.col_Idespecialidad.Name = "col_Idespecialidad"
-        Me.col_Idespecialidad.Visible = False
-        '
-        'col_especialidad
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.col_especialidad.DefaultCellStyle = DataGridViewCellStyle5
-        Me.col_especialidad.HeaderText = "Especialidad"
-        Me.col_especialidad.Name = "col_especialidad"
-        Me.col_especialidad.Width = 105
-        '
-        'col_fecha_alta_prof
-        '
-        Me.col_fecha_alta_prof.HeaderText = "Fecha alta Prof"
-        Me.col_fecha_alta_prof.Name = "col_fecha_alta_prof"
-        Me.col_fecha_alta_prof.Visible = False
-        '
-        'col_idEstado
-        '
-        Me.col_idEstado.HeaderText = "IdEstado"
-        Me.col_idEstado.Name = "col_idEstado"
-        Me.col_idEstado.Visible = False
-        '
-        'col_estado
-        '
-        Me.col_estado.HeaderText = "Estado"
-        Me.col_estado.Name = "col_estado"
-        '
-        'col_total_sc
-        '
-        Me.col_total_sc.HeaderText = "Total S/C"
-        Me.col_total_sc.Name = "col_total_sc"
-        Me.col_total_sc.Visible = False
-        '
-        'col_total_cc
-        '
-        Me.col_total_cc.HeaderText = "Total C/C"
-        Me.col_total_cc.Name = "col_total_cc"
-        Me.col_total_cc.Visible = False
-        '
-        'col_total
-        '
-        Me.col_total.HeaderText = "Total"
-        Me.col_total.Name = "col_total"
         '
         'frm_buscar_atencion
         '

@@ -31,6 +31,7 @@ Public Class frm_buscar_atencion
             cbo_tiposDocumento.Enabled = False
             btn_limpiarCampos.Enabled = False
             btn_buscar.Enabled = False
+            btn_eliminar.Enabled = False
         Else
             btn_eliminar.Enabled = False
         End If
@@ -209,6 +210,9 @@ Public Class frm_buscar_atencion
         Select Case Asc(e.KeyChar)
             Case 4, 24, 4, 19, 127, 13, 9, 15, 14
                 Exit Sub
+            Case 8
+                txt_nombreAfiliado.Text = String.Empty
+                Exit Sub
         End Select
         If IsNumeric(e.KeyChar) = False Then
             MsgBox("Este carater no es un numero ( " + e.KeyChar + " )", vbCritical, "Importante")
@@ -217,6 +221,16 @@ Public Class frm_buscar_atencion
     End Sub
 
     Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
+        If dgv_historial.Rows.Count = 0 Then
+            MessageBox.Show("No existe ninguna atención para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
+        If IsDBNull(row_selected) Then
+            MessageBox.Show("Debe seleccionar una atención", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
         If Convert.ToInt16(row_selected.Cells(14).Value.ToString()) <> 3 Then
             If MessageBox.Show("Esta seguro que desea eliminar la Atención seleccionada?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
                 Dim oAtencion As New Atencion
@@ -233,10 +247,16 @@ Public Class frm_buscar_atencion
                     MessageBox.Show("La Atención se eliminó con éxito", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation _
                                    , MessageBoxDefaultButton.Button1)
                     Me.llenarGrilla(Nothing, Nothing, Nothing, Integer.Parse(cbo_tiposDocumento.SelectedValue), Convert.ToInt32(txt_docAfiliado.Text))
+                    btn_eliminar.Enabled = False
+                    row_selected = New DataGridViewRow
                 Else
                     MessageBox.Show("Hubo un problema en la eliminación de la Atención", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation _
                                   , MessageBoxDefaultButton.Button1)
                 End If
+            Else
+                dgv_historial.ClearSelection()
+                row_selected = New DataGridViewRow
+                btn_eliminar.Enabled = False
             End If
         Else
             MessageBox.Show("La Atención seleccionada ya se encuentra anulada", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Error _

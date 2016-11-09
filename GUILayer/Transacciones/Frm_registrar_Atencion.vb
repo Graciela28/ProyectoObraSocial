@@ -421,6 +421,9 @@ Public Class frm_registrar_Atencion
         Select Case Asc(e.KeyChar)
             Case 4, 24, 4, 19, 127, 13, 9, 15, 14
                 Exit Sub
+            Case 8
+                txt_n_afiliado.Text = String.Empty
+                Exit Sub
         End Select
         If IsNumeric(e.KeyChar) = False Then
             MsgBox("Este carater no es un numero ( " + e.KeyChar + " )", vbCritical, "Importante")
