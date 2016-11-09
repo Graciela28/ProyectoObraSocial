@@ -92,4 +92,8 @@
     Private Sub ReporteDeFacturaciónMensualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeFacturaciónMensualToolStripMenuItem.Click
         Frm_ReporteFacturacionMensual.ShowDialog()
     End Sub
+
+    Private Sub ReporteEstadísticoDeCantidadProfesionalesPorEspecialidadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteEstadísticoDeCantidadProfesionalesPorEspecialidadToolStripMenuItem.Click
+        Frm_EstadisticaCantProfesionalePorEspecialidadPorCentro.ShowDialog()
+    End Sub
 End Class

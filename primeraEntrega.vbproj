@@ -170,6 +170,20 @@
     <Compile Include="GUILayer\Reportes\Data\DataSet6.vb">
       <DependentUpon>DataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Reportes\Data\DataSetCantProf.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCantProf.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Data\DataSetCantProf.vb">
+      <DependentUpon>DataSetCantProf.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_EstadisticaCantProfesionalePorEspecialidadPorCentro.Designer.vb">
+      <DependentUpon>Frm_EstadisticaCantProfesionalePorEspecialidadPorCentro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\Frm_EstadisticaCantProfesionalePorEspecialidadPorCentro.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\Reportes\Frm_EstadisticaTiposAfiliado.Designer.vb">
       <DependentUpon>Frm_EstadisticaTiposAfiliado.vb</DependentUpon>
     </Compile>
@@ -274,9 +288,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUILayer\Reportes\Diseño\EstadisticaCantProfxEspxCent.rdlc" />
     <EmbeddedResource Include="GUILayer\Reportes\Diseño\EstadisticaPracticas.rdlc" />
     <EmbeddedResource Include="GUILayer\Reportes\Diseño\EstadisticaTiposAfiliado.rdlc" />
     <EmbeddedResource Include="GUILayer\Reportes\Diseño\ReporteFacturacionMensual.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\Frm_EstadisticaCantProfesionalePorEspecialidadPorCentro.resx">
+      <DependentUpon>Frm_EstadisticaCantProfesionalePorEspecialidadPorCentro.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Reportes\Frm_EstadisticaTiposAfiliado.resx">
       <DependentUpon>Frm_EstadisticaTiposAfiliado.vb</DependentUpon>
     </EmbeddedResource>
@@ -402,6 +420,17 @@
     </None>
     <None Include="GUILayer\Reportes\Data\DataSet6.xss">
       <DependentUpon>DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSetCantProf.xsc">
+      <DependentUpon>DataSetCantProf.xsd</DependentUpon>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSetCantProf.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCantProf.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="GUILayer\Reportes\Data\DataSetCantProf.xss">
+      <DependentUpon>DataSetCantProf.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

@@ -42,7 +42,7 @@ Public Class frm_registrar_EspecialidadesXCentroXProfesional
             Exit Sub
         End If
         Try
-            Dim consulta = "INSERT INTO ProfesionalesxCentro(matricula, id_centro) VALUES (" + cbo_profesional.SelectedValue.ToString + ", " + cbo_centro.SelectedValue.ToString + ")"
+            Dim consulta = "IF NOT EXISTS (SELECT * FROM ProfesionalesxCentro PC WHERE PC.matricula = " + cbo_profesional.SelectedValue.ToString + " AND PC.id_centro = " + cbo_centro.SelectedValue.ToString + ") BEGIN INSERT INTO ProfesionalesxCentro(matricula, id_centro) VALUES (" + cbo_profesional.SelectedValue.ToString + ", " + cbo_centro.SelectedValue.ToString + ") END"
             BDHelper.EjecutarSQL(consulta)
             Dim sql = "INSERT INTO ProfesionalesxCentroxEspecialidad(id_centro, id_especialidad, matricula, fecha_alta) VALUES (" + cbo_centro.SelectedValue.ToString + ", " + cbo_especialidad.SelectedValue.ToString + ", " + cbo_profesional.SelectedValue.ToString + ", GETDATE())"
             BDHelper.EjecutarSQL(sql)
