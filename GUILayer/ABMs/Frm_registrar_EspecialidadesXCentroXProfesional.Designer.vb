@@ -28,13 +28,6 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         Me.cmd_Grabar = New System.Windows.Forms.Button()
         Me.cmd_Nuevo = New System.Windows.Forms.Button()
         Me.dgv_grilla = New System.Windows.Forms.DataGridView()
-        Me.Especialidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.centro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Profesional = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_especialidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_centro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.matricula = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fecha_alta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cbo_especialidad = New System.Windows.Forms.ComboBox()
         Me.cbo_profesional = New System.Windows.Forms.ComboBox()
@@ -42,6 +35,13 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         Me.lbl_profesional = New System.Windows.Forms.Label()
         Me.lbl_centro = New System.Windows.Forms.Label()
         Me.lbl_especialidad = New System.Windows.Forms.Label()
+        Me.Especialidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.centro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Profesional = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_especialidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_centro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.matricula = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_alta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_grilla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -52,10 +52,10 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         Me.cmd_salir.BackColor = System.Drawing.Color.Silver
         Me.cmd_salir.BackgroundImage = CType(resources.GetObject("cmd_salir.BackgroundImage"), System.Drawing.Image)
         Me.cmd_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.cmd_salir.Location = New System.Drawing.Point(679, 267)
-        Me.cmd_salir.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmd_salir.Location = New System.Drawing.Point(905, 329)
+        Me.cmd_salir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmd_salir.Name = "cmd_salir"
-        Me.cmd_salir.Size = New System.Drawing.Size(51, 50)
+        Me.cmd_salir.Size = New System.Drawing.Size(68, 62)
         Me.cmd_salir.TabIndex = 14
         Me.cmd_salir.UseVisualStyleBackColor = False
         '
@@ -65,10 +65,10 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         Me.cmd_Eliminar.BackColor = System.Drawing.Color.Silver
         Me.cmd_Eliminar.BackgroundImage = CType(resources.GetObject("cmd_Eliminar.BackgroundImage"), System.Drawing.Image)
         Me.cmd_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.cmd_Eliminar.Location = New System.Drawing.Point(118, 265)
-        Me.cmd_Eliminar.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmd_Eliminar.Location = New System.Drawing.Point(157, 326)
+        Me.cmd_Eliminar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmd_Eliminar.Name = "cmd_Eliminar"
-        Me.cmd_Eliminar.Size = New System.Drawing.Size(52, 50)
+        Me.cmd_Eliminar.Size = New System.Drawing.Size(69, 62)
         Me.cmd_Eliminar.TabIndex = 12
         Me.cmd_Eliminar.UseVisualStyleBackColor = False
         '
@@ -78,10 +78,10 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         Me.cmd_Grabar.BackColor = System.Drawing.Color.Silver
         Me.cmd_Grabar.BackgroundImage = CType(resources.GetObject("cmd_Grabar.BackgroundImage"), System.Drawing.Image)
         Me.cmd_Grabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.cmd_Grabar.Location = New System.Drawing.Point(63, 265)
-        Me.cmd_Grabar.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmd_Grabar.Location = New System.Drawing.Point(84, 326)
+        Me.cmd_Grabar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmd_Grabar.Name = "cmd_Grabar"
-        Me.cmd_Grabar.Size = New System.Drawing.Size(51, 50)
+        Me.cmd_Grabar.Size = New System.Drawing.Size(68, 62)
         Me.cmd_Grabar.TabIndex = 11
         Me.cmd_Grabar.UseVisualStyleBackColor = False
         '
@@ -91,10 +91,10 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         Me.cmd_Nuevo.BackColor = System.Drawing.Color.Silver
         Me.cmd_Nuevo.BackgroundImage = CType(resources.GetObject("cmd_Nuevo.BackgroundImage"), System.Drawing.Image)
         Me.cmd_Nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.cmd_Nuevo.Location = New System.Drawing.Point(11, 265)
-        Me.cmd_Nuevo.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmd_Nuevo.Location = New System.Drawing.Point(15, 326)
+        Me.cmd_Nuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmd_Nuevo.Name = "cmd_Nuevo"
-        Me.cmd_Nuevo.Size = New System.Drawing.Size(48, 50)
+        Me.cmd_Nuevo.Size = New System.Drawing.Size(64, 62)
         Me.cmd_Nuevo.TabIndex = 9
         Me.cmd_Nuevo.UseVisualStyleBackColor = False
         '
@@ -107,12 +107,87 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Especialidad, Me.centro, Me.Profesional, Me.id_especialidad, Me.id_centro, Me.matricula, Me.fecha_alta})
-        Me.dgv_grilla.Location = New System.Drawing.Point(365, 12)
+        Me.dgv_grilla.Location = New System.Drawing.Point(487, 15)
+        Me.dgv_grilla.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgv_grilla.Name = "dgv_grilla"
         Me.dgv_grilla.ReadOnly = True
         Me.dgv_grilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_grilla.Size = New System.Drawing.Size(365, 250)
+        Me.dgv_grilla.Size = New System.Drawing.Size(487, 308)
         Me.dgv_grilla.TabIndex = 18
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.cbo_especialidad)
+        Me.Panel1.Controls.Add(Me.cbo_profesional)
+        Me.Panel1.Controls.Add(Me.cbo_centro)
+        Me.Panel1.Controls.Add(Me.lbl_profesional)
+        Me.Panel1.Controls.Add(Me.lbl_centro)
+        Me.Panel1.Controls.Add(Me.lbl_especialidad)
+        Me.Panel1.Location = New System.Drawing.Point(16, 15)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(463, 148)
+        Me.Panel1.TabIndex = 19
+        '
+        'cbo_especialidad
+        '
+        Me.cbo_especialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_especialidad.FormattingEnabled = True
+        Me.cbo_especialidad.Location = New System.Drawing.Point(132, 95)
+        Me.cbo_especialidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbo_especialidad.Name = "cbo_especialidad"
+        Me.cbo_especialidad.Size = New System.Drawing.Size(307, 24)
+        Me.cbo_especialidad.TabIndex = 23
+        '
+        'cbo_profesional
+        '
+        Me.cbo_profesional.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_profesional.FormattingEnabled = True
+        Me.cbo_profesional.Location = New System.Drawing.Point(132, 55)
+        Me.cbo_profesional.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbo_profesional.Name = "cbo_profesional"
+        Me.cbo_profesional.Size = New System.Drawing.Size(307, 24)
+        Me.cbo_profesional.TabIndex = 22
+        '
+        'cbo_centro
+        '
+        Me.cbo_centro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_centro.FormattingEnabled = True
+        Me.cbo_centro.Location = New System.Drawing.Point(132, 17)
+        Me.cbo_centro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbo_centro.Name = "cbo_centro"
+        Me.cbo_centro.Size = New System.Drawing.Size(307, 24)
+        Me.cbo_centro.TabIndex = 21
+        '
+        'lbl_profesional
+        '
+        Me.lbl_profesional.AutoSize = True
+        Me.lbl_profesional.Location = New System.Drawing.Point(41, 59)
+        Me.lbl_profesional.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_profesional.Name = "lbl_profesional"
+        Me.lbl_profesional.Size = New System.Drawing.Size(83, 17)
+        Me.lbl_profesional.TabIndex = 20
+        Me.lbl_profesional.Text = "Profesional:"
+        '
+        'lbl_centro
+        '
+        Me.lbl_centro.AutoSize = True
+        Me.lbl_centro.Location = New System.Drawing.Point(19, 21)
+        Me.lbl_centro.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_centro.Name = "lbl_centro"
+        Me.lbl_centro.Size = New System.Drawing.Size(103, 17)
+        Me.lbl_centro.TabIndex = 19
+        Me.lbl_centro.Text = "Centro Médico:"
+        '
+        'lbl_especialidad
+        '
+        Me.lbl_especialidad.AutoSize = True
+        Me.lbl_especialidad.Location = New System.Drawing.Point(31, 98)
+        Me.lbl_especialidad.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_especialidad.Name = "lbl_especialidad"
+        Me.lbl_especialidad.Size = New System.Drawing.Size(92, 17)
+        Me.lbl_especialidad.TabIndex = 18
+        Me.lbl_especialidad.Text = "Especialidad:"
         '
         'Especialidad
         '
@@ -131,6 +206,7 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         Me.Profesional.HeaderText = "profesional"
         Me.Profesional.Name = "Profesional"
         Me.Profesional.ReadOnly = True
+        Me.Profesional.Width = 200
         '
         'id_especialidad
         '
@@ -160,82 +236,19 @@ Partial Class frm_registrar_EspecialidadesXCentroXProfesional
         Me.fecha_alta.ReadOnly = True
         Me.fecha_alta.Visible = False
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.cbo_especialidad)
-        Me.Panel1.Controls.Add(Me.cbo_profesional)
-        Me.Panel1.Controls.Add(Me.cbo_centro)
-        Me.Panel1.Controls.Add(Me.lbl_profesional)
-        Me.Panel1.Controls.Add(Me.lbl_centro)
-        Me.Panel1.Controls.Add(Me.lbl_especialidad)
-        Me.Panel1.Location = New System.Drawing.Point(12, 12)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(347, 120)
-        Me.Panel1.TabIndex = 19
-        '
-        'cbo_especialidad
-        '
-        Me.cbo_especialidad.FormattingEnabled = True
-        Me.cbo_especialidad.Location = New System.Drawing.Point(99, 77)
-        Me.cbo_especialidad.Name = "cbo_especialidad"
-        Me.cbo_especialidad.Size = New System.Drawing.Size(231, 21)
-        Me.cbo_especialidad.TabIndex = 23
-        '
-        'cbo_profesional
-        '
-        Me.cbo_profesional.FormattingEnabled = True
-        Me.cbo_profesional.Location = New System.Drawing.Point(99, 45)
-        Me.cbo_profesional.Name = "cbo_profesional"
-        Me.cbo_profesional.Size = New System.Drawing.Size(231, 21)
-        Me.cbo_profesional.TabIndex = 22
-        '
-        'cbo_centro
-        '
-        Me.cbo_centro.FormattingEnabled = True
-        Me.cbo_centro.Location = New System.Drawing.Point(99, 14)
-        Me.cbo_centro.Name = "cbo_centro"
-        Me.cbo_centro.Size = New System.Drawing.Size(231, 21)
-        Me.cbo_centro.TabIndex = 21
-        '
-        'lbl_profesional
-        '
-        Me.lbl_profesional.AutoSize = True
-        Me.lbl_profesional.Location = New System.Drawing.Point(31, 48)
-        Me.lbl_profesional.Name = "lbl_profesional"
-        Me.lbl_profesional.Size = New System.Drawing.Size(62, 13)
-        Me.lbl_profesional.TabIndex = 20
-        Me.lbl_profesional.Text = "Profesional:"
-        '
-        'lbl_centro
-        '
-        Me.lbl_centro.AutoSize = True
-        Me.lbl_centro.Location = New System.Drawing.Point(14, 17)
-        Me.lbl_centro.Name = "lbl_centro"
-        Me.lbl_centro.Size = New System.Drawing.Size(79, 13)
-        Me.lbl_centro.TabIndex = 19
-        Me.lbl_centro.Text = "Centro Médico:"
-        '
-        'lbl_especialidad
-        '
-        Me.lbl_especialidad.AutoSize = True
-        Me.lbl_especialidad.Location = New System.Drawing.Point(23, 80)
-        Me.lbl_especialidad.Name = "lbl_especialidad"
-        Me.lbl_especialidad.Size = New System.Drawing.Size(70, 13)
-        Me.lbl_especialidad.TabIndex = 18
-        Me.lbl_especialidad.Text = "Especialidad:"
-        '
         'frm_registrar_EspecialidadesXCentroXProfesional
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.ClientSize = New System.Drawing.Size(743, 329)
+        Me.ClientSize = New System.Drawing.Size(991, 405)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.dgv_grilla)
         Me.Controls.Add(Me.cmd_salir)
         Me.Controls.Add(Me.cmd_Eliminar)
         Me.Controls.Add(Me.cmd_Grabar)
         Me.Controls.Add(Me.cmd_Nuevo)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frm_registrar_EspecialidadesXCentroXProfesional"
         Me.Text = "Especialidades x Centro x Profesional"
         CType(Me.dgv_grilla, System.ComponentModel.ISupportInitialize).EndInit()

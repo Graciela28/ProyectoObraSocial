@@ -439,10 +439,9 @@ Public Class frm_registrar_centroMedico
         Me.Close()
     End Sub
 
-    
     Private Sub txt_telefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_telefono.KeyPress
         Select Case Asc(e.KeyChar)
-            Case 4, 24, 4, 19, 127, 13, 9, 15, 14
+            Case 4, 24, 4, 19, 13, 127, 9, 15, 14, 8
                 Exit Sub
         End Select
         If IsNumeric(e.KeyChar) = False Then
@@ -453,7 +452,7 @@ Public Class frm_registrar_centroMedico
 
     Private Sub txt_altura_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_altura.KeyPress
         Select Case Asc(e.KeyChar)
-            Case 4, 24, 4, 19, 127, 13, 9, 15, 14
+            Case 4, 24, 4, 19, 127, 13, 9, 15, 14, 8
                 Exit Sub
         End Select
         If IsNumeric(e.KeyChar) = False Then

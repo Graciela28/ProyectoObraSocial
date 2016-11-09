@@ -333,7 +333,7 @@ Public Class frm_registrar_profesional
 
     Private Sub txt_nro_documento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_nro_documento.KeyPress
         Select Case Asc(e.KeyChar)
-            Case 4, 24, 4, 19, 127, 13, 9, 15, 14
+            Case 4, 24, 4, 19, 127, 13, 9, 15, 14, 8
                 Exit Sub
         End Select
         If IsNumeric(e.KeyChar) = False Then
@@ -344,7 +344,7 @@ Public Class frm_registrar_profesional
 
     Private Sub txt_matricula_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_matricula.KeyPress
         Select Case Asc(e.KeyChar)
-            Case 4, 24, 4, 19, 127, 13, 9, 15, 14
+            Case 4, 24, 4, 19, 127, 13, 9, 15, 14, 8
                 Exit Sub
         End Select
         If IsNumeric(e.KeyChar) = False Then

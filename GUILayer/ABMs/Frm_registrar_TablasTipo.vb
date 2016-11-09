@@ -190,7 +190,8 @@
     End Sub
 
     'Método para eliminar en la tabla que estemos, utilizando los datos actuales en formulario
-    Private Sub eliminar(ByVal con As String)
+    Private Function eliminar(ByVal con As String) As Boolean
+        Dim status As Boolean = False
 
         'Definición de los objetos que se requieren para lograr acceso a datos con una base de datos Access 
         Dim conexion As New SqlClient.SqlConnection
@@ -213,13 +214,21 @@
         'Arma el "update" en forma genérica para insertar los datos que están en el "form" dentro de la tabla
         'que se esta operando 
         sql_delete = "delete from " & Me._tabla & " "
-        sql_delete &= "where id= " & Me.txt_codigo.Text
+        sql_delete &= "where id= " & Grid.CurrentRow.Cells(0).Value.ToString
 
         'Le asigna al objeto comando "cmd" la instrucción "insert" que debe ejecutar 
         cmd.CommandText = sql_delete
-        cmd.ExecuteNonQuery()
-        conexion.Close()
-    End Sub
+        Try
+            cmd.ExecuteNonQuery()
+            status = True
+        Catch ex As Exception
+            MsgBox("No se puede eliminar porque existen referencias en otras tablas", MsgBoxStyle.Critical)
+        Finally
+            conexion.Close()
+        End Try
+
+        Return status
+    End Function
 
     Private Sub grid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Me.txt_nombre.Text = Me.grid.CurrentRow.Cells(1).Value
@@ -234,14 +243,18 @@
     End Sub
 
     Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
-        Me.eliminar(Me.string_conexion)
-        MessageBox.Show("Se eliminó exitosamente", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If (Me.eliminar(Me.string_conexion)) Then
+            MessageBox.Show("Se eliminó exitosamente", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MsgBox("No se pudo eliminar el registro", MsgBoxStyle.Critical)
+        End If
+
         Me.cargo_grilla(leo_tabla(_tabla, Me._pk, Me._descripcion))
     End Sub
 
     Private Sub txt_codigo_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_codigo.KeyPress
         Select Case Asc(e.KeyChar)
-            Case 4, 24, 4, 19, 127, 13, 9, 15, 14
+            Case 4, 24, 4, 19, 127, 13, 9, 15, 14, 8
                 Exit Sub
         End Select
         If IsNumeric(e.KeyChar) = False Then

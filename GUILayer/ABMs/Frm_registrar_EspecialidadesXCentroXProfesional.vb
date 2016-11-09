@@ -35,6 +35,10 @@
     End Sub
 
     Private Sub cmd_Grabar_Click(sender As Object, e As EventArgs) Handles cmd_Grabar.Click
+        If (cbo_centro.SelectedIndex = -1 Or cbo_especialidad.SelectedIndex = -1 Or cbo_profesional.SelectedIndex = -1) Then
+            MsgBox("Debe seleccionar un dato", MsgBoxStyle.Information)
+            Exit Sub
+        End If
         Dim consulta = "INSERT INTO ProfesionalesxCentro(matricula, id_centro) VALUES (" + cbo_profesional.SelectedValue.ToString + ", " + cbo_centro.SelectedValue.ToString + ")"
         BDHelper.EjecutarSQL(consulta)
         Dim sql = "INSERT INTO ProfesionalesxCentroxEspecialidad(id_centro, id_especialidad, matricula, fecha_alta) VALUES (" + cbo_centro.SelectedValue.ToString + ", " + cbo_especialidad.SelectedValue.ToString + ", " + cbo_profesional.SelectedValue.ToString + ", GETDATE())"
@@ -45,7 +49,7 @@
 
     Private Sub cargarGrilla()
         dgv_grilla.Rows.Clear()
-        For Each row As DataRow In BDHelper.ConsultaSQL("SELECT E.nombre AS especialidad, CM.denominacion AS centro_medico, CONCAT(PE.apellido, ', ', PE.nombre) AS ape_nom, CM.id_centro, E.id AS id_especialidad, P.matricula, PCE.fecha_alta FROM ProfesionalesxCentroxEspecialidad PCE JOIN Profesionales P ON PCE.matricula = P.matricula JOIN CentrosMedicos CM ON CM.id_centro = PCE.id_centro JOIN Especialidades E ON E.id = PCE.id_especialidad JOIN Personas PE ON PE.id_tipo_doc = P.id_tipo_doc AND PE.numero_doc = P.numero_doc").Rows
+        For Each row As DataRow In BDHelper.ConsultaSQL("SELECT E.nombre AS especialidad, CM.denominacion AS centro_medico, PE.apellido + ', ' + PE.nombre AS ape_nom, CM.id_centro, E.id AS id_especialidad, P.matricula, PCE.fecha_alta FROM ProfesionalesxCentroxEspecialidad PCE JOIN Profesionales P ON PCE.matricula = P.matricula JOIN CentrosMedicos CM ON CM.id_centro = PCE.id_centro JOIN Especialidades E ON E.id = PCE.id_especialidad JOIN Personas PE ON PE.id_tipo_doc = P.id_tipo_doc AND PE.numero_doc = P.numero_doc").Rows
             dgv_grilla.Rows.Add(New String() {row.Item("especialidad"), row.Item("centro_medico"), row.Item("ape_nom"), row.Item("id_centro"), row.Item("id_especialidad"), row.Item("matricula"), row.Item("fecha_alta")})
         Next
     End Sub
@@ -63,12 +67,17 @@
         For Each row As DataGridViewRow In dgv_grilla.Rows
             listaEliminar.add(New EspecialidadXProfesionalXCentro(row.Cells.Item("id_centro").Value.ToString, row.Cells.Item("id_especialidad").Value.ToString, row.Cells.Item("matricula").Value.ToString, row.Cells.Item("fecha_alta").Value.ToString))
         Next
-        If (BDHelper.eliminar_ExPxC(listaEliminar)) Then
-            MsgBox("Eliminacion exitoso", MsgBoxStyle.Information)
-            cargarGrilla()
-        Else
-            MsgBox("No se pudieron eliminar los registros seleccionados", MsgBoxStyle.Critical)
-        End If
+        Try
+            If (BDHelper.eliminar_ExPxC(listaEliminar)) Then
+                MsgBox("Eliminacion exitoso", MsgBoxStyle.Information)
+                cargarGrilla()
+            Else
+                MsgBox("No se pudieron eliminar los registros seleccionados", MsgBoxStyle.Critical)
+            End If
+        Catch ex As Exception
+            MsgBox("No se puede eliminar el registro porque tiene atenciones asignadas", MsgBoxStyle.Critical)
+        End Try
+        
     End Sub
 
     Private Sub cbo_profesional_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbo_profesional.SelectionChangeCommitted
