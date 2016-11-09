@@ -1,4 +1,6 @@
-﻿Public Class frm_registrar_EspecialidadesXCentroXProfesional
+﻿Imports System.Data.SqlClient
+
+Public Class frm_registrar_EspecialidadesXCentroXProfesional
 
     Private Sub cmd_salir_Click(sender As Object, e As EventArgs) Handles cmd_salir.Click
         Me.Close()
@@ -39,12 +41,20 @@
             MsgBox("Debe seleccionar un dato", MsgBoxStyle.Information)
             Exit Sub
         End If
-        Dim consulta = "INSERT INTO ProfesionalesxCentro(matricula, id_centro) VALUES (" + cbo_profesional.SelectedValue.ToString + ", " + cbo_centro.SelectedValue.ToString + ")"
-        BDHelper.EjecutarSQL(consulta)
-        Dim sql = "INSERT INTO ProfesionalesxCentroxEspecialidad(id_centro, id_especialidad, matricula, fecha_alta) VALUES (" + cbo_centro.SelectedValue.ToString + ", " + cbo_especialidad.SelectedValue.ToString + ", " + cbo_profesional.SelectedValue.ToString + ", GETDATE())"
-        BDHelper.EjecutarSQL(sql)
-        cargarGrilla()
-        cargar_todos_los_combos_por_defecto()
+        Try
+            Dim consulta = "INSERT INTO ProfesionalesxCentro(matricula, id_centro) VALUES (" + cbo_profesional.SelectedValue.ToString + ", " + cbo_centro.SelectedValue.ToString + ")"
+            BDHelper.EjecutarSQL(consulta)
+            Dim sql = "INSERT INTO ProfesionalesxCentroxEspecialidad(id_centro, id_especialidad, matricula, fecha_alta) VALUES (" + cbo_centro.SelectedValue.ToString + ", " + cbo_especialidad.SelectedValue.ToString + ", " + cbo_profesional.SelectedValue.ToString + ", GETDATE())"
+            BDHelper.EjecutarSQL(sql)
+            cargarGrilla()
+            cargar_todos_los_combos_por_defecto()
+        Catch ex As SqlException
+            If (ex.Message.Contains("duplicate key")) Then
+                MsgBox("Ya existe el registro que desea grabar", MsgBoxStyle.Exclamation)
+            Else
+                MsgBox("Error al intentar guardar el registro: " + ex.Message, MsgBoxStyle.Critical)
+            End If
+        End Try
     End Sub
 
     Private Sub cargarGrilla()
@@ -65,7 +75,7 @@
 
         Dim listaEliminar As New List(Of EspecialidadXProfesionalXCentro)
         For Each row As DataGridViewRow In dgv_grilla.Rows
-            listaEliminar.add(New EspecialidadXProfesionalXCentro(row.Cells.Item("id_centro").Value.ToString, row.Cells.Item("id_especialidad").Value.ToString, row.Cells.Item("matricula").Value.ToString, row.Cells.Item("fecha_alta").Value.ToString))
+            listaEliminar.Add(New EspecialidadXProfesionalXCentro(row.Cells.Item("id_centro").Value.ToString, row.Cells.Item("id_especialidad").Value.ToString, row.Cells.Item("matricula").Value.ToString, row.Cells.Item("fecha_alta").Value.ToString))
         Next
         Try
             If (BDHelper.eliminar_ExPxC(listaEliminar)) Then
@@ -77,7 +87,7 @@
         Catch ex As Exception
             MsgBox("No se puede eliminar el registro porque tiene atenciones asignadas", MsgBoxStyle.Critical)
         End Try
-        
+
     End Sub
 
     Private Sub cbo_profesional_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbo_profesional.SelectionChangeCommitted
