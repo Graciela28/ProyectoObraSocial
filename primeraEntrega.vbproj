@@ -80,6 +80,7 @@
     <Compile Include="BusinessLayer\Entities\CentroMedico.vb" />
     <Compile Include="BusinessLayer\Entities\Cobertura.vb" />
     <Compile Include="BusinessLayer\Entities\ConsultaDeAfiliado.vb" />
+    <Compile Include="BusinessLayer\Entities\ConsultaDeBarrios.vb" />
     <Compile Include="BusinessLayer\Entities\ConsultaDeCentros.vb" />
     <Compile Include="BusinessLayer\Entities\ConsultaDeProfesional.vb" />
     <Compile Include="BusinessLayer\Entities\DetalleAtencion.vb" />
@@ -128,6 +129,12 @@
     <Compile Include="DataLayer\DAOs\TipoDocumentoDao.vb" />
     <Compile Include="DataLayer\Helper\BDHelper.vb" />
     <Compile Include="BusinessLayer\Entities\EspecialidadXProfesionalXCentro.vb" />
+    <Compile Include="GUILayer\ABMs\Frm_registrar_Barrio.Designer.vb">
+      <DependentUpon>Frm_registrar_Barrio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\ABMs\Frm_registrar_Barrio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\ABMs\Frm_registrar_EspecialidadesXCentroXProfesional.Designer.vb">
       <DependentUpon>Frm_registrar_EspecialidadesXCentroXProfesional.vb</DependentUpon>
     </Compile>
@@ -288,6 +295,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUILayer\ABMs\Frm_registrar_Barrio.resx">
+      <DependentUpon>Frm_registrar_Barrio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Reportes\Diseño\EstadisticaCantProfxEspxCent.rdlc" />
     <EmbeddedResource Include="GUILayer\Reportes\Diseño\EstadisticaPracticas.rdlc" />
     <EmbeddedResource Include="GUILayer\Reportes\Diseño\EstadisticaTiposAfiliado.rdlc" />

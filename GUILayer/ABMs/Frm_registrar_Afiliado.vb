@@ -46,6 +46,7 @@ Public Class frm_registrar_Afiliado
     End Sub
 
     Private Sub deshabilitarBotones()
+        btn_new.Enabled = False
         btn_Grabar.Enabled = False
         btn_Eliminar.Enabled = False
         btn_Modificar.Enabled = False
@@ -110,6 +111,7 @@ Public Class frm_registrar_Afiliado
         Me.LimpiarCampos()
         Me.habilitarControles()
         Me.btn_Grabar.Enabled = True
+        Me.btn_new.Enabled = True
         Me.txt_nombre.Focus()
         Me.accion = estado.insertar
     End Sub
@@ -336,7 +338,8 @@ Public Class frm_registrar_Afiliado
 
     Private Sub cbo_provincias_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbo_provincias.SelectionChangeCommitted
         'Estado inicial del combo barrios
-        cbo_barrios.SelectedIndex = -1
+        cbo_barrios.DataSource = Nothing
+        cbo_barrios.Items.Clear()
 
         cbo_localidades.DataSource = oLocalidadService.getLocalidadesConFiltro(cbo_provincias.SelectedValue)
         If oLocalidadService.getLocalidadesConFiltro(cbo_provincias.SelectedValue).Rows.Count > 0 Then
@@ -349,7 +352,7 @@ Public Class frm_registrar_Afiliado
         End If
     End Sub
 
-    Private Sub cbo_localidades_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbo_localidades.SelectionChangeCommitted
+    Friend Sub cbo_localidades_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbo_localidades.SelectionChangeCommitted
         cbo_barrios.DataSource = oBarrioService.GetBarriosConFiltro(cbo_localidades.SelectedValue)
         If oBarrioService.GetBarriosConFiltro(cbo_localidades.SelectedValue).Rows.Count > 0 Then
             cbo_barrios.ValueMember = "id_barrio"
@@ -625,5 +628,16 @@ Public Class frm_registrar_Afiliado
         lbl_barrio.ForeColor = Color.Black
         lbl_nro_documento.BackColor = Color.CornflowerBlue
         lbl_tipo_documento.BackColor = Color.CornflowerBlue
+    End Sub
+
+    Private Sub btn_new_Click(sender As Object, e As EventArgs) Handles btn_new.Click
+        If (cbo_provincias.SelectedIndex <> -1 And cbo_localidades.SelectedIndex <> -1) Then
+            Frm_registrar_Barrio.start_load = False
+            Frm_registrar_Barrio.num_Form = 1
+            Frm_registrar_Barrio.cargarFiltros(sender, cbo_provincias.SelectedValue, cbo_localidades.SelectedValue)
+        Else
+            Frm_registrar_Barrio.start_load = True
+        End If
+        Frm_registrar_Barrio.ShowDialog()
     End Sub
 End Class

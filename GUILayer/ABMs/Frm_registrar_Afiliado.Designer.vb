@@ -78,6 +78,7 @@ Partial Class frm_registrar_Afiliado
         Me.lbl_apellido = New System.Windows.Forms.Label()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.lbl_nombre = New System.Windows.Forms.Label()
+        Me.btn_new = New System.Windows.Forms.Button()
         CType(Me.dgv_afiliados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.txt_direccion.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -99,7 +100,7 @@ Partial Class frm_registrar_Afiliado
         Me.dgv_afiliados.ReadOnly = True
         Me.dgv_afiliados.RowTemplate.Height = 24
         Me.dgv_afiliados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_afiliados.Size = New System.Drawing.Size(428, 433)
+        Me.dgv_afiliados.Size = New System.Drawing.Size(428, 441)
         Me.dgv_afiliados.TabIndex = 7
         '
         'col_idTipoDoc
@@ -209,10 +210,10 @@ Partial Class frm_registrar_Afiliado
         Me.cmd_Salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_Salir.BackColor = System.Drawing.Color.Silver
         Me.cmd_Salir.Image = CType(resources.GetObject("cmd_Salir.Image"), System.Drawing.Image)
-        Me.cmd_Salir.Location = New System.Drawing.Point(971, 465)
+        Me.cmd_Salir.Location = New System.Drawing.Point(970, 483)
         Me.cmd_Salir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmd_Salir.Name = "cmd_Salir"
-        Me.cmd_Salir.Size = New System.Drawing.Size(63, 63)
+        Me.cmd_Salir.Size = New System.Drawing.Size(63, 51)
         Me.cmd_Salir.TabIndex = 8
         Me.cmd_Salir.UseVisualStyleBackColor = False
         '
@@ -221,10 +222,10 @@ Partial Class frm_registrar_Afiliado
         Me.btn_Buscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Buscar.BackColor = System.Drawing.Color.Silver
         Me.btn_Buscar.Image = CType(resources.GetObject("btn_Buscar.Image"), System.Drawing.Image)
-        Me.btn_Buscar.Location = New System.Drawing.Point(292, 466)
+        Me.btn_Buscar.Location = New System.Drawing.Point(292, 477)
         Me.btn_Buscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Buscar.Name = "btn_Buscar"
-        Me.btn_Buscar.Size = New System.Drawing.Size(61, 66)
+        Me.btn_Buscar.Size = New System.Drawing.Size(61, 55)
         Me.btn_Buscar.TabIndex = 6
         Me.btn_Buscar.UseVisualStyleBackColor = False
         '
@@ -234,10 +235,10 @@ Partial Class frm_registrar_Afiliado
         Me.btn_Eliminar.BackColor = System.Drawing.Color.Silver
         Me.btn_Eliminar.BackgroundImage = CType(resources.GetObject("btn_Eliminar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_Eliminar.Location = New System.Drawing.Point(217, 466)
+        Me.btn_Eliminar.Location = New System.Drawing.Point(217, 477)
         Me.btn_Eliminar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Eliminar.Name = "btn_Eliminar"
-        Me.btn_Eliminar.Size = New System.Drawing.Size(69, 66)
+        Me.btn_Eliminar.Size = New System.Drawing.Size(69, 55)
         Me.btn_Eliminar.TabIndex = 5
         Me.btn_Eliminar.UseVisualStyleBackColor = False
         '
@@ -246,10 +247,10 @@ Partial Class frm_registrar_Afiliado
         Me.btn_Grabar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Grabar.BackColor = System.Drawing.Color.Silver
         Me.btn_Grabar.Image = CType(resources.GetObject("btn_Grabar.Image"), System.Drawing.Image)
-        Me.btn_Grabar.Location = New System.Drawing.Point(144, 465)
+        Me.btn_Grabar.Location = New System.Drawing.Point(144, 477)
         Me.btn_Grabar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Grabar.Name = "btn_Grabar"
-        Me.btn_Grabar.Size = New System.Drawing.Size(67, 68)
+        Me.btn_Grabar.Size = New System.Drawing.Size(67, 56)
         Me.btn_Grabar.TabIndex = 4
         Me.btn_Grabar.UseVisualStyleBackColor = False
         '
@@ -259,10 +260,10 @@ Partial Class frm_registrar_Afiliado
         Me.btn_Modificar.BackColor = System.Drawing.Color.Silver
         Me.btn_Modificar.BackgroundImage = CType(resources.GetObject("btn_Modificar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Modificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_Modificar.Location = New System.Drawing.Point(77, 465)
+        Me.btn_Modificar.Location = New System.Drawing.Point(77, 477)
         Me.btn_Modificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Modificar.Name = "btn_Modificar"
-        Me.btn_Modificar.Size = New System.Drawing.Size(60, 68)
+        Me.btn_Modificar.Size = New System.Drawing.Size(60, 56)
         Me.btn_Modificar.TabIndex = 3
         Me.btn_Modificar.UseVisualStyleBackColor = False
         '
@@ -271,16 +272,17 @@ Partial Class frm_registrar_Afiliado
         Me.btn_Nuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Nuevo.BackColor = System.Drawing.Color.Silver
         Me.btn_Nuevo.Image = CType(resources.GetObject("btn_Nuevo.Image"), System.Drawing.Image)
-        Me.btn_Nuevo.Location = New System.Drawing.Point(12, 465)
+        Me.btn_Nuevo.Location = New System.Drawing.Point(12, 477)
         Me.btn_Nuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Nuevo.Name = "btn_Nuevo"
-        Me.btn_Nuevo.Size = New System.Drawing.Size(61, 68)
+        Me.btn_Nuevo.Size = New System.Drawing.Size(61, 56)
         Me.btn_Nuevo.TabIndex = 2
         Me.btn_Nuevo.UseVisualStyleBackColor = False
         '
         'txt_direccion
         '
         Me.txt_direccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_direccion.Controls.Add(Me.btn_new)
         Me.txt_direccion.Controls.Add(Me.lbl_datosDomicilio)
         Me.txt_direccion.Controls.Add(Me.txt_altura)
         Me.txt_direccion.Controls.Add(Me.lbl_numero)
@@ -295,7 +297,7 @@ Partial Class frm_registrar_Afiliado
         Me.txt_direccion.Location = New System.Drawing.Point(11, 288)
         Me.txt_direccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_direccion.Name = "txt_direccion"
-        Me.txt_direccion.Size = New System.Drawing.Size(581, 161)
+        Me.txt_direccion.Size = New System.Drawing.Size(581, 169)
         Me.txt_direccion.TabIndex = 1
         '
         'lbl_datosDomicilio
@@ -374,7 +376,7 @@ Partial Class frm_registrar_Afiliado
         Me.cbo_barrios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_barrios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_barrios.FormattingEnabled = True
-        Me.cbo_barrios.Location = New System.Drawing.Point(89, 113)
+        Me.cbo_barrios.Location = New System.Drawing.Point(89, 119)
         Me.cbo_barrios.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbo_barrios.Name = "cbo_barrios"
         Me.cbo_barrios.Size = New System.Drawing.Size(181, 26)
@@ -384,7 +386,7 @@ Partial Class frm_registrar_Afiliado
         '
         Me.lbl_barrio.AutoSize = True
         Me.lbl_barrio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_barrio.Location = New System.Drawing.Point(35, 116)
+        Me.lbl_barrio.Location = New System.Drawing.Point(35, 123)
         Me.lbl_barrio.Name = "lbl_barrio"
         Me.lbl_barrio.Size = New System.Drawing.Size(52, 18)
         Me.lbl_barrio.TabIndex = 2
@@ -633,6 +635,15 @@ Partial Class frm_registrar_Afiliado
         Me.lbl_nombre.TabIndex = 0
         Me.lbl_nombre.Text = "Nombre:"
         '
+        'btn_new
+        '
+        Me.btn_new.Location = New System.Drawing.Point(280, 117)
+        Me.btn_new.Name = "btn_new"
+        Me.btn_new.Size = New System.Drawing.Size(61, 30)
+        Me.btn_new.TabIndex = 11
+        Me.btn_new.Text = "Nuevo"
+        Me.btn_new.UseVisualStyleBackColor = True
+        '
         'frm_registrar_Afiliado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -648,7 +659,7 @@ Partial Class frm_registrar_Afiliado
         Me.Controls.Add(Me.btn_Nuevo)
         Me.Controls.Add(Me.txt_direccion)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frm_registrar_Afiliado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registrar Afiliado"
@@ -716,4 +727,5 @@ Partial Class frm_registrar_Afiliado
     Friend WithEvents col_empresa As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_activo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_estaActivo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btn_new As System.Windows.Forms.Button
 End Class

@@ -75,6 +75,7 @@ Partial Class frm_registrar_profesional
         Me.col_provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_estaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_new = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.txt_direccion.SuspendLayout()
@@ -274,6 +275,7 @@ Partial Class frm_registrar_profesional
         'txt_direccion
         '
         Me.txt_direccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_direccion.Controls.Add(Me.btn_new)
         Me.txt_direccion.Controls.Add(Me.lbl_datosDomicilio)
         Me.txt_direccion.Controls.Add(Me.txt_altura)
         Me.txt_direccion.Controls.Add(Me.lbl_numero)
@@ -303,9 +305,9 @@ Partial Class frm_registrar_profesional
         'txt_altura
         '
         Me.txt_altura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_altura.Location = New System.Drawing.Point(358, 43)
+        Me.txt_altura.Location = New System.Drawing.Point(352, 44)
         Me.txt_altura.Name = "txt_altura"
-        Me.txt_altura.Size = New System.Drawing.Size(60, 22)
+        Me.txt_altura.Size = New System.Drawing.Size(67, 22)
         Me.txt_altura.TabIndex = 1
         '
         'lbl_numero
@@ -343,16 +345,16 @@ Partial Class frm_registrar_profesional
         Me.cbo_localidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_localidades.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_localidades.FormattingEnabled = True
-        Me.cbo_localidades.Location = New System.Drawing.Point(358, 80)
+        Me.cbo_localidades.Location = New System.Drawing.Point(352, 80)
         Me.cbo_localidades.Name = "cbo_localidades"
-        Me.cbo_localidades.Size = New System.Drawing.Size(147, 26)
+        Me.cbo_localidades.Size = New System.Drawing.Size(153, 26)
         Me.cbo_localidades.TabIndex = 3
         '
         'lbl_localidad
         '
         Me.lbl_localidad.AutoSize = True
         Me.lbl_localidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_localidad.Location = New System.Drawing.Point(277, 88)
+        Me.lbl_localidad.Location = New System.Drawing.Point(277, 83)
         Me.lbl_localidad.Name = "lbl_localidad"
         Me.lbl_localidad.Size = New System.Drawing.Size(75, 18)
         Me.lbl_localidad.TabIndex = 4
@@ -363,7 +365,7 @@ Partial Class frm_registrar_profesional
         Me.cbo_barrios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_barrios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_barrios.FormattingEnabled = True
-        Me.cbo_barrios.Location = New System.Drawing.Point(89, 112)
+        Me.cbo_barrios.Location = New System.Drawing.Point(89, 119)
         Me.cbo_barrios.Name = "cbo_barrios"
         Me.cbo_barrios.Size = New System.Drawing.Size(169, 26)
         Me.cbo_barrios.TabIndex = 4
@@ -372,7 +374,7 @@ Partial Class frm_registrar_profesional
         '
         Me.lbl_barrio.AutoSize = True
         Me.lbl_barrio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_barrio.Location = New System.Drawing.Point(34, 115)
+        Me.lbl_barrio.Location = New System.Drawing.Point(35, 125)
         Me.lbl_barrio.Name = "lbl_barrio"
         Me.lbl_barrio.Size = New System.Drawing.Size(52, 18)
         Me.lbl_barrio.TabIndex = 2
@@ -390,7 +392,7 @@ Partial Class frm_registrar_profesional
         '
         Me.lbl_direccion.AutoSize = True
         Me.lbl_direccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_direccion.Location = New System.Drawing.Point(38, 47)
+        Me.lbl_direccion.Location = New System.Drawing.Point(43, 44)
         Me.lbl_direccion.Name = "lbl_direccion"
         Me.lbl_direccion.Size = New System.Drawing.Size(45, 18)
         Me.lbl_direccion.TabIndex = 0
@@ -452,7 +454,7 @@ Partial Class frm_registrar_profesional
         '
         Me.cmd_Salir.BackColor = System.Drawing.Color.Silver
         Me.cmd_Salir.Image = CType(resources.GetObject("cmd_Salir.Image"), System.Drawing.Image)
-        Me.cmd_Salir.Location = New System.Drawing.Point(954, 480)
+        Me.cmd_Salir.Location = New System.Drawing.Point(954, 473)
         Me.cmd_Salir.Name = "cmd_Salir"
         Me.cmd_Salir.Size = New System.Drawing.Size(73, 63)
         Me.cmd_Salir.TabIndex = 8
@@ -569,6 +571,15 @@ Partial Class frm_registrar_profesional
         Me.nombre.Visible = False
         Me.nombre.Width = 250
         '
+        'btn_new
+        '
+        Me.btn_new.Location = New System.Drawing.Point(268, 117)
+        Me.btn_new.Name = "btn_new"
+        Me.btn_new.Size = New System.Drawing.Size(61, 30)
+        Me.btn_new.TabIndex = 13
+        Me.btn_new.Text = "Nuevo"
+        Me.btn_new.UseVisualStyleBackColor = True
+        '
         'frm_registrar_profesional
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -650,5 +661,6 @@ Partial Class frm_registrar_profesional
     Friend WithEvents col_provincia As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_estaActivo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btn_new As System.Windows.Forms.Button
 
 End Class

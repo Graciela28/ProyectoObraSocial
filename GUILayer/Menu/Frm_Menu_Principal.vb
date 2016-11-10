@@ -96,4 +96,9 @@
     Private Sub ReporteEstadísticoDeCantidadProfesionalesPorEspecialidadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteEstadísticoDeCantidadProfesionalesPorEspecialidadToolStripMenuItem.Click
         Frm_EstadisticaCantProfesionalePorEspecialidadPorCentro.ShowDialog()
     End Sub
+
+    Private Sub RegistrarNuevoBarrioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrarNuevoBarrioToolStripMenuItem.Click
+        Frm_registrar_Barrio.start_load = True
+        Frm_registrar_Barrio.ShowDialog()
+    End Sub
 End Class

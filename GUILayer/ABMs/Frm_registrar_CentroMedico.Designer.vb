@@ -65,6 +65,7 @@ Partial Class frm_registrar_centroMedico
         Me.Provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_idCentro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_idDomicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_new = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -191,6 +192,7 @@ Partial Class frm_registrar_centroMedico
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.btn_new)
         Me.Panel2.Controls.Add(Me.cbo_provincias)
         Me.Panel2.Controls.Add(Me.lbl_provincia)
         Me.Panel2.Controls.Add(Me.cbo_localidades)
@@ -206,7 +208,7 @@ Partial Class frm_registrar_centroMedico
         Me.Panel2.Location = New System.Drawing.Point(12, 207)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(490, 183)
+        Me.Panel2.Size = New System.Drawing.Size(490, 196)
         Me.Panel2.TabIndex = 1
         '
         'cbo_provincias
@@ -224,7 +226,7 @@ Partial Class frm_registrar_centroMedico
         '
         Me.lbl_provincia.AutoSize = True
         Me.lbl_provincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_provincia.Location = New System.Drawing.Point(8, 103)
+        Me.lbl_provincia.Location = New System.Drawing.Point(8, 101)
         Me.lbl_provincia.Name = "lbl_provincia"
         Me.lbl_provincia.Size = New System.Drawing.Size(77, 18)
         Me.lbl_provincia.TabIndex = 10
@@ -235,7 +237,7 @@ Partial Class frm_registrar_centroMedico
         Me.cbo_localidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_localidades.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_localidades.FormattingEnabled = True
-        Me.cbo_localidades.Location = New System.Drawing.Point(340, 98)
+        Me.cbo_localidades.Location = New System.Drawing.Point(330, 98)
         Me.cbo_localidades.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbo_localidades.Name = "cbo_localidades"
         Me.cbo_localidades.Size = New System.Drawing.Size(145, 26)
@@ -245,7 +247,7 @@ Partial Class frm_registrar_centroMedico
         '
         Me.lbl_localidad.AutoSize = True
         Me.lbl_localidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_localidad.Location = New System.Drawing.Point(259, 103)
+        Me.lbl_localidad.Location = New System.Drawing.Point(252, 102)
         Me.lbl_localidad.Name = "lbl_localidad"
         Me.lbl_localidad.Size = New System.Drawing.Size(75, 18)
         Me.lbl_localidad.TabIndex = 8
@@ -256,7 +258,7 @@ Partial Class frm_registrar_centroMedico
         Me.cbo_barrios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_barrios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_barrios.FormattingEnabled = True
-        Me.cbo_barrios.Location = New System.Drawing.Point(83, 137)
+        Me.cbo_barrios.Location = New System.Drawing.Point(83, 145)
         Me.cbo_barrios.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbo_barrios.Name = "cbo_barrios"
         Me.cbo_barrios.Size = New System.Drawing.Size(158, 26)
@@ -266,7 +268,7 @@ Partial Class frm_registrar_centroMedico
         '
         Me.lbl_barrio.AutoSize = True
         Me.lbl_barrio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_barrio.Location = New System.Drawing.Point(29, 144)
+        Me.lbl_barrio.Location = New System.Drawing.Point(29, 150)
         Me.lbl_barrio.Name = "lbl_barrio"
         Me.lbl_barrio.Size = New System.Drawing.Size(56, 18)
         Me.lbl_barrio.TabIndex = 6
@@ -275,7 +277,7 @@ Partial Class frm_registrar_centroMedico
         'txt_altura
         '
         Me.txt_altura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_altura.Location = New System.Drawing.Point(340, 60)
+        Me.txt_altura.Location = New System.Drawing.Point(331, 60)
         Me.txt_altura.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_altura.Name = "txt_altura"
         Me.txt_altura.Size = New System.Drawing.Size(66, 22)
@@ -285,7 +287,7 @@ Partial Class frm_registrar_centroMedico
         '
         Me.lbl_altura.AutoSize = True
         Me.lbl_altura.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_altura.Location = New System.Drawing.Point(264, 64)
+        Me.lbl_altura.Location = New System.Drawing.Point(261, 62)
         Me.lbl_altura.Name = "lbl_altura"
         Me.lbl_altura.Size = New System.Drawing.Size(70, 18)
         Me.lbl_altura.TabIndex = 4
@@ -304,7 +306,7 @@ Partial Class frm_registrar_centroMedico
         '
         Me.lbl_direccion.AutoSize = True
         Me.lbl_direccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_direccion.Location = New System.Drawing.Point(32, 65)
+        Me.lbl_direccion.Location = New System.Drawing.Point(32, 60)
         Me.lbl_direccion.Name = "lbl_direccion"
         Me.lbl_direccion.Size = New System.Drawing.Size(45, 18)
         Me.lbl_direccion.TabIndex = 2
@@ -333,10 +335,10 @@ Partial Class frm_registrar_centroMedico
         Me.btn_Nuevo.BackColor = System.Drawing.Color.Silver
         Me.btn_Nuevo.BackgroundImage = CType(resources.GetObject("btn_Nuevo.BackgroundImage"), System.Drawing.Image)
         Me.btn_Nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_Nuevo.Location = New System.Drawing.Point(12, 423)
+        Me.btn_Nuevo.Location = New System.Drawing.Point(12, 426)
         Me.btn_Nuevo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Nuevo.Name = "btn_Nuevo"
-        Me.btn_Nuevo.Size = New System.Drawing.Size(64, 62)
+        Me.btn_Nuevo.Size = New System.Drawing.Size(64, 59)
         Me.btn_Nuevo.TabIndex = 2
         Me.btn_Nuevo.UseVisualStyleBackColor = False
         '
@@ -345,10 +347,10 @@ Partial Class frm_registrar_centroMedico
         Me.btn_Modificar.BackColor = System.Drawing.Color.Silver
         Me.btn_Modificar.BackgroundImage = CType(resources.GetObject("btn_Modificar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Modificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_Modificar.Location = New System.Drawing.Point(82, 424)
+        Me.btn_Modificar.Location = New System.Drawing.Point(82, 426)
         Me.btn_Modificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Modificar.Name = "btn_Modificar"
-        Me.btn_Modificar.Size = New System.Drawing.Size(61, 60)
+        Me.btn_Modificar.Size = New System.Drawing.Size(61, 58)
         Me.btn_Modificar.TabIndex = 3
         Me.btn_Modificar.UseVisualStyleBackColor = False
         '
@@ -357,10 +359,10 @@ Partial Class frm_registrar_centroMedico
         Me.btn_Grabar.BackColor = System.Drawing.Color.Silver
         Me.btn_Grabar.BackgroundImage = CType(resources.GetObject("btn_Grabar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Grabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_Grabar.Location = New System.Drawing.Point(150, 423)
+        Me.btn_Grabar.Location = New System.Drawing.Point(150, 426)
         Me.btn_Grabar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Grabar.Name = "btn_Grabar"
-        Me.btn_Grabar.Size = New System.Drawing.Size(68, 62)
+        Me.btn_Grabar.Size = New System.Drawing.Size(67, 59)
         Me.btn_Grabar.TabIndex = 4
         Me.btn_Grabar.UseVisualStyleBackColor = False
         '
@@ -369,10 +371,10 @@ Partial Class frm_registrar_centroMedico
         Me.btn_Eliminar.BackColor = System.Drawing.Color.Silver
         Me.btn_Eliminar.BackgroundImage = CType(resources.GetObject("btn_Eliminar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_Eliminar.Location = New System.Drawing.Point(223, 424)
+        Me.btn_Eliminar.Location = New System.Drawing.Point(223, 426)
         Me.btn_Eliminar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Eliminar.Name = "btn_Eliminar"
-        Me.btn_Eliminar.Size = New System.Drawing.Size(69, 62)
+        Me.btn_Eliminar.Size = New System.Drawing.Size(69, 60)
         Me.btn_Eliminar.TabIndex = 5
         Me.btn_Eliminar.UseVisualStyleBackColor = False
         '
@@ -381,10 +383,10 @@ Partial Class frm_registrar_centroMedico
         Me.btn_Buscar.BackColor = System.Drawing.Color.Silver
         Me.btn_Buscar.BackgroundImage = CType(resources.GetObject("btn_Buscar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_Buscar.Location = New System.Drawing.Point(298, 423)
+        Me.btn_Buscar.Location = New System.Drawing.Point(298, 426)
         Me.btn_Buscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_Buscar.Name = "btn_Buscar"
-        Me.btn_Buscar.Size = New System.Drawing.Size(65, 62)
+        Me.btn_Buscar.Size = New System.Drawing.Size(65, 59)
         Me.btn_Buscar.TabIndex = 6
         Me.btn_Buscar.UseVisualStyleBackColor = False
         '
@@ -486,6 +488,15 @@ Partial Class frm_registrar_centroMedico
         Me.col_idDomicilio.ReadOnly = True
         Me.col_idDomicilio.Visible = False
         '
+        'btn_new
+        '
+        Me.btn_new.Location = New System.Drawing.Point(250, 143)
+        Me.btn_new.Name = "btn_new"
+        Me.btn_new.Size = New System.Drawing.Size(61, 30)
+        Me.btn_new.TabIndex = 12
+        Me.btn_new.Text = "Nuevo"
+        Me.btn_new.UseVisualStyleBackColor = True
+        '
         'frm_registrar_centroMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -556,4 +567,5 @@ Partial Class frm_registrar_centroMedico
     Friend WithEvents Provincia As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_idCentro As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_idDomicilio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btn_new As System.Windows.Forms.Button
 End Class
