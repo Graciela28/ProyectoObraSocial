@@ -35,6 +35,7 @@ Partial Class frm_registrar_centroMedico
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btn_new = New System.Windows.Forms.Button()
         Me.cbo_provincias = New System.Windows.Forms.ComboBox()
         Me.lbl_provincia = New System.Windows.Forms.Label()
         Me.cbo_localidades = New System.Windows.Forms.ComboBox()
@@ -65,7 +66,6 @@ Partial Class frm_registrar_centroMedico
         Me.Provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_idCentro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_idDomicilio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_new = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -210,6 +210,15 @@ Partial Class frm_registrar_centroMedico
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(490, 196)
         Me.Panel2.TabIndex = 1
+        '
+        'btn_new
+        '
+        Me.btn_new.Location = New System.Drawing.Point(250, 143)
+        Me.btn_new.Name = "btn_new"
+        Me.btn_new.Size = New System.Drawing.Size(61, 30)
+        Me.btn_new.TabIndex = 12
+        Me.btn_new.Text = "Nuevo"
+        Me.btn_new.UseVisualStyleBackColor = True
         '
         'cbo_provincias
         '
@@ -437,6 +446,7 @@ Partial Class frm_registrar_centroMedico
         Me.Mail.HeaderText = "Mail"
         Me.Mail.Name = "Mail"
         Me.Mail.ReadOnly = True
+        Me.Mail.Width = 200
         '
         'Propio
         '
@@ -487,15 +497,6 @@ Partial Class frm_registrar_centroMedico
         Me.col_idDomicilio.Name = "col_idDomicilio"
         Me.col_idDomicilio.ReadOnly = True
         Me.col_idDomicilio.Visible = False
-        '
-        'btn_new
-        '
-        Me.btn_new.Location = New System.Drawing.Point(250, 143)
-        Me.btn_new.Name = "btn_new"
-        Me.btn_new.Size = New System.Drawing.Size(61, 30)
-        Me.btn_new.TabIndex = 12
-        Me.btn_new.Text = "Nuevo"
-        Me.btn_new.UseVisualStyleBackColor = True
         '
         'frm_registrar_centroMedico
         '
@@ -556,6 +557,7 @@ Partial Class frm_registrar_centroMedico
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents dgv_centros As System.Windows.Forms.DataGridView
     Friend WithEvents cbo_esPropio As System.Windows.Forms.ComboBox
+    Friend WithEvents btn_new As System.Windows.Forms.Button
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Telefono As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Mail As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -567,5 +569,4 @@ Partial Class frm_registrar_centroMedico
     Friend WithEvents Provincia As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_idCentro As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_idDomicilio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents btn_new As System.Windows.Forms.Button
 End Class

@@ -144,6 +144,7 @@ Public Class frm_registrar_Afiliado
             Else
                 .telefono = Convert.ToInt64(txt_telefono.Text)
             End If
+            .empresaConvenio = txt_empresa.Text
             .mailAfiliado = txt_mail.Text
         End With
 
@@ -177,6 +178,7 @@ Public Class frm_registrar_Afiliado
         Me.txt_mail.Text = ""
         Me.txt_calle.Text = ""
         Me.txt_altura.Text = ""
+        Me.txt_empresa.Text = ""
         Me.cbo_tipo_afiliado.SelectedIndex = -1
         Me.cbo_tipo_documento.SelectedIndex = -1
         Me.cbo_provincias.SelectedIndex = -1
@@ -381,6 +383,7 @@ Public Class frm_registrar_Afiliado
                 dtp_fecha.Value = oAfiliado.fechaNacimiento.ToString
                 cbo_tipo_afiliado.SelectedValue = oAfiliado.idTipoAfil.ToString
                 txt_telefono.Text = oAfiliado.telefono.ToString
+                txt_empresa.Text = oAfiliado.empresaConvenio.ToString
                 txt_mail.Text = oAfiliado.mailAfiliado
                 txt_calle.Text = oAfiliado.calle
                 txt_altura.Text = oAfiliado.numero.ToString
@@ -392,6 +395,7 @@ Public Class frm_registrar_Afiliado
             End With
         Next
         btn_Grabar.Enabled = True
+        btn_new.Enabled = True
         Me.accion = estado.modificar
     End Sub
 

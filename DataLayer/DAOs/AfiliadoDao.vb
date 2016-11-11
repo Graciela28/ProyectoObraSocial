@@ -149,6 +149,7 @@
             command.Parameters.AddWithValue("@barrio", oAfiliado.codBarrio)
             command.Parameters.AddWithValue("@telefono", oAfiliado.telefono)
             command.Parameters.AddWithValue("@mail", oAfiliado.mailAfiliado)
+            command.Parameters.AddWithValue("@empresa", oAfiliado.empresaConvenio)
             status = command.ExecuteNonQuery()
 
         Catch ex As Exception

@@ -81,11 +81,10 @@
             If IsDBNull(row.Item("telefono")) Then
                 .telefonoCentro = -1
             Else
-                .telefonoCentro = Convert.ToInt32(row.Item("telefono").ToString)
+                .telefonoCentro = Convert.ToInt64(row.Item("telefono").ToString)
             End If
 
             .mail = row.Item("mail").ToString
-            MsgBox(row.Item("esPropio").ToString)
             If (row.Item("esPropio").ToString.CompareTo("True") = 0) Then
                 .esPropio = True
             Else
