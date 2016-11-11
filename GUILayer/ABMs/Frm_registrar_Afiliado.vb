@@ -367,6 +367,7 @@ Public Class frm_registrar_Afiliado
     End Sub
 
     Private Sub cmd_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
+        Me.seterarLabelsAColorInicial()
         tipo_documento_id = Integer.Parse(Me.dgv_afiliados.CurrentRow.Cells.Item("col_idTipoDoc").Value.ToString)
         num_documento = Integer.Parse(Me.dgv_afiliados.CurrentRow.Cells.Item("col_documento").Value.ToString)
 

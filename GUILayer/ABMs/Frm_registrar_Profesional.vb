@@ -497,6 +497,7 @@ Public Class frm_registrar_profesional
     End Function
 
     Private Sub cmd_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
+        Me.setearLabelsAColorInicial()
         Me.accion = estado.modificar
         Dim tabla As New Data.DataTable
         Dim connection As New SqlConnection

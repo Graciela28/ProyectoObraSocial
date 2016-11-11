@@ -392,7 +392,9 @@ Public Class frm_registrar_centroMedico
     End Sub
 
     Private Sub btn_Modificar_Click(sender As Object, e As EventArgs) Handles btn_Modificar.Click
+        Me.setearLabelsAColorInicial()
         Me.habilitarControles()
+
         Dim idCentro As Integer
         idCentro = Integer.Parse(Me.dgv_centros.CurrentRow.Cells.Item("col_idCentro").Value.ToString)
 
