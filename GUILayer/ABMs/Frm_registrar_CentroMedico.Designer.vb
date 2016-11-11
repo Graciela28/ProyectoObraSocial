@@ -341,6 +341,7 @@ Partial Class frm_registrar_centroMedico
         '
         'btn_Nuevo
         '
+        Me.btn_Nuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Nuevo.BackColor = System.Drawing.Color.Silver
         Me.btn_Nuevo.BackgroundImage = CType(resources.GetObject("btn_Nuevo.BackgroundImage"), System.Drawing.Image)
         Me.btn_Nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -353,6 +354,7 @@ Partial Class frm_registrar_centroMedico
         '
         'btn_Modificar
         '
+        Me.btn_Modificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Modificar.BackColor = System.Drawing.Color.Silver
         Me.btn_Modificar.BackgroundImage = CType(resources.GetObject("btn_Modificar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Modificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -365,6 +367,7 @@ Partial Class frm_registrar_centroMedico
         '
         'btn_Grabar
         '
+        Me.btn_Grabar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Grabar.BackColor = System.Drawing.Color.Silver
         Me.btn_Grabar.BackgroundImage = CType(resources.GetObject("btn_Grabar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Grabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -377,6 +380,7 @@ Partial Class frm_registrar_centroMedico
         '
         'btn_Eliminar
         '
+        Me.btn_Eliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Eliminar.BackColor = System.Drawing.Color.Silver
         Me.btn_Eliminar.BackgroundImage = CType(resources.GetObject("btn_Eliminar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -389,6 +393,7 @@ Partial Class frm_registrar_centroMedico
         '
         'btn_Buscar
         '
+        Me.btn_Buscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Buscar.BackColor = System.Drawing.Color.Silver
         Me.btn_Buscar.BackgroundImage = CType(resources.GetObject("btn_Buscar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -401,6 +406,7 @@ Partial Class frm_registrar_centroMedico
         '
         'cmd_salir
         '
+        Me.cmd_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_salir.BackColor = System.Drawing.Color.Silver
         Me.cmd_salir.BackgroundImage = CType(resources.GetObject("cmd_salir.BackgroundImage"), System.Drawing.Image)
         Me.cmd_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -415,7 +421,8 @@ Partial Class frm_registrar_centroMedico
         '
         Me.dgv_centros.AllowUserToAddRows = False
         Me.dgv_centros.AllowUserToDeleteRows = False
-        Me.dgv_centros.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.dgv_centros.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_centros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_centros.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nombre, Me.Telefono, Me.Mail, Me.Propio, Me.calle, Me.numero, Me.Barrio, Me.Localidad, Me.Provincia, Me.col_idCentro, Me.col_idDomicilio})

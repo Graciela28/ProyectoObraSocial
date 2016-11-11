@@ -43,6 +43,7 @@ Partial Class frm_registrar_profesional
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.txt_direccion = New System.Windows.Forms.Panel()
+        Me.btn_new = New System.Windows.Forms.Button()
         Me.lbl_datosDomicilio = New System.Windows.Forms.Label()
         Me.txt_altura = New System.Windows.Forms.TextBox()
         Me.lbl_numero = New System.Windows.Forms.Label()
@@ -75,7 +76,6 @@ Partial Class frm_registrar_profesional
         Me.col_provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_estaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_new = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.txt_direccion.SuspendLayout()
@@ -292,6 +292,15 @@ Partial Class frm_registrar_profesional
         Me.txt_direccion.Size = New System.Drawing.Size(525, 166)
         Me.txt_direccion.TabIndex = 1
         '
+        'btn_new
+        '
+        Me.btn_new.Location = New System.Drawing.Point(268, 117)
+        Me.btn_new.Name = "btn_new"
+        Me.btn_new.Size = New System.Drawing.Size(61, 30)
+        Me.btn_new.TabIndex = 13
+        Me.btn_new.Text = "Nuevo"
+        Me.btn_new.UseVisualStyleBackColor = True
+        '
         'lbl_datosDomicilio
         '
         Me.lbl_datosDomicilio.AutoSize = True
@@ -400,6 +409,7 @@ Partial Class frm_registrar_profesional
         '
         'btn_Nuevo
         '
+        Me.btn_Nuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Nuevo.BackColor = System.Drawing.Color.Silver
         Me.btn_Nuevo.Image = CType(resources.GetObject("btn_Nuevo.Image"), System.Drawing.Image)
         Me.btn_Nuevo.Location = New System.Drawing.Point(15, 479)
@@ -410,6 +420,7 @@ Partial Class frm_registrar_profesional
         '
         'btn_Modificar
         '
+        Me.btn_Modificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Modificar.BackColor = System.Drawing.Color.Silver
         Me.btn_Modificar.BackgroundImage = CType(resources.GetObject("btn_Modificar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Modificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -421,6 +432,7 @@ Partial Class frm_registrar_profesional
         '
         'btn_Grabar
         '
+        Me.btn_Grabar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Grabar.BackColor = System.Drawing.Color.Silver
         Me.btn_Grabar.Image = CType(resources.GetObject("btn_Grabar.Image"), System.Drawing.Image)
         Me.btn_Grabar.Location = New System.Drawing.Point(150, 479)
@@ -431,6 +443,7 @@ Partial Class frm_registrar_profesional
         '
         'btn_Eliminar
         '
+        Me.btn_Eliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Eliminar.BackColor = System.Drawing.Color.Silver
         Me.btn_Eliminar.BackgroundImage = CType(resources.GetObject("btn_Eliminar.BackgroundImage"), System.Drawing.Image)
         Me.btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -442,6 +455,7 @@ Partial Class frm_registrar_profesional
         '
         'btn_Buscar
         '
+        Me.btn_Buscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Buscar.BackColor = System.Drawing.Color.Silver
         Me.btn_Buscar.Image = CType(resources.GetObject("btn_Buscar.Image"), System.Drawing.Image)
         Me.btn_Buscar.Location = New System.Drawing.Point(297, 479)
@@ -452,6 +466,7 @@ Partial Class frm_registrar_profesional
         '
         'cmd_Salir
         '
+        Me.cmd_Salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_Salir.BackColor = System.Drawing.Color.Silver
         Me.cmd_Salir.Image = CType(resources.GetObject("cmd_Salir.Image"), System.Drawing.Image)
         Me.cmd_Salir.Location = New System.Drawing.Point(954, 473)
@@ -464,6 +479,9 @@ Partial Class frm_registrar_profesional
         '
         Me.dgv_profesionales.AllowUserToAddRows = False
         Me.dgv_profesionales.AllowUserToDeleteRows = False
+        Me.dgv_profesionales.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv_profesionales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_profesionales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idTipoDoc, Me.col_nombreTipoDoc, Me.col_documento, Me.col_matricula, Me.col_nombre, Me.col_edad, Me.col_telefono, Me.col_eMail, Me.col_direccion, Me.col_barrio, Me.col_localidad, Me.col_provincia, Me.col_estaActivo, Me.nombre})
         Me.dgv_profesionales.Location = New System.Drawing.Point(553, 12)
@@ -570,15 +588,6 @@ Partial Class frm_registrar_profesional
         Me.nombre.ReadOnly = True
         Me.nombre.Visible = False
         Me.nombre.Width = 250
-        '
-        'btn_new
-        '
-        Me.btn_new.Location = New System.Drawing.Point(268, 117)
-        Me.btn_new.Name = "btn_new"
-        Me.btn_new.Size = New System.Drawing.Size(61, 30)
-        Me.btn_new.TabIndex = 13
-        Me.btn_new.Text = "Nuevo"
-        Me.btn_new.UseVisualStyleBackColor = True
         '
         'frm_registrar_profesional
         '

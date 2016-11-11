@@ -35,14 +35,14 @@ Partial Class Frm_registrar_Barrio
         Me.btn_Modificar = New System.Windows.Forms.Button()
         Me.btn_Nuevo = New System.Windows.Forms.Button()
         Me.dgv_barrios = New System.Windows.Forms.DataGridView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_Salir = New System.Windows.Forms.Button()
         Me.col_idProvincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_provincia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_IdLocalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_localidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_IdBarrio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_barrio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btn_Salir = New System.Windows.Forms.Button()
         CType(Me.dgv_barrios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -184,43 +184,6 @@ Partial Class Frm_registrar_Barrio
         Me.dgv_barrios.Size = New System.Drawing.Size(591, 260)
         Me.dgv_barrios.TabIndex = 18
         '
-        'col_idProvincia
-        '
-        Me.col_idProvincia.HeaderText = "Id Provincia"
-        Me.col_idProvincia.Name = "col_idProvincia"
-        Me.col_idProvincia.ReadOnly = True
-        '
-        'col_provincia
-        '
-        Me.col_provincia.HeaderText = "Provincia"
-        Me.col_provincia.Name = "col_provincia"
-        Me.col_provincia.ReadOnly = True
-        '
-        'col_IdLocalidad
-        '
-        Me.col_IdLocalidad.HeaderText = "Id Localidad"
-        Me.col_IdLocalidad.Name = "col_IdLocalidad"
-        Me.col_IdLocalidad.ReadOnly = True
-        '
-        'col_localidad
-        '
-        Me.col_localidad.HeaderText = "Localidad"
-        Me.col_localidad.Name = "col_localidad"
-        Me.col_localidad.ReadOnly = True
-        '
-        'col_IdBarrio
-        '
-        Me.col_IdBarrio.HeaderText = "Id Barrio"
-        Me.col_IdBarrio.Name = "col_IdBarrio"
-        Me.col_IdBarrio.ReadOnly = True
-        '
-        'col_barrio
-        '
-        Me.col_barrio.HeaderText = "Barrio"
-        Me.col_barrio.Name = "col_barrio"
-        Me.col_barrio.ReadOnly = True
-        Me.col_barrio.Width = 300
-        '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -244,6 +207,46 @@ Partial Class Frm_registrar_Barrio
         Me.btn_Salir.Size = New System.Drawing.Size(59, 58)
         Me.btn_Salir.TabIndex = 20
         Me.btn_Salir.UseVisualStyleBackColor = False
+        '
+        'col_idProvincia
+        '
+        Me.col_idProvincia.HeaderText = "Id Provincia"
+        Me.col_idProvincia.Name = "col_idProvincia"
+        Me.col_idProvincia.ReadOnly = True
+        Me.col_idProvincia.Visible = False
+        '
+        'col_provincia
+        '
+        Me.col_provincia.HeaderText = "Provincia"
+        Me.col_provincia.Name = "col_provincia"
+        Me.col_provincia.ReadOnly = True
+        '
+        'col_IdLocalidad
+        '
+        Me.col_IdLocalidad.HeaderText = "Id Localidad"
+        Me.col_IdLocalidad.Name = "col_IdLocalidad"
+        Me.col_IdLocalidad.ReadOnly = True
+        Me.col_IdLocalidad.Visible = False
+        '
+        'col_localidad
+        '
+        Me.col_localidad.HeaderText = "Localidad"
+        Me.col_localidad.Name = "col_localidad"
+        Me.col_localidad.ReadOnly = True
+        '
+        'col_IdBarrio
+        '
+        Me.col_IdBarrio.HeaderText = "Id Barrio"
+        Me.col_IdBarrio.Name = "col_IdBarrio"
+        Me.col_IdBarrio.ReadOnly = True
+        Me.col_IdBarrio.Visible = False
+        '
+        'col_barrio
+        '
+        Me.col_barrio.HeaderText = "Barrio"
+        Me.col_barrio.Name = "col_barrio"
+        Me.col_barrio.ReadOnly = True
+        Me.col_barrio.Width = 300
         '
         'Frm_registrar_Barrio
         '
